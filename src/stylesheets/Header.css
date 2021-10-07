@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   text-align: center;
   background-color: rgba(0, 0, 0, 0.438);
   padding: 2rem 0 0;
@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  font-size: 2em;
 }
 
 .nav-header {
@@ -50,7 +51,8 @@
   text-decoration: none;
   margin: 0 1rem;
   transition: all ease 0.3s;
-  font-size: 2rem;
+  margin-top: 1em;
+  /* font-size: 2rem; */
 }
 
 .nav-item:hover {
@@ -58,13 +60,7 @@
 }
 
 .contact-info {
-  /* display: flex;
-  flex-direction: row;
-  justify-content: center; */
-  gap: 1rem;
-  /* background-color: brown; */
-  margin: 2rem;
-  font-size: 2rem;
+  font-size: 2em;
 }
 
 .contact-item {
@@ -76,11 +72,11 @@
 }
 
 .contact-item.phone {
-  left: 0;
+  left: 1em;
 }
 
 .contact-item.email {
-  right: 0;
+  right: 1em;
 }
 
 .contact-item:hover {
@@ -88,20 +84,48 @@
   /* transform: scale(1.1); */
 }
 
-@media only screen and (max-width: 600px) {
+.footer {
+  background-color: rgba(0, 0, 0, 0.603);
+  font-size: 5vw;
+  padding: 0 0 0.3em;
+  display: flex;
+  position: fixed;
+  height: min-content;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: space-evenly;
+  z-index: 9999;
+}
+
+@media (max-width: 899px) {
   .header {
     margin-top: 0;
+    /* background-color: rgb(194, 61, 0); */
   }
   .nav-header > h1 {
     font-size: 3rem;
   }
+  .sub-header {
+    padding: 0 0.5em;
+  }
   .contact-info {
     position: relative;
-    top: auto;
+    display: flex;
     left: auto;
     right: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5em;
   }
   .contact-item {
     position: relative;
+  }
+
+  .contact-item.phone,
+  .contact-item.email {
+    left: auto;
+    right: auto;
   }
 }

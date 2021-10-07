@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import NavItem from "./NavItem";
 import "../../stylesheets/Header.css";
 
-const Header = ({ title, desc }) => {
+const Header = ({ title, desc, isDesktopOrLaptop }) => {
   return (
     <div className={"header"}>
       <Link className="nav-header" to="/">
@@ -16,12 +16,14 @@ const Header = ({ title, desc }) => {
         <div className={"contact-item phone"}>0431 154 056</div>
         <div className={"contact-item email"}>b_rad88@live.com</div>
       </div>
-      <div className="nav-bar">
-        <NavItem href={"/about"} text={"about"} />
-        <NavItem href={"/portfolio"} text={"portfolio"} />
-        <NavItem href={"/blog"} text={"blog"} />
-        <NavItem href={"/contact"} text={"contact"} />
-      </div>
+      {isDesktopOrLaptop && (
+        <div className="nav-bar">
+          <NavItem href={"/about"} text={"about"} />
+          <NavItem href={"/portfolio"} text={"portfolio"} />
+          <NavItem href={"/blog"} text={"blog"} />
+          <NavItem href={"/contact"} text={"contact"} />
+        </div>
+      )}
     </div>
   );
 };

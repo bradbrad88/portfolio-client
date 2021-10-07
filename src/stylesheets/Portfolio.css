@@ -50,6 +50,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 0fr 1fr;
+  gap: 1em;
   /* grid-auto-rows: 1fr; */
   max-height: none;
   min-height: 0;
@@ -92,6 +93,7 @@
   /* bottom: 0;
   right: 0; */
   width: 50%;
+  min-width: fit-content;
   margin-left: auto;
   background: none;
   border: none;
@@ -107,6 +109,7 @@
   transform: scale(1.1);
   background-color: white;
   z-index: 100;
+  box-shadow: 10px 15px 5px rgba(0, 0, 0, 0.2);
 }
 
 .card.portfolio:hover > .content {

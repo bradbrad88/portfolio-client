@@ -37,27 +37,6 @@ const Card = ({
         ></div>
       </div>
     </div>
-    // <div className={`card scene ${active && "active"}`}>
-    //   <div className={`card portfolio ${active && "active"}`}>
-    //     <div className={"face front"}>
-    //       <h2>{title}</h2>
-    //       <a href={url} target={"_blank"}>
-    //         {urlText ? urlText : url}
-    //       </a>
-    //       <div className={"content"}>
-    //         <div className="description">
-    //           <p>{description}</p>
-    //           <button onClick={onClick}>Read more...</button>
-    //         </div>
-    //         <div
-    //           className="image"
-    //           style={{ backgroundImage: `url(${image})` }}
-    //         ></div>
-    //       </div>
-    //     </div>
-    //     <div className={"face back"}>Back</div>
-    //   </div>
-    // </div>
   );
 };
 
