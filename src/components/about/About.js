@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "./Card";
-import desk from "../../assets/desk.jpg";
+// import Card from "./Card";
+// import desk from "../../assets/desk.jpg";
 import "../../stylesheets/About.css";
 
 const About = () => {

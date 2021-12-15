@@ -1,0 +1,75 @@
+.profile-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
+.profile-info {
+  height: 700px;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  font-size: 5rem;
+  font-weight: 600;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.555);
+}
+
+.profile-info h1 {
+  color: rgba(255, 255, 255, 0.781);
+  text-align: center;
+  margin-top: 10rem;
+  user-select: none;
+}
+
+.profile-contact {
+  width: 50%;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+}
+
+.profile-contact a {
+  font: inherit;
+  color: inherit;
+  font-size: 2.5rem;
+  transition: 0.2s;
+}
+
+.profile-contact a:hover {
+  color: rgb(255, 205, 113);
+}
+
+.profile-contact a::selection {
+  color: aliceblue;
+  background-color: rgba(209, 209, 209, 0.288);
+}
+
+.profile-image {
+  position: absolute;
+  box-sizing: border-box;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: bisque;
+  width: fit-content;
+  height: fit-content;
+  border: rgb(255, 255, 255) 1rem solid;
+  align-self: center;
+  bottom: 0;
+  transform: translateY(50%);
+}
+
+.profile-image > img {
+  width: 20rem;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 500px) {
+  .profile-info h1 {
+    font-size: 2rem;
+  }
+}
