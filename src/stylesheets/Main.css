@@ -34,9 +34,9 @@ h2 {
 .card {
   box-sizing: border-box;
   border: rgb(197, 197, 197) 1px solid;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   padding: 2rem;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.068);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.075);
 }
 
 .card h3 {

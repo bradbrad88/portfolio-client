@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 import "stylesheets/Portfolio.css";
 
 const Card = ({
@@ -14,11 +15,6 @@ const Card = ({
   id,
   site,
 }) => {
-  // const history = useHistory();
-  // const onCardClick = () => {
-  //   window.open(url);
-  // };
-
   const renderRepos = () => {
     if (!repos) return;
     return repos.map(repo => (
@@ -37,9 +33,11 @@ const Card = ({
     ));
   };
   return (
-    <div className="portfolio__card">
+    <div className="portfolio__card card">
       <div className="content">
-        <h3>{title}</h3>
+        <Link to={`/portfolio/${url}`}>
+          <h3>{title}</h3>
+        </Link>
         <div className="text">
           <p>{description}</p>
           <br />
