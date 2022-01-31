@@ -6,7 +6,7 @@ import "stylesheets/Portfolio.css";
 const PortfolioPage = ({ children }) => {
   return (
     <div className="portfolio-page">
-      <Link to={"/"}>{homeIcon(50)}</Link>
+      {/* <Link to={"/"}>{homeIcon(50)}</Link> */}
       <Outlet />
     </div>
   );

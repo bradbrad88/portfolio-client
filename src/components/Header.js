@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <div className={`header ${active ? "active" : ""}`}>
       <Link to={"/"} className="home">
-        <h3>{homeIcon(50)}Brad Teague</h3>
+        <h3>{homeIcon(40)}Brad Teague</h3>
       </Link>
       <div className="contact-info">
         <a href={"tel:+61431154056"}>0431 154 056</a>
