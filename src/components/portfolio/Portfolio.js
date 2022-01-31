@@ -2,7 +2,7 @@ import React from "react";
 import PortfolioCard from "./PortfolioCard";
 
 import portfolio from "./portfolioItems";
-import "stylesheets/Portfolio.css";
+import "stylesheets/Portfolio.scss";
 
 const Portfolio = () => {
   const renderPortfolio = portfolio => {
@@ -27,7 +27,7 @@ const Portfolio = () => {
   return (
     <div className={"portfolio section"}>
       <h2>Portfolio</h2>
-      <div className={"portfolio-items"}>{renderPortfolio(portfolio)}</div>
+      <div className={"items"}>{renderPortfolio(portfolio)}</div>
     </div>
   );
 };

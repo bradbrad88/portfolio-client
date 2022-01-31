@@ -1,0 +1,67 @@
+@import "_variables";
+
+.portfolio {
+  margin-top: 10rem;
+  .items {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 1rem;
+    .card {
+      display: flex;
+      box-sizing: border-box;
+      width: 100%;
+      gap: max(1rem, 3vw);
+      padding: clamp(0.7rem, 4vw, 2rem);
+      p,
+      a {
+        font-size: clamp(0.4rem, 2vw, 1.2rem);
+        white-space: pre-line;
+      }
+      .left {
+        flex: 1;
+        h3 {
+          font-size: clamp(1.4rem, 2.5vw, 3rem);
+          line-height: 1;
+          margin-bottom: 0.5rem;
+        }
+        a {
+          display: block;
+          color: $primary-colour;
+          font-weight: bold;
+        }
+      }
+      .right {
+        flex: 1;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        img {
+          max-width: 100%;
+        }
+        h4 {
+          color: $primary-colour;
+          font-size: clamp(0.8rem, 1.6vw, 1.5rem);
+        }
+      }
+    }
+  }
+}
+
+/* Portfolio Page */
+.portfolio-page > a {
+  display: inline-block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  /* background-color: tomato; */
+}
+
+.portfolio-page > a > svg {
+  fill: white;
+  transition: 100ms;
+}
+
+.portfolio-page > a:hover > svg {
+  fill: rgb(48, 250, 41);
+  filter: drop-shadow(0 0 5px white);
+}
