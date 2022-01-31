@@ -2,7 +2,7 @@ import ProfileHeader from "./ProfileHeader";
 import Portfolio from "./portfolio/Portfolio";
 import Skills from "./Skills";
 import About from "./About";
-import PageFooter from "./PageFooter";
+import PageFooter from "./Footer";
 
 const Home = () => {
   return (

@@ -1,17 +1,21 @@
 import React from "react";
-import "../stylesheets/Main.css";
+import "../stylesheets/Main.scss";
 import { useMediaQuery } from "react-responsive";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "components/Home";
 import PortfolioPage from "./portfolio/PortfolioPage";
 import Satisfactory from "./portfolio/portfolio-pages/Satisfactory";
 import Photography from "./portfolio/portfolio-pages/Photography";
-import PageFooter from "./PageFooter";
+import Header from "./Header";
+import Footer from "./Footer";
+import ScrollTop from "./ScrollTop";
 
 const App = () => {
   const isDesktopOrLaptop = useMediaQuery({ query: `(min-width: 900px)` });
   return (
     <Router>
+      <ScrollTop />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="portfolio" element={<PortfolioPage />}>
@@ -19,7 +23,7 @@ const App = () => {
           <Route path="photography" element={<Photography />} />
         </Route>
       </Routes>
-      <PageFooter />
+      <Footer />
     </Router>
   );
 };

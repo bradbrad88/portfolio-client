@@ -1,7 +1,7 @@
 import React from "react";
 import Contact from "./contact/Contact";
 
-const PageFooter = () => {
+const Footer = () => {
   return (
     <div className={"footer"}>
       <Contact />
@@ -9,4 +9,4 @@ const PageFooter = () => {
   );
 };
 
-export default PageFooter;
+export default Footer;

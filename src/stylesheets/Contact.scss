@@ -4,27 +4,15 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  width: 35rem;
   padding: 20px 50px;
-  max-width: 40rem;
   margin: 2rem;
-}
-
-.contact-header {
   color: #fff;
-  text-align: center;
 }
 
 .contact-header > h2 {
   font-size: 2.4rem;
   text-align: left;
-  color: #fff;
-}
-
-.field {
-  margin: 0;
-  padding: 0;
-  /* background-color: red; */
+  color: inherit;
 }
 
 .contact-form > .field {
@@ -47,6 +35,9 @@
   /* width: 100%; */
   width: 100%;
   padding: 0.5rem 1rem;
+}
+.contact-input::selection {
+  background: rgba(255, 255, 255, 0.226);
 }
 .contact-form > .contact-input.button {
   border: none;

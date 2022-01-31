@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import backgroundImage from "assets/bg.jpg";
-import profileImage from "assets/profileImg.jpg";
-import "stylesheets/ProfileHeader.css";
+import profileImage from "assets/profileImg.png";
+import grumpyCat from "assets/grumpycat.jpg";
+import "stylesheets/ProfileHeader.scss";
 
 const ProfileHeader = () => {
+  useEffect(() => {
+    const image = new Image(50, 50);
+    image.src = grumpyCat;
+    image.style.width = "50px";
+    image.onload = () => (window["grumpycat"] = image);
+  }, []);
+  const onDragStart = e => {
+    e.dataTransfer.setDragImage(window["grumpycat"], 137, 100);
+  };
   return (
     <div className={"profile-header"}>
       <div
@@ -17,7 +27,7 @@ const ProfileHeader = () => {
         </div>
       </div>
       <div className={"profile-image"}>
-        <img src={profileImage} />
+        <img onDragStart={onDragStart} src={profileImage} />
       </div>
     </div>
   );

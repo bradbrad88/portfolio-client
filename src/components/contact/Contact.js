@@ -5,11 +5,11 @@ import PhoneInput, {
   formatPhoneNumber,
   isPossiblePhoneNumber,
   isValidPhoneNumber,
-} from "react-phone-number-input";
+} from "react-phone-number-input/input";
 import EmailInput, { validateEmail } from "./EmailInput";
 import TextInput from "./TextInput";
 import "react-phone-number-input/style.css";
-import "stylesheets/Contact.css";
+import "stylesheets/Contact.scss";
 import TextAreaInput from "./TextAreaInput";
 
 const Contact = () => {
@@ -153,15 +153,24 @@ const Contact = () => {
         error={email.error}
         value={email.value}
       />
-      <PhoneInput
-        className="field"
-        onChange={handlePhoneChange}
-        placeholder={"Phone (not required)"}
-        value={phone.value}
-        countries={["AU"]}
-        defaultCountry="AU"
-        onBlur={handlePhoneBlur}
-      />
+      <div className="field">
+        <PhoneInput
+          className="contact-input"
+          onChange={handlePhoneChange}
+          placeholder={"Phone (not required)"}
+          value={phone.value}
+          // countries={["AU"]}
+          // countries={["AU"]}
+          defaultCountry="AU"
+          // country="AU"
+          // international={false}
+          // addInternationalOption={false}
+          // flagComponent={<></>}
+          // showCountrySelect={false}
+          // onBlur={handlePhoneBlur}
+          // useNationalFormatForDefaultCountryValue={false}
+        />
+      </div>
       <TextAreaInput
         value={message.value}
         onChange={handleMessageChange}

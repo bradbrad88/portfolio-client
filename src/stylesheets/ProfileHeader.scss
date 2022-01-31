@@ -1,3 +1,5 @@
+@import "_variables";
+
 .profile-header {
   position: relative;
   display: flex;
@@ -41,7 +43,7 @@
 }
 
 .profile-contact a:hover {
-  color: rgb(255, 205, 113);
+  color: $secondary-colour;
 }
 
 .profile-contact a::selection {
@@ -54,7 +56,7 @@
   box-sizing: border-box;
   border-radius: 50%;
   overflow: hidden;
-  background-color: bisque;
+  background: radial-gradient(circle, $secondary-colour 0%, $primary-colour 100%);
   width: fit-content;
   height: fit-content;
   border: rgb(255, 255, 255) 1rem solid;

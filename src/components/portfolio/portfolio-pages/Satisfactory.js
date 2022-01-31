@@ -1,10 +1,11 @@
 import React from "react";
 import cap1 from "assets/MapCapture.gif";
+import "stylesheets/Satisfactory.css";
 
 const Satisfactory = () => {
   return (
-    <>
-      <h1>Satisfactory</h1>
+    <div className="satisfactory">
+      <h1>SATISFACTORY</h1>
       <p>High level planning for your Satisfactory world.</p>
       <p>
         This application was built to assist in designing factories at their most
@@ -15,7 +16,7 @@ const Satisfactory = () => {
         power consumption and production building count with ease.
       </p>
       <img src={cap1} />
-    </>
+    </div>
   );
 };
 
