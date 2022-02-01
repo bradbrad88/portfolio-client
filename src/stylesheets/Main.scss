@@ -17,8 +17,9 @@ img {
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: clamp(3rem, 5vw, 4rem);
   color: $primary-colour;
+  // text-shadow: 0 0 20px rgba(0, 0, 0, 0.39);
 }
 
 .section {
@@ -27,8 +28,9 @@ h2 {
   font-size: 1rem;
   width: 61.8%;
   max-width: min(1000px, 100vw);
+  min-width: 600px;
   align-self: center;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 
 .card {
@@ -47,8 +49,8 @@ h2 {
   top: 0;
   padding: 0.5rem 3rem;
   justify-content: space-between;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.74);
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.795);
   color: white;
   font-size: 1.5em;
   transition: 500ms;
@@ -104,6 +106,10 @@ h2 {
 }
 
 @media screen and (max-width: $mobile-width) {
+  .section {
+    width: 90vw;
+    min-width: 0;
+  }
   .header {
     top: auto;
     bottom: 0;
@@ -116,17 +122,22 @@ h2 {
       svg {
         max-width: 5vw;
       }
+      h3 {
+        vertical-align: text-bottom;
+        font-size: 1.5rem;
+      }
     }
     .contact-info {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      gap: 0;
+      gap: 0.5rem;
 
       a {
         align-self: flex-end;
         justify-self: flex-end;
         vertical-align: bottom;
+        font-size: 1rem;
       }
     }
   }

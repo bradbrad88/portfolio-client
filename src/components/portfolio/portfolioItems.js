@@ -45,13 +45,13 @@ const portfolio = [
     image: imgFarOut,
     repos: [
       {
-        img: imgGithub,
+        // img: imgGithub,
         url: "https://github.com/bradbrad88/satisfactory-client",
         text: "Front end",
         id: 1,
       },
       {
-        img: imgGithub,
+        // img: imgGithub,
         url: "https://github.com/bradbrad88/satisfactory-server",
         text: "Back end",
         id: 2,

@@ -10,7 +10,7 @@ const Home = () => {
       <ProfileHeader />
       <Portfolio />
       <Skills />
-      <About />
+      {/* <About /> */}
     </>
   );
 };

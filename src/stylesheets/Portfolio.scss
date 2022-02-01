@@ -2,49 +2,74 @@
 
 .portfolio {
   margin-top: -10rem;
+  z-index: 2;
   .items {
     display: grid;
     grid-auto-flow: row;
     gap: 1rem;
+    width: 100%;
     .card {
       display: flex;
       box-sizing: border-box;
-      width: 100%;
-      gap: max(1rem, 3vw);
+      width: 95%;
+      gap: clamp(0.5rem, 3vw, 1.5rem);
       padding: clamp(0.7rem, 4vw, 2rem);
+      width: 100%;
+      a {
+        display: block;
+        color: $secondary-colour;
+        font-weight: bold;
+      }
       p,
       a {
         font-size: clamp(0.4rem, 2vw, 1.2rem);
         white-space: pre-line;
       }
-      .left {
+      .card-section.one {
         flex: 1;
-        h3 {
-          font-size: clamp(1.4rem, 2.5vw, 3rem);
+        .title {
+          font-size: clamp(1.4rem, 2vw, 2.3rem);
           line-height: 1;
           margin-bottom: 0.5rem;
+          text-decoration: underline;
+          transition: 100ms;
+          animation: card-title-tittilator 1.5s infinite alternate-reverse;
+          .icon {
+            fill: $secondary-colour;
+          }
+          &:hover {
+            color: $primary-colour;
+            .icon {
+              fill: $primary-colour;
+            }
+          }
         }
-        a {
-          display: block;
-          color: $primary-colour;
-          font-weight: bold;
+        .description {
+          grid-column: 1;
+          grid-row: 2;
         }
       }
-      .right {
+      .card-section.two {
         flex: 1;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        img {
-          max-width: 100%;
+        .image {
+          width: 100%;
+          grid-column: 2;
+          grid-row: 2;
         }
-        h4 {
-          color: $primary-colour;
-          font-size: clamp(0.8rem, 1.6vw, 1.5rem);
+        .links {
+          grid-column: 2;
+          grid-row: 1;
+          display: flex;
+          flex-direction: column;
         }
       }
     }
   }
+}
+
+.icon-span {
+  display: inline;
+  white-space: nowrap;
 }
 
 /* Portfolio Page */
@@ -53,7 +78,6 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-  /* background-color: tomato; */
 }
 
 .portfolio-page > a > svg {
@@ -64,4 +88,42 @@
 .portfolio-page > a:hover > svg {
   fill: rgb(48, 250, 41);
   filter: drop-shadow(0 0 5px white);
+}
+
+@media only screen and (max-width: $mobile-width) {
+  .portfolio {
+    .items {
+      .card {
+        flex-direction: column;
+        .card-section.two {
+          display: grid;
+          .image {
+            grid-row: 2;
+          }
+          .links {
+            grid-row: 1;
+            flex-direction: row;
+            justify-content: space-between;
+          }
+        }
+        .card-section {
+          .description p {
+            font-size: 1rem;
+          }
+          .links a {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes card-title-tittilator {
+  0% {
+    color: $primary-colour;
+  }
+  100% {
+    color: $secondary-colour;
+  }
 }
