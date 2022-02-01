@@ -16,19 +16,19 @@ const ProfileHeader = () => {
   };
   return (
     <div className={"profile-header"}>
-      <div
-        className={"profile-info"}
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
+      <div className={"info"} style={{ backgroundImage: `url(${backgroundImage})` }}>
         <h1>Brad Teague</h1>
-        <div className={"profile-contact"}>
+        <div className={"contact"}>
+          <a href={"mailto:brad.s.teague@gmail.com"}>brad.s.teague@gmail.com</a>
           <a href={"tel:+61431154056"}>0431 154 056</a>
-          <a href={"mailto:b_rad88@live.com"}>brad.s.teague@gmail.com</a>
         </div>
       </div>
-      <div className={"profile-image"}>
-        <img onDragStart={onDragStart} src={profileImage} />
+      <div className={"image-container"}>
+        <div className={"image"}>
+          <img src={profileImage} />
+        </div>
       </div>
+      {/* <img onDragStart={onDragStart} src={profileImage} /> */}
     </div>
   );
 };

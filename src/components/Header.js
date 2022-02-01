@@ -1,23 +1,36 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { homeIcon } from "assets/svgIcons";
 import { useEffect } from "react/cjs/react.development";
 
 const Header = () => {
-  const [active, setActive] = useState(true);
-  const onscroll = useCallback(e => {
-    console.log(e);
-    const { deltaY } = e;
-    const shouldBeActive = deltaY > 0;
-    setActive(shouldBeActive);
-  }, []);
+  const [hide, setHide] = useState(false);
+  const scrollRef = useRef();
+  const onscroll = useCallback(
+    e => {
+      const {
+        target: {
+          scrollingElement: { scrollTop },
+        },
+      } = e;
+      const scrolledDown = scrollTop > scrollRef.current;
+      const scrolledUp = scrollTop < scrollRef.current;
+      if (scrolledDown && !hide) {
+        setHide(true);
+      } else if (scrolledUp && hide) {
+        setHide(false);
+      }
+      scrollRef.current = scrollTop;
+    },
+    [hide]
+  );
   useEffect(() => {
-    window.addEventListener("wheel", onscroll);
-    return () => window.removeEventListener("wheel", onscroll);
-  }, []);
-
+    window.addEventListener("scroll", onscroll);
+    return () => window.removeEventListener("scroll", onscroll);
+  }, [onscroll]);
+  console.log("render");
   return (
-    <div className={`header ${active ? "active" : ""}`}>
+    <div className={`header ${hide ? "hide" : ""}`}>
       <Link to={"/"} className="home">
         <h3>{homeIcon(40)}Brad Teague</h3>
       </Link>
