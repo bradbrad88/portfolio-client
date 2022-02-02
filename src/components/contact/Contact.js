@@ -107,10 +107,14 @@ const Contact = () => {
   };
 
   const isValid = () => {
-    return [name, email, phone].map(state => state.valid).every(el => el === true);
+    return [name, email].map(state => state.valid).every(el => el === true);
   };
 
   const onSend = async () => {
+    console.log("its happening");
+    if (!process.env.REACT_APP_API_HOST) {
+      return console.error("Missing REACT_APP_API_HOST environment variable");
+    }
     setWorking(true);
     try {
       const headers = new Headers();
@@ -125,10 +129,9 @@ const Contact = () => {
         body: data.toString(),
         method: "POST",
       };
-      const res = await fetch(
-        process.env.REACT_APP_API_HOST + "/sendemail",
-        options
-      );
+      const url = process.env.REACT_APP_API_HOST + "/sendemail";
+      console.log(url);
+      const res = await fetch(url, options);
       setWorking(false);
     } catch (error) {
       setWorking(false);

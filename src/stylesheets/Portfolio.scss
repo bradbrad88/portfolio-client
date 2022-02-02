@@ -19,6 +19,7 @@
         display: block;
         color: $secondary-colour;
         font-weight: bold;
+        text-decoration: underline;
       }
       p,
       a {
@@ -32,12 +33,13 @@
           line-height: 1;
           margin-bottom: 0.5rem;
           text-decoration: underline;
-          transition: 100ms;
-          animation: card-title-tittilator 1.5s infinite alternate-reverse;
+          // animation: card-title-tittilator 3s infinite alternate-reverse;
           .icon {
             fill: $secondary-colour;
+            vertical-align: bottom;
           }
           &:hover {
+            animation: none;
             color: $primary-colour;
             .icon {
               fill: $primary-colour;

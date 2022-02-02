@@ -44,7 +44,8 @@ const Card = ({
           <h3>
             {title}
             <span className="icon-span">
-              &nbsp;<span className="icon-span-object">{touchIcon(24)}</span>
+              &nbsp;
+              <span className="icon-span-object">{!isDesktop && touchIcon(24)}</span>
             </span>
           </h3>
         </Link>
