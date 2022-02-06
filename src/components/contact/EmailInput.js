@@ -15,8 +15,11 @@ const EmailInput = ({ onChange, value, error, onBlur }) => {
         className={"contact-input"}
         placeholder={"Email *"}
         value={value}
+        autoComplete="email"
         onChange={handleChange}
         onBlur={handleBlur}
+        id="email-input"
+        name="email-input-name"
       ></input>
       {error && value && <p className="error">{error}</p>}
     </div>

@@ -139,10 +139,13 @@ const Contact = () => {
   };
 
   return (
-    <form className={"contact-form"} onSubmit={onSubmit}>
+    <form className={"contact-form"} onSubmit={onSubmit} autoComplete="on">
       <div className={"contact-header"}>
         <h2>Get in touch...</h2>
       </div>
+      <a href={"mailto:brad.s.teague@gmail.com"}>brad.s.teague@gmail.com</a>
+      <a href={"tel:+61431154056"}>0431 154 056</a>
+
       <TextInput
         value={name.value}
         onChange={handleNameChange}
@@ -160,26 +163,17 @@ const Contact = () => {
         <PhoneInput
           className="contact-input"
           onChange={handlePhoneChange}
-          placeholder={"Phone (not required)"}
+          placeholder={"Phone"}
           value={phone.value}
-          // countries={["AU"]}
-          // countries={["AU"]}
           defaultCountry="AU"
-          // country="AU"
-          // international={false}
-          // addInternationalOption={false}
-          // flagComponent={<></>}
-          // showCountrySelect={false}
-          // onBlur={handlePhoneBlur}
-          // useNationalFormatForDefaultCountryValue={false}
+          autoComplete
         />
       </div>
       <TextAreaInput
         value={message.value}
         onChange={handleMessageChange}
-        placeholder={
-          "Hey man, rad portfolio, forget the interview... you're hired!  or some message like that"
-        }
+        placeholder={"Ask a question..."}
+        rows={5}
       />
       <button
         className={"contact-input button"}
