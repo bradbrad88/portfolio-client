@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { homeIcon } from "assets/svgIcons";
 import { useEffect } from "react/cjs/react.development";
+import resume from "assets/Resume.pdf";
 
 const Header = () => {
   const [hide, setHide] = useState(false);
@@ -30,7 +31,6 @@ const Header = () => {
     window.addEventListener("scroll", onscroll);
     return () => window.removeEventListener("scroll", onscroll);
   }, [onscroll]);
-  console.log("render");
   return (
     <div className={`header ${hide ? "hide" : ""}`}>
       <Link to={"/"} className="home">
@@ -39,6 +39,9 @@ const Header = () => {
       <div className="contact-info">
         <a href={"tel:+61431154056"}>0431 154 056</a>
         <a href={"mailto:b_rad88@live.com"}>brad.s.teague@gmail.com</a>
+        <a href={resume} download={"Brad_Teague_Resume.pdf"}>
+          Résumé
+        </a>
       </div>
     </div>
   );
