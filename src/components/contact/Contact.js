@@ -111,7 +111,6 @@ const Contact = () => {
   };
 
   const onSend = async () => {
-    console.log("its happening");
     if (!process.env.REACT_APP_API_HOST) {
       return console.error("Missing REACT_APP_API_HOST environment variable");
     }
@@ -120,16 +119,16 @@ const Contact = () => {
       const headers = new Headers();
       headers.append("Content-Type", "application/x-www-form-urlencoded");
       const data = new URLSearchParams();
-      data.append("name", name.value);
-      data.append("email", email.value);
-      data.append("phone", phone.value);
-      data.append("message", message.value);
+      data.append("contactName", name.value);
+      data.append("contactEmail", email.value);
+      data.append("contactPhone", phone.value);
+      data.append("messageBody", message.value);
       const options = {
         headers,
         body: data.toString(),
         method: "POST",
       };
-      const url = process.env.REACT_APP_API_HOST + "/sendemail";
+      const url = process.env.REACT_APP_API_HOST + "/new_message";
       console.log(url);
       const res = await fetch(url, options);
       setWorking(false);
