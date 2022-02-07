@@ -1,8 +1,7 @@
-import React, { useCallback, useState, useRef } from "react";
+import React, { useCallback, useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { homeIcon } from "assets/svgIcons";
-import { useEffect } from "react/cjs/react.development";
 import resume from "assets/Resume.pdf";
 
 const Header = () => {
