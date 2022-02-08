@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Ripple } from "react-spinners-css";
+import socials from "./socials";
 
 import PhoneInput, {
   formatPhoneNumber,
@@ -11,6 +12,7 @@ import TextInput from "./TextInput";
 import "react-phone-number-input/style.css";
 import "stylesheets/Contact.scss";
 import TextAreaInput from "./TextAreaInput";
+import SocialIcon from "./SocialIcon";
 
 const Contact = () => {
   const [name, setName] = useState({ value: "", valid: false, error: false });
@@ -137,13 +139,22 @@ const Contact = () => {
     }
   };
 
+  const renderSocials = () => {
+    return socials.map(social => <SocialIcon {...social} />);
+  };
+
   return (
     <form className={"contact-form"} onSubmit={onSubmit} autoComplete="on">
       <div className={"contact-header"}>
         <h2>Get in touch...</h2>
       </div>
-      <a href={"mailto:brad.s.teague@gmail.com"}>brad.s.teague@gmail.com</a>
-      <a href={"tel:+61431154056"}>0431 154 056</a>
+      <div className="info">
+        <div className="contact-details">
+          <a href={"mailto:brad.s.teague@gmail.com"}>brad.s.teague@gmail.com</a>
+          <a href={"tel:+61431154056"}>0431 154 056</a>
+        </div>
+        <div className="socials">{renderSocials()}</div>
+      </div>
 
       <TextInput
         value={name.value}

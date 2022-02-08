@@ -16,33 +16,63 @@
     text-decoration: underline;
     margin-bottom: 0.3rem;
   }
+  .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      font-size: clamp(1rem, 4vw, 1.4rem);
+    }
+    .socials {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
+  .contact-header {
+    h2 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      text-align: left;
+      color: inherit;
+    }
+  }
+
+  .field {
+    border: none;
+    margin-bottom: 10px;
+    .contact-input,
+    .PhoneInputInput {
+      box-sizing: border-box;
+      border-radius: 10px;
+      border: rgba(0, 0, 0, 0.651) solid 1px;
+      background-color: rgba(255, 255, 255, 0.164);
+      width: 25rem;
+      color: rgb(255, 255, 255);
+      font-size: 1.5rem;
+      font-family: inherit;
+      transition: all ease 0.3s;
+      width: 100%;
+      padding: 0.5rem 1rem;
+    }
+  }
 }
 
-.contact-header > h2 {
-  font-size: clamp(1.7rem, 4vw, 2.4rem);
-  text-align: left;
-  color: inherit;
-}
-
-.contact-form > .field {
-  border: none;
-  margin-bottom: 10px;
-}
-
-.contact-form > .field > .contact-input,
-.PhoneInputInput {
-  box-sizing: border-box;
-  border-radius: 5px;
-  border: rgba(0, 0, 0, 0.651) solid 1px;
-  background-color: rgba(255, 255, 255, 0.164);
-  width: 25rem;
-  color: rgb(255, 255, 255);
-  font-size: 1.5rem;
-  font-family: inherit;
-  transition: all ease 0.3s;
-  width: 100%;
-  padding: 0.5rem 1rem;
-}
+// .contact-form > .field > .contact-input,
+// .PhoneInputInput {
+//   box-sizing: border-box;
+//   border-radius: 5px;
+//   border: rgba(0, 0, 0, 0.651) solid 1px;
+//   background-color: rgba(255, 255, 255, 0.164);
+//   width: 25rem;
+//   color: rgb(255, 255, 255);
+//   font-size: 1.5rem;
+//   font-family: inherit;
+//   transition: all ease 0.3s;
+//   width: 100%;
+//   padding: 0.5rem 1rem;
+// }
 .contact-input::selection {
   background: rgba(255, 255, 255, 0.226);
 }
@@ -61,12 +91,14 @@
   transition: 0.2s;
 }
 
-.contact-form > .contact-input.button:disabled {
-  background-color: rgb(83, 83, 83);
-}
-
-.contact-form > .contact-input.button:hover {
-  background-color: rgb(72, 152, 218);
+.contact-form > .contact-input.button {
+  &:hover:enabled {
+    background-color: rgb(72, 152, 218);
+  }
+  &:disabled {
+    background-color: rgb(83, 83, 83);
+    cursor: default;
+  }
 }
 
 .contact-form > .field > .contact-input.area {
@@ -74,17 +106,22 @@
   height: 10rem;
 }
 
-.contact-form > .field > .contact-input:hover,
-.PhoneInputInput:hover {
-  border: rgba(130, 226, 255, 0.658) solid 1px;
-  box-shadow: 0 0 10px rgba(130, 226, 255, 0.658);
-}
-
-.contact-form > .field > .contact-input:focus,
-.PhoneInputInput:focus {
-  outline: none;
-  border: rgba(137, 218, 255, 0.589) solid 1px;
-  box-shadow: none;
+.contact-form > .field > .contact-input,
+.PhoneInputInput {
+  &:hover {
+    border: rgba(130, 226, 255, 0.658) solid 1px;
+    box-shadow: 0 0 10px rgba(130, 226, 255, 0.658);
+  }
+  &:focus {
+    outline: none;
+    border: rgba(133, 212, 248, 0.589) solid 1px;
+    box-shadow: none;
+  }
+  &:active {
+    outline: none;
+    border: rgba(133, 212, 248, 0.589) solid 1px;
+    box-shadow: none;
+  }
 }
 
 .PhoneInputCountryFlag-height {
@@ -102,6 +139,14 @@ textarea {
 
 @media only screen and (max-width: $mobile-width) {
   .contact-form {
+    .info {
+      flex-direction: column;
+      .socials {
+        img {
+          max-width: 40px;
+        }
+      }
+    }
     .field {
       .contact-input {
         font-size: 1rem;
