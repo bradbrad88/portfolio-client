@@ -76,20 +76,20 @@
 .contact-input::selection {
   background: rgba(255, 255, 255, 0.226);
 }
-.contact-form > .contact-input.button {
-  border: none;
-  outline: none;
-  width: 50%;
-  align-self: center;
-  background-color: rgb(51, 114, 165);
-  color: rgb(255, 255, 255);
-  font: inherit;
-  font-size: 1.5rem;
-  padding: 0.5rem;
-  border-radius: 0.2rem;
-  cursor: pointer;
-  transition: 0.2s;
-}
+// .contact-form > .contact-input.button {
+//   border: none;
+//   outline: none;
+//   width: 50%;
+//   align-self: center;
+//   background-color: rgb(51, 114, 165);
+//   color: rgb(255, 255, 255);
+//   font: inherit;
+//   font-size: 1.5rem;
+//   padding: 0.5rem;
+//   border-radius: 0.2rem;
+//   cursor: pointer;
+//   transition: 0.2s;
+// }
 
 .contact-form > .contact-input.button {
   &:hover:enabled {
@@ -137,6 +137,170 @@ textarea {
   resize: none;
 }
 
+.message {
+  &.scene {
+    perspective: 1500px;
+    .three-d-card {
+      box-sizing: border-box;
+      position: relative;
+      margin: 0;
+      backface-visibility: visible;
+      transform-style: preserve-3d;
+      // min-width: 800px;
+      width: clamp(0px, 600px, 95vw);
+      // max-width: 95vw;
+      height: fit-content;
+      // min-height: 500px;
+      transition: transform 0.7s;
+      &.success {
+        transform: rotateY(180deg);
+      }
+      .face {
+        box-sizing: border-box;
+        border-radius: 1.5rem;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        padding: 1rem;
+        &.confirm {
+          position: relative;
+          background: linear-gradient(
+            155deg,
+            rgb(91, 164, 167) 0%,
+            $primary-colour 100%
+          );
+          color: $secondary-colour;
+          display: grid;
+          grid-template-columns: min-content 2fr;
+          gap: 0.7rem 1.3rem;
+          h2 {
+            color: $secondary-colour;
+            grid-column: 1 / 3;
+            transition: color 0.4s;
+            line-height: 1;
+          }
+          .label {
+            grid-column: 1;
+            &::after {
+              content: ":";
+            }
+            width: fit-content;
+            font-size: larger;
+            margin-top: 0.5rem;
+          }
+          .data {
+            grid-column: 2;
+            background-color: rgba(0, 0, 0, 0.678);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            font-size: larger;
+            white-space: pre;
+            max-height: 150px;
+            overflow-y: auto;
+          }
+          .button {
+            grid-column: 2;
+            width: 12rem;
+            justify-self: right;
+            background-color: rgb(55, 199, 120);
+          }
+        }
+        &.success {
+          top: 0;
+          transform: rotateY(180deg);
+          background: linear-gradient(
+            155deg,
+            rgb(105, 211, 114) 0%,
+            rgb(31, 129, 39) 100%
+          );
+          h2 {
+            color: rgb(232, 255, 169);
+          }
+          p {
+            font-size: larger;
+          }
+          button.success {
+            position: absolute;
+            right: 1rem;
+            bottom: 1rem;
+            background-color: rgb(101, 22, 190);
+          }
+        }
+      }
+    }
+  }
+  // .confirm {
+  //   z-index: inherit;
+  //   display: grid;
+  //   color: $secondary-colour;
+  //   justify-content: center;
+  //   align-self: center;
+  //   // background-color: rgb(48, 54, 77);
+  //   background: $primary-colour;
+  //   background: linear-gradient(155deg, rgb(91, 164, 167) 0%, $primary-colour 100%);
+  //   padding: 2rem;
+  //   border-radius: 1rem;
+  //   grid-template-columns: min-content 2fr;
+  //   gap: 0.7rem 1.3rem;
+  //   min-width: 50vw;
+
+  //   h2 {
+  //     color: $secondary-colour;
+  //     grid-column: 1 / 3;
+  //     transition: color 0.4s;
+  //   }
+  //   .label {
+  //     grid-column: 1;
+  //     &::after {
+  //       content: ":";
+  //     }
+  //     width: fit-content;
+  //     font-size: larger;
+  //     margin-top: 0.5rem;
+  //     // align-self: center;
+  //     // margin-right: 1rem;
+  //   }
+  //   .data {
+  //     grid-column: 2;
+  //     background-color: rgba(0, 0, 0, 0.678);
+  //     padding: 0.5rem;
+  //     border-radius: 0.5rem;
+  //     font-size: larger;
+  //     white-space: pre;
+  //     max-height: 150px;
+  //     overflow-y: auto;
+  //   }
+  //   button {
+  //     grid-column: 2;
+  //     font-size: x-large;
+  //     font-weight: bold;
+  //     border: none;
+  //     border-radius: 0.5rem;
+  //     padding: 0.5rem;
+  //     cursor: pointer;
+  //   }
+  //   button.send {
+  //     color: rgb(20, 82, 15);
+  //     background-color: rgb(78, 165, 28);
+  //   }
+  //   button.close {
+  //     color: rgb(117, 200, 214);
+  //     background-color: rgb(28, 99, 165);
+  //   }
+  //   &.success {
+  //     color: rgb(217, 243, 202);
+  //     h2 {
+  //       color: rgb(134, 214, 118);
+  //     }
+  //   }
+  // }
+}
+
+.message-confirm {
+}
+
 @media only screen and (max-width: $mobile-width) {
   .contact-form {
     .info {
@@ -150,6 +314,20 @@ textarea {
     .field {
       .contact-input {
         font-size: 1rem;
+      }
+    }
+  }
+  .message.scene {
+    .three-d-card {
+      .face.confirm {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+        .data {
+          grid-column: 1;
+        }
+        .button {
+          grid-column: 1;
+        }
       }
     }
   }

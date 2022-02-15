@@ -41,6 +41,20 @@ h2 {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.075);
 }
 
+.button {
+  border: none;
+  outline: none;
+  align-self: center;
+  background-color: $primary-colour;
+  color: rgb(255, 255, 255);
+  font: inherit;
+  font-size: 1.5rem;
+  padding: 0.5rem 2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
 .header {
   display: flex;
   position: fixed;
@@ -105,6 +119,19 @@ h2 {
   justify-content: center;
 }
 
+.modal-background {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.911);
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  .form {
+    margin: auto 0;
+    animation: drop-in 0.4s ease-in-out 0s 1 forwards;
+  }
+}
+
 @media screen and (max-width: $mobile-width) {
   .section {
     width: 90vw;
@@ -118,13 +145,16 @@ h2 {
       transform: translateY(100%);
     }
     padding-left: 1rem;
+    padding-right: 1rem;
     .home {
+      max-width: 0;
       svg {
         max-width: 5vw;
       }
       h3 {
         vertical-align: text-bottom;
         font-size: 1.5rem;
+        word-wrap: break-word;
       }
     }
     .contact-info {
@@ -132,6 +162,7 @@ h2 {
       flex-direction: column;
       justify-content: space-around;
       gap: 0.5rem;
+      max-width: 100%;
 
       a {
         align-self: flex-end;
@@ -140,5 +171,15 @@ h2 {
         font-size: 1rem;
       }
     }
+  }
+}
+
+@keyframes drop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

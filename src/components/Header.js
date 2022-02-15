@@ -37,7 +37,7 @@ const Header = () => {
       </Link>
       <div className="contact-info">
         <a href={"tel:+61431154056"}>0431 154 056</a>
-        <a href={"mailto:b_rad88@live.com"}>brad.s.teague@gmail.com</a>
+        <a href={"mailto:admin@bradteague.com"}>admin@bradteague.com</a>
         <a href={resume} download={"Brad_Teague_Resume.pdf"}>
           Résumé
         </a>

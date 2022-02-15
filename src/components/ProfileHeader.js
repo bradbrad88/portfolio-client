@@ -19,13 +19,13 @@ const ProfileHeader = () => {
       <div className={"info"} style={{ backgroundImage: `url(${backgroundImage})` }}>
         <h1>Brad Teague</h1>
         <div className={"contact"}>
-          <a href={"mailto:brad.s.teague@gmail.com"}>brad.s.teague@gmail.com</a>
+          <a href={"mailto:admin@bradteague.com"}>admin@bradteague.com</a>
           <a href={"tel:+61431154056"}>0431 154 056</a>
         </div>
       </div>
       <div className={"image-container"}>
         <div className={"image"}>
-          <img src={profileImage} />
+          <img src={profileImage} onDragStart={onDragStart} />
         </div>
       </div>
       {/* <img onDragStart={onDragStart} src={profileImage} /> */}

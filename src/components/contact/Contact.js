@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext, isValidElement } from "react";
 import { Ripple } from "react-spinners-css";
 import socials from "./socials";
 
@@ -7,14 +7,18 @@ import PhoneInput, {
   isPossiblePhoneNumber,
   isValidPhoneNumber,
 } from "react-phone-number-input/input";
+import { ModalFormContext } from "contexts/ModalFormContext";
 import EmailInput, { validateEmail } from "./EmailInput";
 import TextInput from "./TextInput";
-import "react-phone-number-input/style.css";
-import "stylesheets/Contact.scss";
 import TextAreaInput from "./TextAreaInput";
 import SocialIcon from "./SocialIcon";
+import MessageConfirm from "./MessageConfirm";
+import "react-phone-number-input/style.css";
+import "stylesheets/Contact.scss";
+import Button from "components/elements/Button";
 
 const Contact = () => {
+  const { setModalForm, setLock } = useContext(ModalFormContext);
   const [name, setName] = useState({ value: "", valid: false, error: false });
   const [email, setEmail] = useState({ value: "", valid: false, error: false });
   const [message, setMessage] = useState({ value: "", valid: false, error: false });
@@ -74,7 +78,7 @@ const Contact = () => {
   };
 
   const handleEmailChange = value => {
-    handleInputChange(value, setEmail);
+    handleInputChange(value, setEmail, validateEmail);
   };
 
   // const handlePhoneChange = e => {
@@ -113,30 +117,38 @@ const Contact = () => {
   };
 
   const onSend = async () => {
-    if (!process.env.REACT_APP_API_HOST) {
-      return console.error("Missing REACT_APP_API_HOST environment variable");
-    }
-    setWorking(true);
-    try {
-      const headers = new Headers();
-      headers.append("Content-Type", "application/x-www-form-urlencoded");
-      const data = new URLSearchParams();
-      data.append("contactName", name.value);
-      data.append("contactEmail", email.value);
-      data.append("contactPhone", phone.value);
-      data.append("messageBody", message.value);
-      const options = {
-        headers,
-        body: data.toString(),
-        method: "POST",
-      };
-      const url = process.env.REACT_APP_API_HOST + "/new_message";
-      console.log(url);
-      const res = await fetch(url, options);
-      setWorking(false);
-    } catch (error) {
-      setWorking(false);
-    }
+    const messageDetails = {
+      contactName: name.value,
+      contactEmail: email.value,
+      contactPhone: phone.value,
+      messageBody: message.value,
+    };
+    setLock(false);
+    setModalForm(<MessageConfirm {...messageDetails} />);
+    // if (!process.env.REACT_APP_API_HOST) {
+    //   return console.error("Missing REACT_APP_API_HOST environment variable");
+    // }
+    // setWorking(true);
+    // try {
+    //   const headers = new Headers();
+    //   headers.append("Content-Type", "application/x-www-form-urlencoded");
+    //   const data = new URLSearchParams();
+    //   data.append("contactName", name.value);
+    //   data.append("contactEmail", email.value);
+    //   data.append("contactPhone", phone.value);
+    //   data.append("messageBody", message.value);
+    //   const options = {
+    //     headers,
+    //     body: data.toString(),
+    //     method: "POST",
+    //   };
+    //   const url = process.env.REACT_APP_API_HOST + "/new_message";
+    //   console.log(url);
+    //   const res = await fetch(url, options);
+    //   setWorking(false);
+    // } catch (error) {
+    //   setWorking(false);
+    // }
   };
 
   const renderSocials = () => {
@@ -185,13 +197,19 @@ const Contact = () => {
         placeholder={"Ask a question..."}
         rows={5}
       />
-      <button
-        className={"contact-input button"}
+      <Button
+        className={"contact-input"}
+        text={working ? <Ripple color={"#000"} size={30} /> : "Send"}
+        onClick={onSend}
         disabled={!isValid()}
+      />
+      {/* <button
+        className={"contact-input button"}
+        // disabled={!isValid()}
         onClick={onSend}
       >
         {working ? <Ripple color={"#000"} size={30} /> : "Send"}
-      </button>
+      </button> */}
     </form>
   );
 };
