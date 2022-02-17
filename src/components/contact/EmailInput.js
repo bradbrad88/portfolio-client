@@ -1,6 +1,13 @@
 import React from "react";
 
-const EmailInput = ({ onChange, value, error, onBlur }) => {
+const EmailInput = ({
+  value,
+  hintMessage,
+  hintDisplay,
+  onChange,
+  onBlur,
+  placeholder,
+}) => {
   const handleChange = e => {
     onChange(e.target.value);
   };
@@ -13,8 +20,8 @@ const EmailInput = ({ onChange, value, error, onBlur }) => {
     <div className="field">
       <input
         className={"contact-input"}
-        placeholder={"Email *"}
-        // value={value}
+        placeholder={placeholder}
+        value={value}
         autoComplete="email"
         onChange={handleChange}
         onBlur={handleBlur}
@@ -22,7 +29,7 @@ const EmailInput = ({ onChange, value, error, onBlur }) => {
         name="email"
         type="email"
       ></input>
-      {error && value && <p className="error">{error}</p>}
+      {hintDisplay && <p className="error">{hintMessage}</p>}
     </div>
   );
 };

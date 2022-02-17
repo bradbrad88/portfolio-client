@@ -19,13 +19,29 @@ import Button from "components/elements/Button";
 
 const Contact = () => {
   const { setModalForm, setLock } = useContext(ModalFormContext);
-  const [name, setName] = useState({ value: "", valid: false, error: false });
-  const [email, setEmail] = useState({ value: "", valid: false, error: false });
-  const [message, setMessage] = useState({ value: "", valid: false, error: false });
+  const [name, setName] = useState({
+    value: "",
+    valid: false,
+    hintMessage: "",
+    hintDisplay: false,
+  });
+  const [email, setEmail] = useState({
+    value: "",
+    valid: false,
+    hintMessage: "",
+    hintDisplay: false,
+  });
+  const [message, setMessage] = useState({
+    value: "",
+    valid: false,
+    hintMessage: "",
+    hintDisplay: false,
+  });
   const [phone, setPhone] = useState({
     value: undefined,
     valid: true,
-    error: false,
+    hintMessage: "",
+    hintDisplay: false,
   });
   const [working, setWorking] = useState(false);
   const onSubmit = e => {
@@ -33,20 +49,16 @@ const Contact = () => {
     // console.log("e", e.serialize());
   };
 
-  const handleInputChange = (value, setState) => {
-    const newState = { value, error: false, valid: false };
+  const handleInputChange = (value, setState, validator) => {
+    const hintMessage = validator(value);
+    const valid = !hintMessage;
+    const newState = { value, valid, hintMessage, hintDisplay: false };
     setState(newState);
   };
 
-  const handleValidation = (value, setState, validator) => {
-    const error = validator(value);
-    const valid = !error;
-    const newState = {
-      value,
-      error,
-      valid,
-    };
-    setState(newState);
+  const handleValidation = (state, setState) => {
+    const hintDisplay = !state.valid;
+    setState(prevState => ({ ...prevState, hintDisplay }));
   };
 
   const validateName = value => {
@@ -68,7 +80,7 @@ const Contact = () => {
   };
 
   const handleNameChange = value => {
-    handleInputChange(value, setName);
+    handleInputChange(value, setName, validateName);
   };
 
   const handleEmailChange = value => {
@@ -84,15 +96,15 @@ const Contact = () => {
   };
 
   const handleNameBlur = () => {
-    handleValidation(name.value, setName, validateName);
+    handleValidation(name, setName, validateName);
   };
 
   const handleEmailBlur = () => {
-    handleValidation(email.value, setEmail, validateEmail);
+    handleValidation(email, setEmail, validateEmail);
   };
 
   const handlePhoneBlur = () => {
-    handleValidation(phone.value, setPhone, validatePhone);
+    handleValidation(phone, setPhone, validatePhone);
   };
 
   const isValid = () => {
@@ -136,17 +148,16 @@ const Contact = () => {
       </div>
 
       <TextInput
-        value={name.value}
+        {...name}
         onChange={handleNameChange}
         onBlur={handleNameBlur}
         placeholder={"Your Name *"}
-        error={name.error}
       />
       <EmailInput
+        {...email}
         onChange={handleEmailChange}
         onBlur={handleEmailBlur}
-        error={email.error}
-        value={email.value}
+        placeholder={"Email *"}
       />
       <div className="field">
         <PhoneInput
@@ -170,14 +181,6 @@ const Contact = () => {
         onClick={onSend}
         disabled={!isValid()}
       />
-      {/* <button
-        className={"contact-input button"}
-        // disabled={!isValid()}
-        onClick={onSend}
-      >
-        {working ? <Ripple color={"#000"} size={30} /> : "Send"}
-      </button> */}
-      {/* <input type={"submit"} value={"SEND"} /> */}
     </form>
   );
 };

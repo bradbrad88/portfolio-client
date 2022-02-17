@@ -38,10 +38,9 @@ const MessageConfirm = ({
           <div className="label">Phone</div>
           <div className="data">{contactPhone ? contactPhone : "Not Provided"}</div>
           <div className="label">Message</div>
-          <div className="data">{messageBody}</div>
-          {/* <button disabled={working} className="send" onClick={onClick}>
-            {working ? <Ripple color={"#000"} size={30} /> : "SEND"}
-          </button> */}
+          <div className="data">
+            {messageBody ? messageBody : "No Message Included"}
+          </div>
           <Button
             disabled={working}
             className={"send"}

@@ -1,6 +1,13 @@
 import React from "react";
 
-const TextInput = ({ value, onChange, error, onBlur, placeholder }) => {
+const TextInput = ({
+  value,
+  placeholder,
+  hintMessage,
+  hintDisplay,
+  onChange,
+  onBlur,
+}) => {
   const handleChange = e => {
     onChange(e.target.value);
   };
@@ -19,7 +26,7 @@ const TextInput = ({ value, onChange, error, onBlur, placeholder }) => {
         onChange={handleChange}
         onBlur={handleBlur}
       ></input>
-      {error && value && <p className="error">{error}</p>}
+      {hintDisplay && <p className="error">{hintMessage}</p>}
     </div>
   );
 };
