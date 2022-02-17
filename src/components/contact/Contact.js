@@ -43,7 +43,7 @@ const Contact = () => {
     e.preventDefault();
   };
 
-  const handleInputChange = (value, setState, validator) => {
+  const handleInputChange = (value, setState, validator = () => false) => {
     const hintMessage = validator(value);
     const valid = !hintMessage;
     const newState = { value, valid, hintMessage, hintDisplay: false };
