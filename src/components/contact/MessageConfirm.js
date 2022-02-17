@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Ripple } from "react-spinners-css";
-import useMessage from "hooks/useMessage";
 import { ModalFormContext } from "contexts/ModalFormContext";
+import useMessage from "hooks/useMessage";
 import Button from "components/elements/Button";
 import "stylesheets/Contact.scss";
 
@@ -11,9 +11,8 @@ const MessageConfirm = ({
   contactEmail,
   messageBody,
 }) => {
-  const { lock, setLock, setModalForm } = useContext(ModalFormContext);
+  const { setLock, setModalForm } = useContext(ModalFormContext);
   const { working, sendMessage, success, failure } = useMessage();
-  // if (lock !== working) setLock(working);
   useEffect(() => {
     setLock(working);
   }, [working]);
@@ -66,9 +65,6 @@ const MessageConfirm = ({
             className={"success"}
             onClick={() => setModalForm(null, true)}
           />
-          {/* <button className="close" onClick={() => setModalForm(null, true)}>
-            Close
-          </button> */}
         </div>
       </div>
     </div>

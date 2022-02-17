@@ -18,9 +18,9 @@ const TextInput = ({
   return (
     <div className="field">
       <input
+        className="contact-input name"
         name="name"
         autocomplete="name"
-        className={"contact-input"}
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
