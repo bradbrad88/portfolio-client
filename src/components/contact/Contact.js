@@ -54,12 +54,6 @@ const Contact = () => {
     return false;
   };
 
-  // const validateEmail = value => {
-  //   const test = /\S+@\S+\.\S+/.test(value);
-  //   if (!test) return "Not a valid email format";
-  //   return false;
-  // };
-
   const validatePhone = () => {
     // if (phone.length > 0 && phone.length < 10)
     //   return "Phone number should be 10 characters (mobile only please) * Not essential, leave blank if desired";
@@ -80,17 +74,6 @@ const Contact = () => {
   const handleEmailChange = value => {
     handleInputChange(value, setEmail, validateEmail);
   };
-
-  // const handlePhoneChange = e => {
-  //   let sel = e.target.selectionStart;
-  //   if (sel === 4 || sel === 8) sel++;
-  //   console.log("sel", sel);
-  //   const val = e.target.value.replace(/[^0-9.]/g, "");
-  //   handleInputChange(val, phone, setPhone);
-  //   setTimeout(() => {
-  //     e.target.setSelectionRange(sel, sel);
-  //   }, 10);
-  // };
 
   const handlePhoneChange = value => {
     handleInputChange(value, setPhone);
@@ -125,30 +108,6 @@ const Contact = () => {
     };
     setLock(false);
     setModalForm(<MessageConfirm {...messageDetails} />);
-    // if (!process.env.REACT_APP_API_HOST) {
-    //   return console.error("Missing REACT_APP_API_HOST environment variable");
-    // }
-    // setWorking(true);
-    // try {
-    //   const headers = new Headers();
-    //   headers.append("Content-Type", "application/x-www-form-urlencoded");
-    //   const data = new URLSearchParams();
-    //   data.append("contactName", name.value);
-    //   data.append("contactEmail", email.value);
-    //   data.append("contactPhone", phone.value);
-    //   data.append("messageBody", message.value);
-    //   const options = {
-    //     headers,
-    //     body: data.toString(),
-    //     method: "POST",
-    //   };
-    //   const url = process.env.REACT_APP_API_HOST + "/new_message";
-    //   console.log(url);
-    //   const res = await fetch(url, options);
-    //   setWorking(false);
-    // } catch (error) {
-    //   setWorking(false);
-    // }
   };
 
   const renderSocials = () => {
@@ -156,13 +115,21 @@ const Contact = () => {
   };
 
   return (
-    <form className={"contact-form"} onSubmit={onSubmit} autoComplete="on">
+    <form
+      className={"contact-form"}
+      onSubmit={onSubmit}
+      autoComplete="on"
+      method="post"
+      name="contact-form"
+    >
       <div className={"contact-header"}>
         <h2>Get in touch...</h2>
       </div>
       <div className="info">
         <div className="contact-details">
-          <a href={"mailto:brad.s.teague@gmail.com"}>brad.s.teague@gmail.com</a>
+          <a href={`mailto:${process.env.REACT_APP_EMAIL}`}>
+            {process.env.REACT_APP_EMAIL}
+          </a>
           <a href={"tel:+61431154056"}>0431 154 056</a>
         </div>
         <div className="socials">{renderSocials()}</div>
@@ -172,7 +139,7 @@ const Contact = () => {
         value={name.value}
         onChange={handleNameChange}
         onBlur={handleNameBlur}
-        placeholder={"Name *"}
+        placeholder={"Your Name *"}
         error={name.error}
       />
       <EmailInput
@@ -188,7 +155,7 @@ const Contact = () => {
           placeholder={"Phone"}
           value={phone.value}
           defaultCountry="AU"
-          autoComplete
+          autoComplete={"phone"}
         />
       </div>
       <TextAreaInput
@@ -210,6 +177,7 @@ const Contact = () => {
       >
         {working ? <Ripple color={"#000"} size={30} /> : "Send"}
       </button> */}
+      {/* <input type={"submit"} value={"SEND"} /> */}
     </form>
   );
 };

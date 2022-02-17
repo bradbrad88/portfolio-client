@@ -60,6 +60,7 @@ const MessageConfirm = ({
         <div className="face success">
           <h2>Success</h2>
           <p>Your message was sent successfully.</p>
+          <br />
           <p>Thank you for getting in touch, I will endeavour to respond quickly.</p>
           <Button
             text={"Close"}

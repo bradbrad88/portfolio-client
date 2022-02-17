@@ -37,9 +37,11 @@ const Header = () => {
       </Link>
       <div className="contact-info">
         <a href={"tel:+61431154056"}>0431 154 056</a>
-        <a href={"mailto:admin@bradteague.com"}>admin@bradteague.com</a>
+        <a href={`mailto:${process.env.REACT_APP_EMAIL}`}>
+          {process.env.REACT_APP_EMAIL}
+        </a>
         <a href={resume} download={"Brad_Teague_Resume.pdf"}>
-          Résumé
+          Resume
         </a>
       </div>
     </div>
