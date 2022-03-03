@@ -26,7 +26,8 @@ const useMessage = () => {
         process.env.REACT_APP_API_HOST + "/new_message",
         options
       );
-      if (res.status === 201) setSuccess(true);
+      if (res.status === 201) return setSuccess(true);
+      setFailure(true);
     } catch (error) {
       setWorking(false);
       setFailure(true);

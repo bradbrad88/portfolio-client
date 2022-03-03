@@ -1,5 +1,5 @@
 import React from "react";
-import "stylesheets/Skills.css";
+import "stylesheets/Skills.scss";
 
 const Skills = () => {
   return (
@@ -28,6 +28,17 @@ const Skills = () => {
             Have practiced with ES5 and ES6 syntaxes. Comfortable with object
             referential equality, recursion concepts, regex, classes and functional
             programming.
+            <ul>
+              <li>
+                <a
+                  href="https://freecodecamp.org/certification/fcc6977236b-7ae3-4420-8096-7ca9e9ff4adf/javascript-algorithms-and-data-structures"
+                  target={"_blank"}
+                >
+                  freeCodeCamp Javascript Algorithms and Data Structures
+                  Certification (300 hours)
+                </a>
+              </li>
+            </ul>
           </p>
         </li>
         <li>
