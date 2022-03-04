@@ -25,7 +25,6 @@
       display: flex;
       flex-direction: column;
       font-size: clamp(1.2rem, 4.5vw, 1.5rem);
-      // line-height: 1.7;
       gap: 1rem;
     }
     .socials {
@@ -33,7 +32,6 @@
       flex-direction: row;
       gap: 1rem;
       align-items: flex-end;
-      // margin-bottom: 1rem;
     }
   }
   .contact-header {
@@ -41,7 +39,6 @@
       font-size: clamp(2rem, 8vw, 3rem);
       text-align: left;
       color: inherit;
-      // color: red;
       line-height: 1;
       margin-bottom: min(2vw, 1rem);
     }
@@ -50,74 +47,65 @@
   .field {
     border: none;
     margin-bottom: 10px;
+    p.error {
+      color: rgb(240, 121, 11);
+      font-size: 1.2rem;
+    }
     .contact-input,
     .PhoneInputInput {
       box-sizing: border-box;
-      border-radius: 10px;
-      border: rgba(0, 0, 0, 0.651) solid 1px;
-      background-color: rgba(255, 255, 255, 0.164);
-      width: 25rem;
-      color: rgb(255, 255, 255);
+      // border-radius: 10px;
+      border: none;
+      border-bottom: rgba(255, 255, 255, 0.568) solid 1px;
+      background-color: rgba(255, 255, 255, 0);
+      // width: 25rem;
+      color: $secondary-colour;
       font-size: 1.5rem;
       font-family: inherit;
-      transition: all ease 0.3s;
+      transition: all ease 0.1s;
       width: 100%;
       padding: 0.5rem 1rem;
+      resize: none;
+      &textarea {
+        background-color: red;
+        height: 4rem;
+      }
       &.name {
         text-transform: capitalize;
       }
+
+      &::selection {
+        background: rgba(255, 255, 255, 0.164);
+      }
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.815);
+      }
+      &:focus {
+        outline: none;
+        border-bottom: rgba(141, 219, 255, 0.589) solid 3px;
+      }
+      &:active {
+        outline: none;
+      }
+    }
+    textarea.contact-input {
+      resize: none;
+      height: 10rem;
     }
   }
-}
-
-.contact-input::selection {
-  background: rgba(255, 255, 255, 0.226);
-}
-
-.contact-form > .contact-input.button {
-  &:hover:enabled {
-    background-color: rgb(72, 152, 218);
-  }
-  &:disabled {
-    background-color: rgb(83, 83, 83);
-    cursor: default;
-  }
-}
-
-.contact-form > .field > .contact-input.area {
-  resize: none;
-  height: 10rem;
-}
-
-.contact-form > .field > .contact-input,
-.PhoneInputInput {
-  &:hover {
-    border: rgba(130, 226, 255, 0.658) solid 1px;
-    box-shadow: 0 0 10px rgba(130, 226, 255, 0.658);
-  }
-  &:focus {
-    outline: none;
-    border: rgba(133, 212, 248, 0.589) solid 1px;
-    box-shadow: none;
-  }
-  &:active {
-    outline: none;
-    border: rgba(133, 212, 248, 0.589) solid 1px;
-    box-shadow: none;
+  .button {
+    &:hover:enabled {
+      background-color: rgb(72, 152, 218);
+    }
+    &:disabled {
+      background-color: rgb(83, 83, 83);
+      cursor: default;
+    }
   }
 }
 
 .PhoneInputCountryFlag-height {
   width: 100px;
-}
-
-p.error {
-  color: rgb(240, 121, 11);
-  font-size: 1.2rem;
-}
-
-textarea {
-  resize: none;
 }
 
 .message {
@@ -133,9 +121,7 @@ textarea {
       max-width: 95vw;
       height: 400px;
       max-height: 95vh;
-      // height: fit-content;
       transition: transform 0.7s;
-      // transform: rotateY(180deg);
       &.success {
         transform: rotateY(180deg);
       }
@@ -232,74 +218,6 @@ textarea {
       }
     }
   }
-  // .confirm {
-  //   z-index: inherit;
-  //   display: grid;
-  //   color: $secondary-colour;
-  //   justify-content: center;
-  //   align-self: center;
-  //   // background-color: rgb(48, 54, 77);
-  //   background: $primary-colour;
-  //   background: linear-gradient(155deg, rgb(91, 164, 167) 0%, $primary-colour 100%);
-  //   padding: 2rem;
-  //   border-radius: 1rem;
-  //   grid-template-columns: min-content 2fr;
-  //   gap: 0.7rem 1.3rem;
-  //   min-width: 50vw;
-
-  //   h2 {
-  //     color: $secondary-colour;
-  //     grid-column: 1 / 3;
-  //     transition: color 0.4s;
-  //   }
-  //   .label {
-  //     grid-column: 1;
-  //     &::after {
-  //       content: ":";
-  //     }
-  //     width: fit-content;
-  //     font-size: larger;
-  //     margin-top: 0.5rem;
-  //     // align-self: center;
-  //     // margin-right: 1rem;
-  //   }
-  //   .data {
-  //     grid-column: 2;
-  //     background-color: rgba(0, 0, 0, 0.678);
-  //     padding: 0.5rem;
-  //     border-radius: 0.5rem;
-  //     font-size: larger;
-  //     white-space: pre;
-  //     max-height: 150px;
-  //     overflow-y: auto;
-  //   }
-  //   button {
-  //     grid-column: 2;
-  //     font-size: x-large;
-  //     font-weight: bold;
-  //     border: none;
-  //     border-radius: 0.5rem;
-  //     padding: 0.5rem;
-  //     cursor: pointer;
-  //   }
-  //   button.send {
-  //     color: rgb(20, 82, 15);
-  //     background-color: rgb(78, 165, 28);
-  //   }
-  //   button.close {
-  //     color: rgb(117, 200, 214);
-  //     background-color: rgb(28, 99, 165);
-  //   }
-  //   &.success {
-  //     color: rgb(217, 243, 202);
-  //     h2 {
-  //       color: rgb(134, 214, 118);
-  //     }
-  //   }
-  // }
-}
-
-.message-confirm {
 }
 
 @media only screen and (max-width: $mobile-width) {
@@ -329,7 +247,6 @@ textarea {
       .face.confirm {
         grid-template-rows: 3rem repeat(7, 1.2rem);
         grid-template-columns: 100%;
-        // gap: 0.2rem;
         h2 {
           font-size: clamp(1.2rem, 8vw, 2.5rem);
         }
