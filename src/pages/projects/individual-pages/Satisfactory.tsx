@@ -1,13 +1,15 @@
 import mapgif from "assets/MapCapture.gif";
 import projects from "data/projects";
+import useProject from "hooks/useProject";
 
 const Satisfactory = () => {
-  const data = projects.find(project => project.id === "satisfactory")!;
+  const project = useProject();
+  if (!project) return null;
 
   return (
     <div>
-      <h1>{data.title}</h1>
-      <img src={data.image} alt="" />
+      <h1>{project.title}</h1>
+      <img src={project.image} alt="" />
       <h2>Lorem, ipsum dolor.</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, tempore voluptatum,
