@@ -1,30 +1,41 @@
-interface List {
-  label: string;
-  details: string;
-  link: boolean;
-}
+import { Project } from "data/projects";
 
 interface Proptypes {
-  list: List[];
+  project: Project;
 }
 
-const ProjectDetails = ({ list }: Proptypes) => {
-  const renderList = () => {
-    return list.map(li => {
-      const label = <p>{li.label}</p>;
-      const details = li.link ? <a href={li.details}>{li.details}</a> : <p>{li.details}</p>;
-      return (
-        <>
-          {label}
-          {details}
-        </>
-      );
-    });
+const ProjectDetails = ({ project }: Proptypes) => {
+  const renderRepos = () => {
+    return (
+      <>
+        <p className="label">Repos</p>
+        <div>
+          {project.repos.map(repo => (
+            <a href={repo.link} target="_blank">
+              {repo.text}
+            </a>
+          ))}
+        </div>
+      </>
+    );
   };
+
   return (
     <section id="details">
       <h2>Project Details</h2>
-      {renderList()}
+      <div className="project-details">
+        <p className="label">Title</p>
+        <p>{project.title}</p>
+        {renderRepos()}
+        {project.deployed && (
+          <>
+            <p className="label">Deployment</p>
+            <a href={project.deployed}>Live Site</a>
+          </>
+        )}
+        <p className="label">Status</p>
+        <p>{project.complete ? "Complete" : "WIP"}</p>
+      </div>
     </section>
   );
 };

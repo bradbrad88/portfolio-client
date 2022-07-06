@@ -2,18 +2,19 @@ import { Outlet } from "react-router-dom";
 import ProjectNav from "./ProjectNav";
 import ProjectDetails from "./ProjectDetails";
 import { Project } from "data/projects";
+import useProject from "hooks/useProject";
 
 interface Proptypes {
   projects: Project[];
 }
 const ProjectView = ({ projects }: Proptypes) => {
-  // const location = useLocation();
-  // console.log(location);
+  const project = useProject();
+
   return (
     <div id="project-view">
       <div className="sidebar">
         <ProjectNav projects={projects} />
-        <ProjectDetails list={[]} />
+        {project && <ProjectDetails project={project} />}
       </div>
       <main>
         <Outlet />

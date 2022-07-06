@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import ButtonList from "components/widgets/ButtonList";
 import { Project } from "data/projects";
 
@@ -11,7 +11,9 @@ const ProjectNav = ({ projects }: { projects: Project[] }) => {
   const mapId = projects.map(project => ({ ...project, id: project.path }));
   return (
     <nav>
-      <h2>Projects</h2>
+      <Link to={"/projects"}>
+        <h2>Projects</h2>
+      </Link>
       <ButtonList className={"link-hover"} list={mapId} onClick={onClick} />
     </nav>
   );
