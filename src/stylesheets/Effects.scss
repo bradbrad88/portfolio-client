@@ -1,0 +1,8 @@
+.link-hover {
+  transition: 200ms;
+}
+.link-hover:hover {
+  transform: translateY(-2px);
+  // letter-spacing: 1px;
+  border-bottom: solid 2px white !important;
+}

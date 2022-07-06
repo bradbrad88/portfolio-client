@@ -12,7 +12,7 @@ nav.main {
   }
 }
 
-@media screen and (max-width: $mobile-width) {
+@media screen and (max-width: calc($sm - 0.2px)) {
   nav.main {
     position: fixed;
     width: 90%;
@@ -49,7 +49,7 @@ nav.main {
   }
 }
 
-@media screen and (min-width: $mobile-width) {
+@media screen and (min-width: $sm) {
   nav.main {
     position: fixed;
     top: 0;
@@ -62,11 +62,6 @@ nav.main {
     }
     a {
       text-shadow: 1px 1px 7px black;
-    }
-    li:hover a {
-      transform: translateY(-2px);
-      color: var(--green);
-      border-bottom: solid 2px white;
     }
     li:active a {
       opacity: 0.8;
