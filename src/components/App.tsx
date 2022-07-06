@@ -7,8 +7,9 @@ import Projects from "pages/projects/Projects";
 import Skills from "pages/skills/Skills";
 import ScrollTop from "./ScrollTop";
 import FlexWrapper from "components/styling/FlexWrapper";
-import "stylesheets/Resets.scss";
-import "../stylesheets/Main.scss";
+// import "stylesheets/Resets.scss";
+import "stylesheets/Main.scss";
+import "stylesheets/Effects.scss";
 
 const App = () => {
   return (
