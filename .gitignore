@@ -1,3 +1,7 @@
 node_modules
-.env
 build
+.env
+todo.txt
+diagrams
+.DS_Store
+.firebase
