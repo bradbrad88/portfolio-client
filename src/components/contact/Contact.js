@@ -6,7 +6,7 @@ import EmailInput, { validateEmail } from "./EmailInput";
 import TextInput from "./TextInput";
 import TextAreaInput from "./TextAreaInput";
 import MessageConfirm from "./MessageConfirm";
-import socials from "./socials";
+import socials from "../../data/socials";
 import SocialIcon from "./SocialIcon";
 import Button from "components/elements/Button";
 import { capitalizeEachWord } from "utils/strings";
@@ -99,12 +99,9 @@ const Contact = () => {
     setModalForm(<MessageConfirm {...messageDetails} />);
   };
 
-  const renderSocials = () => {
-    return socials.map(social => <SocialIcon {...social} />);
-  };
-
   return (
     <form
+      id="contact"
       className={"contact-form"}
       onSubmit={onSubmit}
       autoComplete="on"
@@ -116,9 +113,7 @@ const Contact = () => {
       </div>
       <div className="info">
         <div className="contact-details">
-          <a href={`mailto:${process.env.REACT_APP_EMAIL}`}>
-            {process.env.REACT_APP_EMAIL}
-          </a>
+          <a href={`mailto:${process.env.REACT_APP_EMAIL}`}>{process.env.REACT_APP_EMAIL}</a>
           <a href={"tel:+61431154056"}>0431 154 056</a>
         </div>
         <div className="socials">{renderSocials()}</div>

@@ -8,8 +8,7 @@ const useMessage = () => {
     setFailure(false);
     setWorking(true);
     try {
-      const { contactName, contactEmail, contactPhone, messageBody } =
-        messageDetails;
+      const { contactName, contactEmail, contactPhone, messageBody } = messageDetails;
       const headers = new Headers();
       headers.append("Content-Type", "application/x-www-form-urlencoded");
       const data = new URLSearchParams();
@@ -22,10 +21,7 @@ const useMessage = () => {
         body: data.toString(),
         method: "POST",
       };
-      const res = await fetch(
-        process.env.REACT_APP_API_HOST + "/new_message",
-        options
-      );
+      const res = await fetch(process.env.REACT_APP_API_HOST + "new_message", options);
       if (res.status === 201) return setSuccess(true);
       setFailure(true);
     } catch (error) {

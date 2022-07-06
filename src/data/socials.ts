@@ -2,7 +2,7 @@ import fb from "assets/fb.png";
 import tw from "assets/tw.png";
 import li from "assets/li.png";
 
-export default [
+const socials = [
   {
     icon: li,
     url: "https://www.linkedin.com/in/brad-teague-86a282231/",
@@ -19,3 +19,4 @@ export default [
     altText: "Twitter Account",
   },
 ];
+export default socials;
