@@ -4,16 +4,17 @@ interface ListItem {
 }
 
 interface Proptypes {
+  className: string;
   list: ListItem[];
   onClick: (listItem: ListItem) => void;
 }
 
-const ButtonList = ({ list, onClick }: Proptypes) => {
+const ButtonList = ({ className, list, onClick }: Proptypes) => {
   const renderList = () => {
     return (
       <>
         {list.map(listItem => (
-          <button onClick={() => onClick(listItem)} key={listItem.id}>
+          <button className={className} onClick={() => onClick(listItem)} key={listItem.id}>
             {listItem.title}
           </button>
         ))}

@@ -1,0 +1,76 @@
+@import "_variables";
+
+#project-view {
+  margin-top: 4rem;
+  display: flex;
+  position: relative;
+  gap: 2rem;
+  .sidebar {
+    margin-left: 1rem;
+    width: 250px;
+    h2 {
+      font-size: 1.5rem;
+      color: $green;
+    }
+  }
+  nav {
+    button {
+      width: 100%;
+      text-align: left;
+      padding: 0.5rem 1rem;
+      background-color: transparent;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+  }
+  main {
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    h1 {
+      color: white;
+      font-size: 4rem;
+    }
+    h2 {
+      margin-top: 1rem;
+      font-size: 2rem;
+      color: $purple;
+    }
+    p {
+      margin-top: 0.75rem;
+      line-height: 1.4;
+    }
+    img {
+      max-width: 100%;
+      border: solid 5px rgb(255, 255, 255);
+    }
+  }
+  #details {
+  }
+}
+
+@media screen and (max-width: calc($md - 0.2px)) {
+  #project-view {
+    flex-direction: column;
+    main {
+      order: 2;
+    }
+    #details {
+      top: 0;
+      order: 1;
+    }
+  }
+}
+@media screen and (min-width: $md) {
+  #project-view {
+    nav {
+      flex: 0 0 20%;
+    }
+    main {
+      flex: 1 1 0;
+    }
+    #details {
+      flex: 0 0 20%;
+    }
+  }
+}

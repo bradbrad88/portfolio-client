@@ -10,12 +10,14 @@ const ProjectView = ({ projects }: Proptypes) => {
   // const location = useLocation();
   // console.log(location);
   return (
-    <div className="project-view">
-      <ProjectNav projects={projects} />
+    <div id="project-view">
+      <div className="sidebar">
+        <ProjectNav projects={projects} />
+        <ProjectDetails list={[]} />
+      </div>
       <main>
         <Outlet />
       </main>
-      <ProjectDetails list={[]} />
     </div>
   );
 };

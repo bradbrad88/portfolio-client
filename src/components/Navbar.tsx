@@ -12,21 +12,21 @@ const NavBar = () => {
   return (
     <nav className={classes}>
       <ul>
-        <li>
+        <li className="link-hover">
           <Link to={"/"}>Home</Link>
         </li>
-        <li>
+        <li className="link-hover">
           <Link to={"/projects"}>Projects</Link>
         </li>
-        <li>
+        <li className="link-hover">
           <Link to={"/skills"}>Skills</Link>
         </li>
-        <li>
+        <li className="link-hover">
           <a href={resume} download={"Brad_Teague_Resume.pdf"}>
             Resume
           </a>
         </li>
-        <li>
+        <li className="link-hover">
           <Link to={"/#contact"}>Contact</Link>
         </li>
       </ul>

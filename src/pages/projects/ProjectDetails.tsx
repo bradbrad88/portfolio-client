@@ -22,7 +22,7 @@ const ProjectDetails = ({ list }: Proptypes) => {
     });
   };
   return (
-    <section>
+    <section id="details">
       <h2>Project Details</h2>
       {renderList()}
     </section>

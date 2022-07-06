@@ -1,11 +1,16 @@
-.about p {
-  font: inherit;
-  font-size: 1.5rem;
-  color: rgb(107, 107, 107);
-  margin-bottom: 1rem;
-}
+// .about p {
+//   font: inherit;
+//   font-size: 1.5rem;
+//   color: rgb(107, 107, 107);
+//   margin-bottom: 1rem;
+// }
 
-.about__items {
-  display: flex;
-  gap: 1rem;
+// .about__items {
+//   display: flex;
+//   gap: 1rem;
+// }
+
+#about {
+  margin: 1rem auto;
+  max-width: 600px;
 }

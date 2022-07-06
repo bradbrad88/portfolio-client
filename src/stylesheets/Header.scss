@@ -35,7 +35,7 @@ header {
   }
 }
 
-@media screen and (max-width: $mobile-width) {
+@media screen and (max-width: $sm) {
   .header-content {
     flex-direction: column;
   }
@@ -48,7 +48,7 @@ header {
   }
 }
 
-@media screen and (min-width: $mobile-width) {
+@media screen and (min-width: $sm) {
   .header-content {
     margin-top: 2rem;
   }

@@ -136,11 +136,7 @@
         padding: 1rem;
         &.confirm {
           position: relative;
-          background: linear-gradient(
-            155deg,
-            rgb(91, 164, 167) 0%,
-            $primary-colour 100%
-          );
+          background: linear-gradient(155deg, rgb(91, 164, 167) 0%, $primary-colour 100%);
           color: $secondary-colour;
           display: grid;
           grid-template-rows: 3.5rem 2rem 2rem 2rem 1fr;
@@ -185,11 +181,7 @@
         &.success {
           top: 0;
           transform: rotateY(180deg);
-          background: linear-gradient(
-            155deg,
-            rgb(105, 211, 114) 0%,
-            rgb(31, 129, 39) 100%
-          );
+          background: linear-gradient(155deg, rgb(105, 211, 114) 0%, rgb(31, 129, 39) 100%);
           h2 {
             color: rgb(244, 252, 130);
           }
@@ -220,7 +212,7 @@
   }
 }
 
-@media only screen and (max-width: $mobile-width) {
+@media only screen and (max-width: $sm) {
   .contact-form {
     .info {
       flex-direction: column;

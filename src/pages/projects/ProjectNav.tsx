@@ -11,8 +11,8 @@ const ProjectNav = ({ projects }: { projects: Project[] }) => {
   const mapId = projects.map(project => ({ ...project, id: project.path }));
   return (
     <nav>
-      <h2>Projects Navigation</h2>
-      <ButtonList list={mapId} onClick={onClick} />
+      <h2>Projects</h2>
+      <ButtonList className={"link-hover"} list={mapId} onClick={onClick} />
     </nav>
   );
 };

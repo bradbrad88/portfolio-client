@@ -3,30 +3,32 @@ import "stylesheets/About.scss";
 
 const About = () => {
   return (
-    <div className={"about section"}>
+    <section id="about">
       <h2>About Me</h2>
-      <div className="about__items">
-        <div className="card">
-          <h3>Career</h3>
-          <p>Hospitality background - looking to pursue a developer's career</p>
-          <p>Assistant manager in high-performing hotel - acting venue manager 2020</p>
-          <p>
-            Developed Access and Excel solutions to numerous processes and gained a taste for
-            programming
-          </p>
-          <p>
-            Since focused in web dev area with the help of Udemy, Youtube, documentation and
-            various people to progress
-          </p>
-        </div>
-        <div className="card">
-          <h3>Personal</h3>
-          <p>Enjoys sports and fitness - basketball on weekends and jogs on Anstey's Hill</p>
-          <p>Unwinds with video games - currently Rocket League, Age of Empires, Halo</p>
-          <p>Music lover and drummer</p>
-        </div>
-      </div>
-    </div>
+      <h3>Professional</h3>
+      <p>
+        Previously working in hospitality, I took charge of a hotel and its team of
+        approximately 25 employees immediately prior to the pandemic.
+      </p>
+      <p>
+        Working hard to foster a fun, respectful and inclusive culture, the team and I achieved
+        some fantastic successes despite the difficult times we faced.
+      </p>
+      <p>
+        Using skills learned in my own time, I developed programs to assist the team in
+        efficiently tackling tasks including stock ordering, compliance tracking and
+        accounting.
+      </p>
+      <p></p>
+      <h3>Personal</h3>
+      <p>Some pass-times I enjoy are:</p>
+      <ul>
+        <li>Drumming - anything unique or interesting</li>
+        <li>Sports - basketball and taekwondo</li>
+        <li>Games - rocket league or most rpgs</li>
+        <li>Spending time with the family</li>
+      </ul>
+    </section>
   );
 };
 
