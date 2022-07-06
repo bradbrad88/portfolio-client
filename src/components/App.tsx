@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import Home from "pages/home/Home";
 import Projects from "pages/projects/Projects";
 import Skills from "pages/skills/Skills";
-import ScrollTop from "./ScrollTop";
+import ScrollTop from "./utils/ScrollTop";
 import FlexWrapper from "components/styling/FlexWrapper";
 // import "stylesheets/Resets.scss";
 import "stylesheets/Main.scss";
