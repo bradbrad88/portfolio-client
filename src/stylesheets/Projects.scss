@@ -6,6 +6,8 @@
   position: relative;
   gap: 2rem;
   .sidebar {
+    position: fixed;
+    height: 80vh;
     margin-left: 1rem;
     width: 250px;
     h2 {
@@ -14,6 +16,7 @@
     }
   }
   nav {
+    height: 50%;
     button {
       width: 100%;
       text-align: left;
@@ -22,11 +25,14 @@
       border: none;
       color: white;
       cursor: pointer;
+      font-size: 1rem;
     }
   }
   main {
-    margin-right: 2rem;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 2rem;
+    max-width: 700px;
     h1 {
       color: white;
       font-size: 4rem;
@@ -42,11 +48,35 @@
     }
     img {
       max-width: 100%;
-      border: solid 5px rgb(255, 255, 255);
+      // border: solid 5px rgb(255, 255, 255);
     }
   }
   #details {
+    height: 50%;
   }
+}
+
+.project {
+  background-color: $purple;
+  color: white;
+  figcaption {
+    color: white;
+  }
+  &:hover {
+    opacity: 0.85;
+    figcaption {
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.projects-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.project:first-of-type {
+  grid-column: 1 / -1;
 }
 
 @media screen and (max-width: calc($md - 0.2px)) {
