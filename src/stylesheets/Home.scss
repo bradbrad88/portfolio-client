@@ -10,7 +10,10 @@
 //   gap: 1rem;
 // }
 
-#about {
+section {
   margin: 1rem auto;
-  max-width: 600px;
+  max-width: min(600px, 90vw);
+}
+
+#feature {
 }
