@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 
 export interface Proptypes {
   className?: string;
-  caption: string;
+  title: string;
   path: string;
-  src: string;
-  alt: string;
+  image: string;
+  alt?: string;
 }
 
-const Card = ({ className, caption, path, src, alt }: Proptypes) => {
+const Card = ({ className, title, path, image, alt = "" }: Proptypes) => {
   const articleStyles: React.CSSProperties = {
     borderRadius: "1rem",
     overflow: "hidden",
@@ -31,8 +31,8 @@ const Card = ({ className, caption, path, src, alt }: Proptypes) => {
     <article style={articleStyles} className={"card " + className}>
       <Link to={path}>
         <figure>
-          <img style={imgStyles} src={src} alt={alt} />
-          <figcaption style={figCaptionStyles}>{caption}</figcaption>
+          <img style={imgStyles} src={image} alt={alt} />
+          <figcaption style={figCaptionStyles}>{title}</figcaption>
         </figure>
       </Link>
     </article>

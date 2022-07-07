@@ -6,6 +6,7 @@ import satisfactoryImg from "assets/satisfactory.webp";
 import photographyImg from "assets/bg.jpg";
 import pwgenImg from "assets/pwgen.gif";
 import quizzlesImg from "assets/quizzles.gif";
+
 export interface Project {
   id: string;
   path: string;
@@ -16,6 +17,7 @@ export interface Project {
   complete: boolean;
   page: React.ReactNode;
   image: string;
+  feature?: boolean;
 }
 
 const projects: Project[] = [
@@ -31,6 +33,7 @@ const projects: Project[] = [
     complete: false,
     page: <Satisfactory />,
     image: satisfactoryImg,
+    feature: true,
   },
   {
     id: "photography",
@@ -44,6 +47,7 @@ const projects: Project[] = [
     complete: false,
     page: <Photography />,
     image: photographyImg,
+    feature: true,
   },
   {
     id: "pwgen",
@@ -65,6 +69,7 @@ const projects: Project[] = [
     path: "quizzles",
     repos: [{ link: "https://github.com/bradbrad88/code-quiz", text: "Github" }],
     deployed: "https://bradbrad88.github.io/code-quiz/",
+    feature: true,
   },
 ];
 
