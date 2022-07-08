@@ -25,20 +25,21 @@
       pointer-events: none;
       margin: 0 auto;
       width: 100%;
-      background-color: rgb(59, 59, 59);
-      box-shadow: 10px 10px 10px black;
+      background-color: rgb(34, 34, 36);
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.506),
+        inset -5px -5px 20px 5px rgba(209, 231, 255, 0.105);
       transform-origin: top;
       transform: scaleY(0);
       &.active {
         pointer-events: all;
         height: 100%;
         opacity: 1;
-        border-radius: 5px;
+        border-radius: 10px;
         transform: scaleY(1);
         transition: 200ms;
         h2 {
-          margin-left: 1rem;
-          padding-top: 1rem;
+          margin: 0;
+          padding: 1rem;
         }
       }
     }
@@ -76,7 +77,8 @@
     padding: 0 1.5rem;
     h1 {
       color: white;
-      font-size: 4rem;
+      font-size: clamp(1.5rem, 8vw, 4rem);
+      margin-bottom: 1rem;
     }
     h2 {
       margin-top: 1rem;
@@ -175,17 +177,18 @@
   }
 }
 
-@media screen and (min-width: $lg) {
+@media screen and (min-width: $xl) {
   #project-view {
     flex-direction: row;
     nav.project-nav {
-      position: relative;
+      position: fixed;
+      left: 1rem;
+      top: 4rem;
       display: flex;
-      flex: 0 0 250px;
-      flex-direction: column;
-      margin-left: 1rem;
-      width: 100%;
-
+      width: 250px;
+      h2 {
+        margin-top: 0;
+      }
       .nav-menu {
         display: none;
       }
