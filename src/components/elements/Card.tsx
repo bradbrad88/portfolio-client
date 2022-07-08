@@ -22,10 +22,7 @@ const Card = ({ className, title, path, image, alt = "" }: Proptypes) => {
     width: "100%",
   };
   const figCaptionStyles: React.CSSProperties = {
-    textAlign: "center",
-    padding: "0.4rem",
     transition: "200ms",
-    fontSize: "2rem",
   };
   return (
     <article style={articleStyles} className={"card " + className}>
