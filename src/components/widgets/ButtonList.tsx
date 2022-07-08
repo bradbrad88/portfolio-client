@@ -4,12 +4,12 @@ interface ListItem {
 }
 
 interface Proptypes {
-  className: string;
+  className?: string;
   list: ListItem[];
   onClick: (listItem: ListItem) => void;
 }
 
-const ButtonList = ({ className, list, onClick }: Proptypes) => {
+const ButtonList = ({ className = "", list, onClick }: Proptypes) => {
   const renderList = () => {
     return (
       <>

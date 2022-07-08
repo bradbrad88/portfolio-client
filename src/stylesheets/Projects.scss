@@ -5,24 +5,19 @@
   display: flex;
   position: relative;
   gap: 2rem;
-  .sidebar {
-    position: relative;
-    width: 250px;
-    font-size: 1.3rem;
-    user-select: none;
-    h2 {
-      font-size: 1.5rem;
-      color: $green;
-      margin-bottom: 0.5rem;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
+
   nav.project-nav {
+    user-select: none;
+    font-size: 1.3rem;
     position: fixed;
     z-index: 1;
     top: 0;
+    color: white;
+    h2:hover,
+    button:hover {
+      text-decoration: underline;
+    }
+
     .display-menu {
       pointer-events: none;
       margin: 0 auto;
@@ -118,7 +113,8 @@
       }
     }
     img {
-      margin-top: 2rem;
+      margin: 2rem auto;
+      width: 100%;
     }
   }
 }
@@ -182,6 +178,7 @@
     nav.project-nav {
       position: relative;
       display: flex;
+      flex: 0 0 250px;
       flex-direction: column;
       margin-left: 1rem;
       width: 100%;

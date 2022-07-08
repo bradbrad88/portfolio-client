@@ -37,7 +37,7 @@ const ProjectNav = ({ projects }: { projects: Project[] }) => {
         <Link to={"/projects"}>
           <h2>Projects</h2>
         </Link>
-        <ButtonList className={"link-hover"} list={mapId} onClick={onClick} />
+        <ButtonList list={mapId} onClick={onClick} />
       </div>
     </nav>
   );
