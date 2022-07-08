@@ -11,9 +11,11 @@ const ProjectDetails = ({ project }: Proptypes) => {
         <p className="label">Repos</p>
         <div>
           {project.repos.map(repo => (
-            <a href={repo.link} target="_blank">
-              {repo.text}
-            </a>
+            <p>
+              <a href={repo.link} target="_blank">
+                {repo.text}
+              </a>
+            </p>
           ))}
         </div>
       </>
@@ -22,7 +24,7 @@ const ProjectDetails = ({ project }: Proptypes) => {
 
   return (
     <section id="details">
-      <h2>Project Details</h2>
+      <h1>{project.title}</h1>
       <div className="project-details">
         <p className="label">Title</p>
         <p>{project.title}</p>
@@ -35,7 +37,10 @@ const ProjectDetails = ({ project }: Proptypes) => {
         )}
         <p className="label">Status</p>
         <p>{project.complete ? "Complete" : "WIP"}</p>
+        <p className="label">Description</p>
+        <p style={{ whiteSpace: "pre-line" }}>{project.desc}</p>
       </div>
+      <img src={project.image} alt="" />
     </section>
   );
 };

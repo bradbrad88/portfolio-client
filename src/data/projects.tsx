@@ -3,7 +3,7 @@ import Photography from "pages/projects/individual-pages/Photography";
 import Quizzles from "pages/projects/individual-pages/Quizzles";
 import PasswordGenerator from "pages/projects/individual-pages/PasswordGenerator";
 import satisfactoryImg from "assets/satisfactory.webp";
-import photographyImg from "assets/bg.jpg";
+import photographyImg from "assets/photography.avif";
 import pwgenImg from "assets/pwgen.gif";
 import quizzlesImg from "assets/quizzles.gif";
 
@@ -29,7 +29,7 @@ const projects: Project[] = [
       { link: "https://github.com/bradbrad88/satisfactory-client", text: "Github - client" },
       { link: "https://github.com/bradbrad88/satisfactory-server", text: "Github - server" },
     ],
-    desc: "PERN stack project.",
+    desc: "React project assisting the design of factories in the game, Satisfactory.\nComplex relationships between the inputs and outputs of factories are best described by a graph model.",
     complete: false,
     page: <Satisfactory />,
     image: satisfactoryImg,

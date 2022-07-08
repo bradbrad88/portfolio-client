@@ -14,9 +14,9 @@ const ProjectView = ({ projects }: Proptypes) => {
     <div id="project-view">
       <div className="sidebar">
         <ProjectNav projects={projects} />
-        {project && <ProjectDetails project={project} />}
       </div>
       <main>
+        {project && <ProjectDetails project={project} />}
         <Outlet />
       </main>
     </div>

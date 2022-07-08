@@ -6,10 +6,9 @@
   position: relative;
   gap: 2rem;
   .sidebar {
-    position: fixed;
-    height: 80vh;
+    position: relative;
     margin-left: 1rem;
-    width: 250px;
+    width: 230px;
     font-size: 1.3rem;
     h2 {
       font-size: 1.5rem;
@@ -18,7 +17,6 @@
     }
   }
   nav {
-    height: 50%;
     button {
       width: 100%;
       text-align: left;
@@ -35,6 +33,7 @@
     margin-right: auto;
     margin-bottom: 2rem;
     max-width: 700px;
+    padding: 0 1.5rem;
     h1 {
       color: white;
       font-size: 4rem;
@@ -50,11 +49,9 @@
     }
     img {
       max-width: 100%;
-      // border: solid 5px rgb(255, 255, 255);
     }
   }
   #details {
-    height: 50%;
     color: white;
     p {
       margin: 0;
@@ -75,8 +72,11 @@
       gap: 0.4rem 1rem;
       .label {
         font-weight: thin;
-        color: rgba(255, 255, 255, 0.647);
+        color: $green;
       }
+    }
+    img {
+      margin-top: 2rem;
     }
   }
 }
@@ -97,7 +97,7 @@
 
 .projects-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .project:first-of-type {
@@ -115,9 +115,13 @@
       order: 1;
     }
   }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
 @media screen and (min-width: $md) {
   #project-view {
+    flex-direction: column;
     nav {
       flex: 0 0 20%;
     }
@@ -127,5 +131,11 @@
     #details {
       flex: 0 0 20%;
     }
+  }
+}
+
+@media screen and (min-width: $lg) {
+  #project-view {
+    flex-direction: row;
   }
 }
