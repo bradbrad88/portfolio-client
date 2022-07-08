@@ -1,5 +1,4 @@
 import mapgif from "assets/MapCapture.gif";
-import projects from "data/projects";
 import useProject from "hooks/useProject";
 
 const Satisfactory = () => {

@@ -12,7 +12,7 @@ const ProjectDetails = ({ project }: Proptypes) => {
         <div>
           {project.repos.map(repo => (
             <p>
-              <a href={repo.link} target="_blank">
+              <a href={repo.link} target="_blank" rel="noreferrer">
                 {repo.text}
               </a>
             </p>

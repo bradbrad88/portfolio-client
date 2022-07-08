@@ -2,8 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import ProjectView from "./ProjectView";
 import ProjectsHome from "./ProjectsHome";
 import projects from "data/projects";
-import Card from "components/elements/Card";
-import img from "assets/satisfactory.webp";
 import "stylesheets/Projects.scss";
 
 const Projects = () => {
