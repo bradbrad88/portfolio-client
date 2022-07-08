@@ -1,5 +1,4 @@
 import profileImage from "assets/profileImg.png";
-import "stylesheets/Header.scss";
 
 const Header = () => {
   return (
