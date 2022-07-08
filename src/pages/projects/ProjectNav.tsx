@@ -4,7 +4,12 @@ import ButtonList from "components/widgets/ButtonList";
 import { Project } from "data/projects";
 import { menuIcon } from "assets/svgIcons";
 
-const ProjectNav = ({ projects }: { projects: Project[] }) => {
+interface Proptypes {
+  projects: Project[];
+  selected?: Project;
+}
+
+const ProjectNav = ({ projects, selected }: Proptypes) => {
   const [open, setOpen] = useState(false);
   const nav = useNavigate();
   useEffect(() => {
@@ -25,7 +30,11 @@ const ProjectNav = ({ projects }: { projects: Project[] }) => {
     e.stopPropagation();
     setOpen(!open);
   };
-  const mapId = projects.map(project => ({ ...project, id: project.path }));
+  const listProps = projects.map(project => ({
+    ...project,
+    id: project.path,
+    selected: project.id === selected?.id,
+  }));
   return (
     <nav className="project-nav">
       <div style={{ display: "flex", gap: "1rem" }}>
@@ -37,7 +46,7 @@ const ProjectNav = ({ projects }: { projects: Project[] }) => {
         <Link to={"/projects"}>
           <h2>Projects</h2>
         </Link>
-        <ButtonList list={mapId} onClick={onClick} />
+        <ButtonList list={listProps} onClick={onClick} />
       </div>
     </nav>
   );

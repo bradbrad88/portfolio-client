@@ -17,6 +17,9 @@
     button:hover {
       text-decoration: underline;
     }
+    button.selected {
+      color: $purple;
+    }
 
     .display-menu {
       pointer-events: none;

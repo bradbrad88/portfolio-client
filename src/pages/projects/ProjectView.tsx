@@ -12,7 +12,7 @@ const ProjectView = ({ projects }: Proptypes) => {
 
   return (
     <div id="project-view">
-      <ProjectNav projects={projects} />
+      <ProjectNav projects={projects} selected={project} />
       <main>
         {project && <ProjectDetails project={project} />}
         <Outlet />
