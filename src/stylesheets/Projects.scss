@@ -7,16 +7,43 @@
   gap: 2rem;
   .sidebar {
     position: relative;
-    margin-left: 1rem;
-    width: 230px;
+    width: 250px;
     font-size: 1.3rem;
+    user-select: none;
     h2 {
       font-size: 1.5rem;
       color: $green;
       margin-bottom: 0.5rem;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
-  nav {
+  nav.project-nav {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    .display-menu {
+      pointer-events: none;
+      margin: 0 auto;
+      width: 100%;
+      background-color: rgb(59, 59, 59);
+      box-shadow: 10px 10px 10px black;
+      transform-origin: top;
+      transform: scaleY(0);
+      &.active {
+        pointer-events: all;
+        height: 100%;
+        opacity: 1;
+        border-radius: 5px;
+        transform: scaleY(1);
+        transition: 200ms;
+        h2 {
+          margin-left: 1rem;
+          padding-top: 1rem;
+        }
+      }
+    }
     button {
       width: 100%;
       text-align: left;
@@ -28,6 +55,21 @@
       cursor: pointer;
     }
   }
+  // The hamburger menu icon
+  .nav-menu {
+    margin-left: 0.75rem;
+    margin-top: 0.75rem;
+    .icon {
+      fill: white;
+      transition: 200ms;
+    }
+    &:hover {
+      .icon {
+        fill: $green;
+      }
+    }
+  }
+
   main {
     margin-left: auto;
     margin-right: auto;
@@ -137,5 +179,27 @@
 @media screen and (min-width: $lg) {
   #project-view {
     flex-direction: row;
+    nav.project-nav {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin-left: 1rem;
+      width: 100%;
+
+      .nav-menu {
+        display: none;
+      }
+      .display-menu {
+        background-color: transparent;
+        box-shadow: none;
+        width: fit-content;
+        pointer-events: all;
+        transform: none;
+        transition: none;
+        button {
+          width: fit-content;
+        }
+      }
+    }
   }
 }
