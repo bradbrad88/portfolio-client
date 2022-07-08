@@ -27,7 +27,7 @@
       width: 100%;
       background-color: rgb(34, 34, 36);
       box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.506),
-        inset -5px -5px 20px 5px rgba(209, 231, 255, 0.105);
+        inset -5px -5px 20px 5px rgba(209, 231, 255, 0.044);
       transform-origin: top;
       transform: scaleY(0);
       &.active {
@@ -166,6 +166,11 @@
   }
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+  .project:first-of-type {
+    figcaption {
+      font-size: 1.7rem;
+    }
   }
 }
 @media screen and (min-width: $md) {
