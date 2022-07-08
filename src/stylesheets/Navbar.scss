@@ -17,16 +17,18 @@ nav.main {
     position: fixed;
     width: 90%;
     left: 50%;
-    transform: translateX(-50%);
     bottom: 1rem;
     background-color: $purple;
     border-radius: 1rem;
     box-shadow: 5px 5px 5px black;
     overflow: hidden;
     opacity: 0;
+    transform: translate(-50%, 50px);
+    transition: 400ms;
     ul {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+      margin-left: 0;
     }
     li {
       padding: 0.7rem 0;
@@ -45,6 +47,7 @@ nav.main {
     }
     &.display {
       opacity: 1;
+      transform: translate(-50%, 0);
     }
   }
 }
