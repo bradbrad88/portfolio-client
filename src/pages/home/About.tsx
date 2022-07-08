@@ -5,6 +5,11 @@ const About = () => {
   return (
     <section id="about">
       <h2>About Me</h2>
+      <h3>At a Glance</h3>
+      <p>
+        Studied web development since late 2020. Focussed on PERN stack. Enrolled in the
+        University of Adelaide Coding Bootcamp in May 2022.
+      </p>
       <h3>Professional</h3>
       <p>
         Previously working in hospitality, I took charge of a hotel and its team of
