@@ -9,11 +9,15 @@ const Footer = () => {
   };
   return (
     <footer>
-      <div className="contact-details">
-        <a href={`mailto:${process.env.REACT_APP_EMAIL}`}>{process.env.REACT_APP_EMAIL}</a>
-        <a href={"tel:+61431154056"}>0431 154 056</a>
-      </div>
       <div className="socials">{renderSocials()}</div>
+
+      <p>
+        Email me:{" "}
+        <a href={`mailto:${process.env.REACT_APP_EMAIL}`}>{process.env.REACT_APP_EMAIL}</a>
+      </p>
+      <p>
+        Call or msg: <a href={"tel:+61431154056"}>0431 154 056</a>
+      </p>
     </footer>
   );
 };
