@@ -55,3 +55,24 @@ section {
   max-width: min(700px, 90vw);
   margin-bottom: 2rem;
 }
+
+.code-block {
+  font-size: 1.1rem;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  background-color: rgba(0, 0, 0, 0.289);
+}
+
+code {
+  font-family: monospace;
+}
+
+pre {
+  font-family: inherit;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+span {
+  font-family: inherit;
+}
