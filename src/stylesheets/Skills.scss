@@ -10,6 +10,9 @@
   h3 {
     color: $purple;
   }
+  p {
+    white-space: pre-line;
+  }
   .ratings {
     display: flex;
     justify-content: space-between;

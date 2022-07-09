@@ -26,8 +26,8 @@ const Skills = () => {
       <section id="skills">
         <h1 style={{ fontSize: "4rem", marginTop: "4rem" }}>Skills</h1>
         <p>
-          Take the rating system with a grain of salt - it's only intended as a visual
-          indicator on how I feel about a concept.
+          Please take the rating system with a grain of salt - it's only intended as a visual
+          indicator of my confidence within a subject (however mis-guided).
         </p>
         {renderSkills()}
       </section>
