@@ -1,4 +1,4 @@
-import CardGrid from "components/CardGrid";
+import CardGrid from "components/elements/CardGrid";
 import { Project } from "data/projects";
 
 interface Proptypes {

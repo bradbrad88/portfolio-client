@@ -1,5 +1,5 @@
 import projects from "data/projects";
-import CardGrid from "components/CardGrid";
+import CardGrid from "components/elements/CardGrid";
 
 const FeatureProjects = () => {
   const featureProjects = projects

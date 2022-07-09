@@ -1,6 +1,6 @@
 import { useState, useEffect, MouseEventHandler } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import ButtonList from "components/widgets/ButtonList";
+import ButtonList from "components/elements/ButtonList";
 import { Project } from "data/projects";
 import { menuIcon } from "assets/svgIcons";
 
