@@ -11,7 +11,7 @@ const ProjectDetails = ({ project }: Proptypes) => {
         <p className="label">Repos</p>
         <div>
           {project.repos.map(repo => (
-            <p>
+            <p key={repo.link}>
               <a href={repo.link} target="_blank" rel="noreferrer">
                 {repo.text}
               </a>
