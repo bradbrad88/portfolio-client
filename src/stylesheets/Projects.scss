@@ -193,9 +193,9 @@
     flex-direction: row;
     nav.project-nav {
       position: relative;
-
       display: flex;
       flex: 0 0 250px;
+      margin-left: 1rem;
       h2 {
         margin-top: 0;
       }
@@ -220,6 +220,7 @@
 @media screen and (min-width: $xl) {
   #project-view {
     nav.project-nav {
+      margin-left: 0;
       position: fixed;
       width: 250px;
       left: 1rem;
