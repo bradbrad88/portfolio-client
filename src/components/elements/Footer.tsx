@@ -1,15 +1,10 @@
-import SocialIcon from "components/contact/SocialIcon";
-import socials from "data/socials";
+import SocialList from "./SocialList";
 import "stylesheets/Footer.scss";
 
 const Footer = () => {
-  const renderSocials = () => {
-    return socials.map(social => <SocialIcon {...social} key={social.url} />);
-  };
-
   return (
     <footer>
-      <div className="socials">{renderSocials()}</div>
+      <SocialList />
       <p>
         Email me:{" "}
         <a href={`mailto:${process.env.REACT_APP_EMAIL}`}>{process.env.REACT_APP_EMAIL}</a>
