@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Ripple } from "react-spinners-css";
+import { PropagateLoader } from "react-spinners";
 import useFetch, { Req } from "hooks/useFetch";
 import TextInput from "components/elements/TextInput";
 import { capitalizeEachWord } from "utils/strings";
@@ -148,7 +148,15 @@ const ContactForm = () => {
         />
         <p>
           <button type="submit" disabled={!isValid()}>
-            {working ? <Ripple size={20} color={"#fff"} /> : "Send Message"}
+            {working ? (
+              <PropagateLoader
+                size={18}
+                color={"#fff5"}
+                cssOverride={{ display: "block", height: "20px" }}
+              />
+            ) : (
+              "Send Message"
+            )}
           </button>
         </p>
       </form>
