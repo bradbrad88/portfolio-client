@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import { ToastContainer } from "react-toastify";
 import Navbar from "components/elements/Navbar";
 import Footer from "components/elements/Footer";
 import Home from "pages/home/Home";
@@ -10,11 +10,18 @@ import ScrollTop from "./utils/ScrollTop";
 import FlexWrapper from "components/styling/FlexWrapper";
 import "stylesheets/Main.scss";
 import "stylesheets/Effects.scss";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
     <Router>
       <ScrollTop />
+      <ToastContainer
+        position="bottom-right"
+        theme="dark"
+        toastClassName="toasty"
+        autoClose={3000}
+      />
       <FlexWrapper>
         <Navbar />
         <Routes>
