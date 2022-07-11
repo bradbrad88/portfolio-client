@@ -17,7 +17,7 @@ const App = () => {
     <Router>
       <ScrollTop />
       <ToastContainer
-        position="bottom-right"
+        position="top-left"
         theme="dark"
         toastClassName="toasty"
         autoClose={3000}
