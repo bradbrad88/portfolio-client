@@ -22,6 +22,13 @@ const useFetch = () => {
     return res.data;
   };
 
+  const deleteRequest = async (req: AxiosRequestConfig): Promise<true | null> => {
+    req.method = "DELETE";
+    const res = await sendRequest(req);
+    if (!res) return null;
+    return true;
+  };
+
   const sendRequest = async <T>(req: AxiosRequestConfig): Promise<ResponseDataError<T>> => {
     req.baseURL = process.env.REACT_APP_SERVER_API;
     setWorking(true);
@@ -46,7 +53,7 @@ const useFetch = () => {
     }
   };
 
-  return { postRequest, working };
+  return { postRequest, deleteRequest, working };
 };
 
 export default useFetch;
