@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 import { PropagateLoader } from "react-spinners";
 import useFetch, { Req } from "hooks/useFetch";
 import TextInput from "components/elements/TextInput";
 import { capitalizeEachWord } from "utils/strings";
+import Undo from "./Undo";
 import "stylesheets/Contact.scss";
 
 interface InputState {
@@ -41,7 +43,7 @@ const ContactForm = () => {
     hintDisplay: false,
   });
 
-  const onSubmit: React.FormEventHandler<HTMLFormElement> = e => {
+  const onSubmit: React.FormEventHandler<HTMLFormElement> = async e => {
     e.preventDefault();
     if (working) return;
     const messageDetails = {
@@ -54,7 +56,17 @@ const ContactForm = () => {
       url: "new_message",
       data: messageDetails,
     };
-    postRequest(req);
+    const res = await postRequest<{ token: string }>(req);
+    if (!res) return toast.error("That didn't work, please try again");
+    toast.success(<Undo token={res.token} />, {
+      // position: toast.POSITION.BOTTOM_RIGHT,
+      autoClose: 10000,
+      pauseOnHover: false,
+      pauseOnFocusLoss: false,
+      closeOnClick: false,
+      // theme: "dark",
+      // style: { backgroundColor: "rgb(50, 50, 60)" },
+    });
   };
 
   const handleInputChange = (
@@ -104,63 +116,61 @@ const ContactForm = () => {
   };
 
   return (
-    <>
-      <form id="contactForm" name="contactForm" autoComplete="on" onSubmit={onSubmit}>
-        <TextInput
-          value={name.value}
-          hintMessage={name.hintMessage}
-          hintDisplay={name.hintDisplay}
-          placeholder="* Preferred Name"
-          autocomplete="name"
-          onChange={handleNameChange}
-          onBlur={() => handleValidation(name, setName)}
-        />
-        <TextInput
-          value={email.value}
-          hintMessage={email.hintMessage}
-          hintDisplay={email.hintDisplay}
-          placeholder="* Email Address"
-          onChange={handleEmailChange}
-          type="email"
-          autocomplete="email"
-          onBlur={() => handleValidation(email, setEmail)}
-        />
-        <TextInput
-          value={phone.value}
-          hintMessage={phone.hintMessage}
-          hintDisplay={phone.hintDisplay}
-          placeholder="Phone Number (not required)"
-          onChange={handlePhoneChange}
-          type="tel"
-          autocomplete="tel"
-          onBlur={() => handleValidation(phone, setPhone)}
-        />
-        <TextInput
-          value={message.value}
-          hintMessage={message.hintMessage}
-          hintDisplay={message.hintDisplay}
-          placeholder="Message"
-          onChange={handleMessageChange}
-          type="tel"
-          autocomplete="tel"
-          area={true}
-          onBlur={() => handleValidation(message, setMessage)}
-        />
-        <p>
-          <button type="submit" disabled={!isValid()}>
-            {working ? (
-              <PropagateLoader
-                size={18}
-                color={"#fff5"}
-                cssOverride={{ display: "block", height: "20px" }}
-              />
-            ) : (
-              "Send Message"
-            )}
-          </button>
-        </p>
-      </form>
-    </>
+    <form id="contactForm" name="contactForm" autoComplete="on" onSubmit={onSubmit}>
+      <TextInput
+        value={name.value}
+        hintMessage={name.hintMessage}
+        hintDisplay={name.hintDisplay}
+        placeholder="* Preferred Name"
+        autocomplete="name"
+        onChange={handleNameChange}
+        onBlur={() => handleValidation(name, setName)}
+      />
+      <TextInput
+        value={email.value}
+        hintMessage={email.hintMessage}
+        hintDisplay={email.hintDisplay}
+        placeholder="* Email Address"
+        onChange={handleEmailChange}
+        type="email"
+        autocomplete="email"
+        onBlur={() => handleValidation(email, setEmail)}
+      />
+      <TextInput
+        value={phone.value}
+        hintMessage={phone.hintMessage}
+        hintDisplay={phone.hintDisplay}
+        placeholder="Phone Number (not required)"
+        onChange={handlePhoneChange}
+        type="tel"
+        autocomplete="tel"
+        onBlur={() => handleValidation(phone, setPhone)}
+      />
+      <TextInput
+        value={message.value}
+        hintMessage={message.hintMessage}
+        hintDisplay={message.hintDisplay}
+        placeholder="Message"
+        onChange={handleMessageChange}
+        type="tel"
+        autocomplete="tel"
+        area={true}
+        onBlur={() => handleValidation(message, setMessage)}
+      />
+      <p>
+        <button type="submit" disabled={!isValid()}>
+          {working ? (
+            <PropagateLoader
+              size={18}
+              color={"#fff5"}
+              cssOverride={{ display: "block", height: "20px" }}
+            />
+          ) : (
+            "Send Message"
+          )}
+        </button>
+      </p>
+    </form>
   );
 };
 
