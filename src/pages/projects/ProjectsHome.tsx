@@ -9,7 +9,6 @@ const ProjectsHome = ({ projects }: Proptypes) => {
   return (
     <>
       <h1>Projects</h1>
-      <p>Check it out</p>
       <CardGrid className="projects-grid" childClassName="project" items={projects} />
     </>
   );

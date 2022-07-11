@@ -2,6 +2,15 @@
 
 $error: rgb(255, 167, 94);
 
+#contact {
+  .socials {
+    // background-color: red;
+    // justify-content: center;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+  }
+}
+
 form {
   p {
     margin-top: 2.5rem;
@@ -9,6 +18,30 @@ form {
   }
   .error {
     color: $error;
+  }
+}
+
+.undo-container {
+  display: flex;
+  flex-direction: column;
+  p {
+    margin: 0rem;
+  }
+}
+
+.toasty {
+  background-color: rgb(50, 50, 60) !important;
+}
+
+.Toastify .undo {
+  position: relative;
+  text-align: left;
+  color: $error;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 200ms;
+  &:hover {
+    color: $purple;
   }
 }
 
@@ -102,259 +135,3 @@ input[type="submit"]:hover {
 input[type="submit"]:active {
   transform: scale(0.99);
 }
-
-// .contact-form {
-//   box-sizing: border-box;
-//   border: solid 1px rgba(255, 255, 255, 0.281);
-//   background-color: rgba(255, 255, 255, 0.062);
-//   border-radius: 1rem;
-//   display: flex;
-//   flex-direction: column;
-//   padding: 20px 30px;
-//   margin: 2rem;
-//   color: #fff;
-//   min-width: min(90vw, 600px);
-//   a {
-//     color: white;
-//     text-decoration: underline;
-//   }
-//   .info {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     margin-bottom: 1rem;
-//     .contact-details {
-//       display: flex;
-//       flex-direction: column;
-//       font-size: clamp(1.2rem, 4.5vw, 1.5rem);
-//       gap: 1rem;
-//     }
-//     .socials {
-//       display: flex;
-//       flex-direction: row;
-//       gap: 1rem;
-//       align-items: flex-end;
-//     }
-//   }
-//   .contact-header {
-//     h2 {
-//       font-size: clamp(2rem, 8vw, 3rem);
-//       text-align: left;
-//       color: inherit;
-//       line-height: 1;
-//       margin-bottom: min(2vw, 1rem);
-//     }
-//   }
-
-//   .field {
-//     border: none;
-//     margin-bottom: 10px;
-//     p.error {
-//       color: rgb(240, 121, 11);
-//       font-size: 1.2rem;
-//     }
-//     .contact-input,
-//     .PhoneInputInput {
-//       box-sizing: border-box;
-//       // border-radius: 10px;
-//       border: none;
-//       border-bottom: rgba(255, 255, 255, 0.568) solid 1px;
-//       background-color: rgba(255, 255, 255, 0);
-//       // width: 25rem;
-//       color: $secondary-colour;
-//       font-size: 1.5rem;
-//       font-family: inherit;
-//       transition: all ease 0.1s;
-//       width: 100%;
-//       padding: 0.5rem 1rem;
-//       resize: none;
-//       &textarea {
-//         background-color: red;
-//         height: 4rem;
-//       }
-//       &.name {
-//         text-transform: capitalize;
-//       }
-
-//       &::selection {
-//         background: rgba(255, 255, 255, 0.164);
-//       }
-//       &::placeholder {
-//         color: rgba(255, 255, 255, 0.815);
-//       }
-//       &:focus {
-//         outline: none;
-//         border-bottom: rgba(141, 219, 255, 0.589) solid 3px;
-//       }
-//       &:active {
-//         outline: none;
-//       }
-//     }
-//     textarea.contact-input {
-//       resize: none;
-//       height: 10rem;
-//     }
-//   }
-//   .button {
-//     &:hover:enabled {
-//       background-color: rgb(72, 152, 218);
-//     }
-//     &:disabled {
-//       background-color: rgb(83, 83, 83);
-//       cursor: default;
-//     }
-//   }
-// }
-
-// .PhoneInputCountryFlag-height {
-//   width: 100px;
-// }
-
-// .message {
-//   &.scene {
-//     perspective: 1500px;
-//     .three-d-card {
-//       box-sizing: border-box;
-//       position: relative;
-//       margin: 0;
-//       backface-visibility: visible;
-//       transform-style: preserve-3d;
-//       width: 600px;
-//       max-width: 95vw;
-//       height: 400px;
-//       max-height: 95vh;
-//       transition: transform 0.7s;
-//       &.success {
-//         transform: rotateY(180deg);
-//       }
-//       .face {
-//         box-sizing: border-box;
-//         border-radius: 1.5rem;
-//         display: block;
-//         position: absolute;
-//         width: 100%;
-//         height: 100%;
-//         backface-visibility: hidden;
-//         padding: 1rem;
-//         &.confirm {
-//           position: relative;
-//           background: linear-gradient(155deg, rgb(91, 164, 167) 0%, $primary-colour 100%);
-//           color: $secondary-colour;
-//           display: grid;
-//           grid-template-rows: 3.5rem 2rem 2rem 2rem 1fr;
-//           grid-template-columns: min-content 2fr;
-//           gap: 0.7rem 1.3rem;
-//           h2 {
-//             font-size: 3rem;
-//             color: $secondary-colour;
-//             grid-column: 1 / 3;
-//             transition: color 0.4s;
-//             line-height: 1;
-//             text-shadow: 0 0 8px rgba(0, 0, 0, 0.534);
-//           }
-//           .label {
-//             grid-column: 1;
-//             &::after {
-//               content: ":";
-//             }
-//             width: fit-content;
-//             font-size: larger;
-//             margin-top: 0.5rem;
-//             text-shadow: 0 0 8px rgba(0, 0, 0, 0.849);
-//           }
-//           .data {
-//             grid-column: 2;
-//             background-color: rgba(0, 0, 0, 0.678);
-//             padding: 0.3rem 0.7rem;
-//             border-radius: 0.5rem;
-//             font-size: larger;
-//             white-space: pre-wrap;
-//             height: fit-content;
-//             overflow-y: auto;
-//             max-height: 6.4rem;
-//           }
-//           .button {
-//             grid-column: 2;
-//             width: 12rem;
-//             justify-self: right;
-//             background-color: rgb(55, 199, 120);
-//           }
-//         }
-//         &.success {
-//           top: 0;
-//           transform: rotateY(180deg);
-//           background: linear-gradient(155deg, rgb(105, 211, 114) 0%, rgb(31, 129, 39) 100%);
-//           h2 {
-//             color: rgb(244, 252, 130);
-//           }
-//           p {
-//             font-size: 1.6rem;
-//             color: #fff;
-//             width: 80%;
-//             margin-left: 3rem;
-//             line-height: 1.2;
-//           }
-//           p:first-of-type {
-//             color: rgb(244, 252, 130);
-//             text-align: left;
-//             font-size: 1.4rem;
-//             margin: 0;
-//           }
-
-//           button.success {
-//             position: absolute;
-//             right: 1rem;
-//             bottom: 1rem;
-//             background-color: rgb(101, 22, 190);
-//             width: 12rem;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-// @media only screen and (max-width: $sm) {
-//   .contact-form {
-//     .info {
-//       flex-direction: column;
-//       margin-bottom: 0.5rem;
-//       .contact-details {
-//         margin-top: 1rem;
-//         margin-bottom: 1rem;
-//       }
-//       .socials {
-//         img {
-//           max-width: 40px;
-//         }
-//       }
-//     }
-//     .field {
-//       .contact-input {
-//         font-size: 1rem;
-//       }
-//     }
-//   }
-//   .message.scene {
-//     .three-d-card {
-//       height: 500px;
-//       .face.confirm {
-//         grid-template-rows: 3rem repeat(7, 1.2rem);
-//         grid-template-columns: 100%;
-//         h2 {
-//           font-size: clamp(1.2rem, 8vw, 2.5rem);
-//         }
-//         .data {
-//           box-sizing: border-box;
-//           grid-column: 1;
-//           margin: 0;
-//           width: 100%;
-//           max-height: 7.2rem;
-//         }
-//         .button {
-//           grid-column: 1;
-//         }
-//       }
-//     }
-//   }
-// }

@@ -3,7 +3,7 @@ import SocialList from "components/elements/SocialList";
 
 const ContactPage = () => {
   return (
-    <main>
+    <main id="contact">
       <section>
         <h2>Get In Contact</h2>
         <p>
