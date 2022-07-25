@@ -2,6 +2,7 @@ import Satisfactory from "pages/projects/individual-pages/Satisfactory";
 import Photography from "pages/projects/individual-pages/Photography";
 import Quizzles from "pages/projects/individual-pages/Quizzles";
 import PasswordGenerator from "pages/projects/individual-pages/PasswordGenerator";
+import nibblesImg from "assets/nibbles.png";
 import satisfactoryImg from "assets/satisfactory.webp";
 import photographyImg from "assets/photography.avif";
 import pwgenImg from "assets/pwgen.gif";
@@ -21,6 +22,18 @@ export interface Project {
 }
 
 const projects: Project[] = [
+  {
+    id: "nibbles",
+    path: "nibbles",
+    title: "Nibbles",
+    repos: [{ link: "https://github.com/rouge86/Nibbles", text: "Github" }],
+    desc: "A recipe selection application. Works like Tinder where you can swipe yes or no on recipes. Ability to filter based on dietary requirements.",
+    complete: true,
+    page: null,
+    image: nibblesImg,
+    feature: true,
+    deployed: "https://rouge86.github.io/Nibbles/",
+  },
   {
     id: "satisfactory",
     path: "satisfactory-planner",
