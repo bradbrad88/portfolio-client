@@ -1,25 +1,11 @@
 import skills from "data/skills";
+import Skill from "./Skill";
+
 import "stylesheets/Skills.scss";
 
 const Skills = () => {
   const renderSkills = () => {
-    return skills.map(skill => (
-      <section key={skill.skill}>
-        <h2>{skill.skill}</h2>
-        {skill.concepts.map(concept => (
-          <article key={concept.description}>
-            <h3 className="ratings">
-              {concept.description}
-              <span className="stars">
-                {concept.stars + " out of 5 "}
-                {"💡".repeat(concept.stars) + "➖".repeat(5 - concept.stars)}
-              </span>
-            </h3>
-            <p>{concept.comment}</p>
-          </article>
-        ))}
-      </section>
-    ));
+    return skills.map(skill => <Skill key={skill.skill} skill={skill} />);
   };
   return (
     <main id="skills">
