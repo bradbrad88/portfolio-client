@@ -27,7 +27,7 @@ const projects: Project[] = [
     path: "nibbles",
     title: "Nibbles",
     repos: [{ link: "https://github.com/rouge86/Nibbles", text: "Github" }],
-    desc: "A recipe selection application. Works like Tinder where you can swipe yes or no on recipes. Ability to filter based on dietary requirements.",
+    desc: "A two  week long collaborative project that provides a Tinder-esque experience with meal recipes. Features the ability to filter based on dietary requirements and stores information locally.",
     complete: true,
     page: null,
     image: nibblesImg,
