@@ -11,10 +11,17 @@ const NavBar = () => {
   // sets to true whenever use scrolls up
   const { up } = useScrollDirection();
 
-  const classes = classnames("main", { display: up });
+  // const classes = classnames("main", { display: up });
 
   return (
-    <nav className="fixed w-[90%] sm:w-fit bottom-0 left-1/2 -translate-x-1/2 bg-sky-800 sm:bg-transparent mb-3 sm:bottom-auto sm:right-0 mr-2 rounded-lg z-10">
+    <nav
+      className={
+        (up
+          ? "animate-drop-in-below sm:animate-drop-in-above"
+          : "animate-drop-out-below sm:animate-drop-out-above") +
+        " fixed w-[90%] sm:w-fit bottom-0 left-1/2 -translate-x-1/2 bg-sky-800 sm:bg-transparent mb-3 sm:bottom-auto sm:right-0 mr-2 rounded-lg z-10"
+      }
+    >
       <ul className="grid grid-flow-col auto-cols-fr justify-center sm:flex sm:gap-6 font-bold ">
         <NavLi>
           <Link to={"/"}>Home</Link>
