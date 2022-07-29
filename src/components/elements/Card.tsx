@@ -29,7 +29,7 @@ const Card = ({ className, title, path, image, alt = "" }: Proptypes) => {
       <Link to={path}>
         <figure>
           <img className="block aspect-video object-cover" src={image} alt={alt} />
-          <figcaption className="bg-purple text-center group-hover:tracking-wide py-2">
+          <figcaption className="bg-purple text-center group-hover:tracking-wide py-2 transition-all">
             {title}
           </figcaption>
         </figure>
