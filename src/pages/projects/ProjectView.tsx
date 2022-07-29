@@ -1,8 +1,9 @@
 import { Outlet } from "react-router-dom";
 import useProject from "hooks/useProject";
-import ProjectNav from "./ProjectNav";
 import ProjectDetails from "./ProjectDetails";
 import { Project } from "data/projects";
+import Main from "components/elements/Main";
+import NavbarSpacer from "components/elements/NavbarSpacer";
 
 interface Proptypes {
   projects: Project[];
@@ -11,13 +12,11 @@ const ProjectView = ({ projects }: Proptypes) => {
   const project = useProject();
 
   return (
-    <div id="project-view">
-      <ProjectNav projects={projects} selected={project} />
-      <main>
-        {project && <ProjectDetails project={project} />}
-        <Outlet />
-      </main>
-    </div>
+    <Main>
+      <NavbarSpacer />
+      {project && <ProjectDetails project={project} />}
+      <Outlet />
+    </Main>
   );
 };
 

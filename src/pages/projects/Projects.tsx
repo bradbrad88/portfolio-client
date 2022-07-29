@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import ProjectView from "./ProjectView";
 import ProjectsHome from "./ProjectsHome";
 import projects from "data/projects";
-import "stylesheets/Projects.scss";
 
 const Projects = () => {
   const renderRoutes = () => {

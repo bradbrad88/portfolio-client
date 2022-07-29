@@ -5,7 +5,6 @@ import useFetch, { Req } from "hooks/useFetch";
 import TextInput from "components/elements/TextInput";
 import { capitalizeEachWord } from "utils/strings";
 import Undo from "./Undo";
-import "stylesheets/Contact.scss";
 
 interface InputState {
   value: string;
@@ -157,8 +156,12 @@ const ContactForm = () => {
         area={true}
         onBlur={() => handleValidation(message, setMessage)}
       />
-      <p>
-        <button type="submit" disabled={!isValid()}>
+      <p className="my-8">
+        <button
+          className="w-full bg-purple rounded-md h-14 active:bg-opacity-70 text-xl font-bold hover:bg-opacity-90 disabled:bg-gray-500"
+          type="submit"
+          disabled={!isValid()}
+        >
           {working ? (
             <PropagateLoader
               size={18}

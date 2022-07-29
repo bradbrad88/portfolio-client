@@ -1,5 +1,7 @@
 import projects from "data/projects";
 import CardGrid from "components/elements/CardGrid";
+import Section from "components/elements/Section";
+import H2 from "components/elements/H2";
 
 const FeatureProjects = () => {
   const featureProjects = projects
@@ -7,10 +9,10 @@ const FeatureProjects = () => {
     .map(project => ({ ...project, path: "projects/" + project.path }));
 
   return (
-    <section id="feature">
-      <h2>Feature Projects</h2>
+    <Section>
+      <H2>Feature Projects</H2>
       <CardGrid items={featureProjects} childClassName="project" className="projects-grid" />
-    </section>
+    </Section>
   );
 };
 

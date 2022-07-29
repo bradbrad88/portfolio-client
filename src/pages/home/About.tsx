@@ -1,16 +1,16 @@
-// import React from "react";
-// import "stylesheets/Home.scss";
+import H2 from "components/elements/H2";
+import H3 from "components/elements/H3";
 
 const About = () => {
   return (
     <section id="about">
-      <h2>About Me</h2>
-      <h3>At a Glance</h3>
+      <H2>About Me</H2>
+      <H3>At a Glance</H3>
       <p>
         Studied web development since late 2020. Focussed on PERN stack. Enrolled in the
         University of Adelaide Coding Bootcamp in May 2022.
       </p>
-      <h3>Professional</h3>
+      <H3>Professional</H3>
       <p>
         Previously working in hospitality, I took charge of a hotel and its team of
         approximately 25 employees immediately prior to the pandemic.
@@ -25,7 +25,7 @@ const About = () => {
         accounting.
       </p>
       <p></p>
-      <h3>Personal</h3>
+      <H3>Personal</H3>
       <p>Some pass-times I enjoy are:</p>
       <ul>
         <li>Drumming - anything unique or interesting</li>

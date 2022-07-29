@@ -1,4 +1,5 @@
 import Card, { Proptypes as CardProps } from "components/elements/Card";
+import Section from "components/elements/Section";
 
 interface Proptypes {
   className?: string;
@@ -7,23 +8,16 @@ interface Proptypes {
 }
 
 const CardGrid = ({ className, childClassName, items }: Proptypes) => {
-  const gridStyles: React.CSSProperties = {
-    display: "grid",
-  };
   const renderCards = () => {
     return (
       <>
         {items.map(item => (
-          <Card className={childClassName} {...item} key={item.path} />
+          <Card {...item} key={item.path} />
         ))}
       </>
     );
   };
-  return (
-    <div style={gridStyles} className={className}>
-      {renderCards()}
-    </div>
-  );
+  return <div className="grid sm:grid-cols-2 gap-3">{renderCards()}</div>;
 };
 
 export default CardGrid;

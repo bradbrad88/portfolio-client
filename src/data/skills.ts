@@ -1,10 +1,12 @@
+import Skill from "pages/skills/Skill";
+
 interface Concept {
   description: string;
   stars: 1 | 2 | 3 | 4 | 5;
   comment?: string;
 }
 
-interface Skill {
+export interface Skill {
   skill: string;
   concepts: Concept[];
 }
@@ -36,7 +38,7 @@ const skills: Skill[] = [
         description: "Libraries and Extensions",
         stars: 3,
         comment:
-          "Some expreience with Bootstrap and actively using SCSS. Quite sure I have not even scratched the surface on SCSS yet however.",
+          "Some expreience with Bootstrap and actively using SCSS. Recently touched on Tailwind which seems like a great fit with React.",
       },
       {
         description: "CSS Basics",
@@ -74,10 +76,33 @@ const skills: Skill[] = [
           "Able to create from scratch but know when to utilise existing solutions. Had some practise in freeCodeCamp and codewars. Created and unit tested an expression that hyphenated a title to be used in a URL.",
       },
       {
+        description: "In Browser",
+        stars: 4,
+        comment:
+          "Have had some good practice at creating elements with the Document API. Some experience with Location and Navigation APIs, event handling including bubbling and delegation. Familiar with AJAX technique and sending different kinds of requests.",
+      },
+      {
         description: "Typescript",
         stars: 3,
         comment:
-          "Intermediate stages of typescript. Comfortable creating generic types. Have had success in creating functions that required generics to be inferred dynamically based ",
+          "Intermediate stages of typescript. Comfortable creating generic types. Have had success in creating functions that required generics to be inferred dynamically based on argument types.",
+      },
+    ],
+  },
+  {
+    skill: "Git",
+    concepts: [
+      {
+        description: "General Understanding",
+        stars: 3,
+        comment:
+          "Comfortable with the basics; able to commit, ignore, branch, merge and rebase. ",
+      },
+      {
+        description: "Collaboration",
+        stars: 3,
+        comment:
+          "Recently had success completing a collaborative project with 3 other people. We protected the main branch and submitted pull requests that required authorisation by at least one other person. This provided excellent practice in navigating multiple features concurrently.",
       },
     ],
   },

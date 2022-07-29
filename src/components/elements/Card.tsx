@@ -25,11 +25,13 @@ const Card = ({ className, title, path, image, alt = "" }: Proptypes) => {
     transition: "200ms",
   };
   return (
-    <article style={articleStyles} className={"card " + className}>
+    <article className="group rounded-lg overflow-hidden border-[1px] border-white first-of-type:col-span-full sm:first-of-type:text-3xl text-2xl hover:opacity-90">
       <Link to={path}>
         <figure>
-          <img style={imgStyles} src={image} alt={alt} />
-          <figcaption style={figCaptionStyles}>{title}</figcaption>
+          <img className="block aspect-video object-cover" src={image} alt={alt} />
+          <figcaption className="bg-purple text-center group-hover:tracking-wide py-2">
+            {title}
+          </figcaption>
         </figure>
       </Link>
     </article>

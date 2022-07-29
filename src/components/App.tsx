@@ -8,8 +8,8 @@ import Skills from "pages/skills/Skills";
 import ContactPage from "pages/contact/ContactPage";
 import ScrollTop from "./utils/ScrollTop";
 import FlexWrapper from "components/styling/FlexWrapper";
-import "stylesheets/Main.scss";
-import "stylesheets/Effects.scss";
+// import "stylesheets/Main.scss";
+// import "stylesheets/Effects.scss";
 import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
@@ -25,7 +25,7 @@ const App = () => {
       <FlexWrapper>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="" element={<Home />} />
           <Route path="projects/*" element={<Projects />} />
           <Route path="skills" element={<Skills />} />
           <Route path="contact" element={<ContactPage />} />

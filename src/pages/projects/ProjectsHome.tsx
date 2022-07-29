@@ -1,4 +1,5 @@
 import CardGrid from "components/elements/CardGrid";
+import H1 from "components/elements/H1";
 import { Project } from "data/projects";
 
 interface Proptypes {
@@ -8,7 +9,7 @@ interface Proptypes {
 const ProjectsHome = ({ projects }: Proptypes) => {
   return (
     <>
-      <h1>Projects</h1>
+      <H1>Projects</H1>
       <CardGrid className="projects-grid" childClassName="project" items={projects} />
     </>
   );

@@ -26,8 +26,8 @@ const TextInput = ({
   };
 
   return (
-    <p style={{ position: "relative" }}>
-      <label>
+    <p className="mt-8 text-2xl">
+      <label className="relative block h-fit">
         {area ? (
           <textarea
             value={value}
@@ -36,7 +36,10 @@ const TextInput = ({
             onBlur={onBlur}
             placeholder=" "
             autoComplete={autocomplete}
-            className={hintDisplay ? "error" : ""}
+            className={
+              (hintDisplay ? "border-b-orange-500" : "border-b-green") +
+              " block peer w-full resize-none border-0 border-b-2 focus-visible:border-b-purple focus-visible:outline-none  bg-transparent"
+            }
           ></textarea>
         ) : (
           <input
@@ -47,12 +50,17 @@ const TextInput = ({
             onBlur={onBlur}
             placeholder=" "
             autoComplete={autocomplete}
-            className={hintDisplay ? "error" : ""}
+            className={
+              (hintDisplay ? "border-b-orange-500" : "border-b-green") +
+              " peer w-full border-0 border-b-2 border-b-green bg-transparent  focus-visible:outline-none focus:border-b-purple"
+            }
           />
         )}
-        <span>{placeholder}</span>
+        <span className="absolute left-0 -top-6 text-sm text-[rgba(255,255,255,0.6)] -z-10 transition-all after:content-['...'] peer-placeholder-shown:top-0 peer-placeholder-shown:text-lg peer-focus:-top-6 peer-focus:text-sm">
+          {placeholder}
+        </span>
       </label>
-      {hintDisplay && <span className="error">{hintMessage}</span>}
+      {hintDisplay && <span className="text-orange-300">{hintMessage}</span>}
     </p>
   );
 };

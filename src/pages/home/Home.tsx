@@ -2,20 +2,22 @@ import Header from "pages/home/Header";
 import About from "pages/home/About";
 import FeatureProjects from "./FeatureProjects";
 import ContactForm from "components/contact/ContactForm";
-import "stylesheets/Home.scss";
+import Main from "components/elements/Main";
+import Section from "components/elements/Section";
+import H2 from "components/elements/H2";
 
 const Home = () => {
   return (
     <>
       <Header />
-      <main>
+      <Main>
         <About />
         <FeatureProjects />
-        <section>
-          <h2>Contact Me</h2>
+        <Section>
+          <H2>Contact Me</H2>
           <ContactForm />
-        </section>
-      </main>
+        </Section>
+      </Main>
     </>
   );
 };

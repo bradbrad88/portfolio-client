@@ -46,7 +46,7 @@ const projects: Project[] = [
     complete: false,
     page: <Satisfactory />,
     image: satisfactoryImg,
-    feature: true,
+    feature: false,
   },
   {
     id: "photography",
