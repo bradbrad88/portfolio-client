@@ -1,7 +1,7 @@
-import { useState, useEffect, useCallback } from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-interface MenuItem {
+export interface MenuItem {
   path: string;
   title: string;
   id: string;
@@ -10,61 +10,60 @@ interface MenuItem {
 interface Proptypes {
   menuItems: MenuItem[];
   root: string;
-  title: string;
+  expand: boolean;
+  setExpand: Function;
 }
 
-const Submenu = ({ title, root, menuItems }: Proptypes) => {
-  const [expand, setExpand] = useState(false);
-  // window click listener set expand false
+const Submenu = ({ root, menuItems, expand, setExpand }: Proptypes) => {
+  const nav = useNavigate();
 
+  // window click listener set expand false
   useEffect(() => {
     window.addEventListener("click", collapse);
     return () => window.removeEventListener("click", collapse);
   }, []);
 
   function collapse() {
-    // console.log("collapsing", expand);
     setExpand(false);
   }
+
+  const handleNavigation = (e: React.MouseEvent, path: string = "") => {
+    e.stopPropagation();
+    console.log(path);
+    nav(`${root}/${path}`);
+    setExpand(false);
+  };
 
   const renderMenuItems = () => {
     return menuItems.map(menuItem => (
       <li
-        className="hover:bg-white hover:bg-opacity-30 block transition-colors ease-in-out px-3 py-1 m-0"
+        className="hover:bg-white hover:bg-opacity-30 block transition-colors ease-in-out px-3 py-2 sm:py-1 m-0 cursor-pointer"
         key={menuItem.id}
+        onClick={e => handleNavigation(e, menuItem.path)}
       >
-        <Link to={`/${root}/${menuItem.path}`}>{menuItem.title}</Link>
+        {menuItem.title}
       </li>
     ));
   };
 
-  const onAnchorClick: React.MouseEventHandler = e => {
-    e.preventDefault();
-    e.stopPropagation();
-    setExpand(!expand);
-  };
-
   return (
-    <>
-      <a onClick={onAnchorClick}>{title}</a>
-      <div
-        className="absolute w-full whitespace-nowrap left-0 bg-purple bottom-0 sm:bottom-auto origin-bottom sm:origin-top my-14 sm:mt-2 rounded-md text-white text-left"
-        style={{
-          transform: expand ? undefined : "scaleY(0)",
-          transition: "ease-in-out 300ms",
-        }}
-      >
-        <ul>
-          <Link to="projects">
-            <li className="hover:bg-white hover:bg-opacity-30 block transition-colors ease-in-out px-3 py-1 m-0">
-              All
-            </li>
-          </Link>
-          <hr />
-          {renderMenuItems()}
-        </ul>
-      </div>
-    </>
+    <div
+      className="absolute w-full whitespace-nowrap left-0 bg-purple bottom-0 sm:bottom-auto origin-bottom sm:top-full sm:origin-top my-14 sm:mt-2 rounded-md text-white text-left text-lg max-h-[70vh] overflow-y-auto transition-transform"
+      style={{
+        transform: expand ? undefined : "scaleY(0)",
+      }}
+    >
+      <ul>
+        <li
+          onClick={e => handleNavigation(e)}
+          className="hover:bg-white hover:bg-opacity-30 block transition-colors ease-in-out px-3 py-3 sm:py-2 m-0 cursor-pointer"
+        >
+          All
+        </li>
+        <hr />
+        {renderMenuItems()}
+      </ul>
+    </div>
   );
 };
 
