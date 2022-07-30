@@ -22,7 +22,7 @@ const Skill = ({ skill }: Proptypes) => {
         <div
           className={
             (fold ? "rotate-90" : "rotate-180") +
-            " h-[12px] w-[12px] border-l-transparent border-l-[12px] border-r-[12px] border-r-transparent border-b-[12px] border-[#fff6] transition-all origin-bottom -translate-y-2"
+            " h-[12px] w-[12px] border-l-transparent border-l-[12px] border-r-[12px] border-r-transparent border-b-[12px] border-[#fff6] transition-all ease-in-out origin-bottom -translate-y-2"
           }
         ></div>
       </div>
