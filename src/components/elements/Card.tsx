@@ -8,7 +8,7 @@ export interface Proptypes {
   alt?: string;
 }
 
-const Card = ({ className, title, path, image, alt = "" }: Proptypes) => {
+const Card = ({ title, path, image, alt = "" }: Proptypes) => {
   const articleStyles: React.CSSProperties = {
     borderRadius: "1rem",
     overflow: "hidden",
@@ -27,8 +27,8 @@ const Card = ({ className, title, path, image, alt = "" }: Proptypes) => {
   return (
     <article className="group rounded-lg overflow-hidden border-[1px] border-white first-of-type:col-span-full sm:first-of-type:text-3xl text-2xl hover:opacity-90">
       <Link to={path}>
-        <figure>
-          <img className="block aspect-video object-cover" src={image} alt={alt} />
+        <figure className="aspect-video">
+          <img className="block object-cover h-full w-full" src={image} alt={alt} />
           <figcaption className="bg-purple text-center group-hover:tracking-wide py-2 transition-all">
             {title}
           </figcaption>
