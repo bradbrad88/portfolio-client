@@ -31,7 +31,7 @@ const ProjectDetails = ({ project }: Proptypes) => {
   return (
     <Section>
       <H2>{project.title}</H2>
-      <div className="grid grid-cols-2 text-lg">
+      <div className="grid grid-cols-[min-content,_minmax(0,1fr)] text-lg">
         <p className="text-purple">Title</p>
         <p>{project.title}</p>
         {renderRepos()}
@@ -45,7 +45,7 @@ const ProjectDetails = ({ project }: Proptypes) => {
         )}
         <p className="text-purple">Status</p>
         <p>{project.complete ? "Complete" : "WIP"}</p>
-        <p className="text-purple">Description</p>
+        <p className="text-purple mr-8">Description</p>
         <p className="whitespace-pre-line">{project.desc}</p>
       </div>
       <img className="mt-3 border-[1px] border-white rounded-lg" src={project.image} alt="" />
