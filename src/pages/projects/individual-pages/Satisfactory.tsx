@@ -1,4 +1,6 @@
 import mapgif from "assets/MapCapture.gif";
+import H2 from "components/elements/H2";
+import Section from "components/elements/Section";
 import useProject from "hooks/useProject";
 
 const Satisfactory = () => {
@@ -7,29 +9,32 @@ const Satisfactory = () => {
 
   return (
     <article>
-      <section>
-        <h2>Lorem, ipsum dolor.</h2>
+      <Section>
+        <H2>Overview</H2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, tempore voluptatum,
-          consectetur eum laudantium veritatis porro hic pariatur, quasi praesentium inventore
-          blanditiis commodi delectus amet cum impedit recusandae aut id atque voluptate.
-          Officiis, incidunt consequuntur. Illum corrupti accusamus voluptate, quisquam vel
-          pariatur sed aliquid vero! Facere quibusdam eaque, ipsam illum quasi minus doloremque
-          ducimus blanditiis, sed perspiciatis autem? Quo, sint sit placeat non dignissimos
-          quidem?
+          This project was designed to help with the high level planning of your world in the
+          game, Satisfactory.
         </p>
-      </section>
-      <section>
-        <h2>Lorem, ipsum dolor.</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, velit dolorem eum
-          perspiciatis nemo dolor alias, magni nam molestias quos sapiente asperiores
-          voluptate, aliquam ipsam veritatis facilis voluptatum voluptates ex iusto provident
-          iste libero dicta esse. Aspernatur natus architecto hic dolores debitis culpa eaque
-          dicta. Qui modi eum dolor aspernatur!
+          The gist is that you turn raw elements into useful materials. Each item has different
+          recipes that it can be manufactured with. The different recipes offer different
+          tradeoffs which can be time-consuming to work out.
         </p>
         <img src={mapgif} alt="" />
-      </section>
+      </Section>
+      <Section>
+        <H2>Progress</H2>
+        <p>
+          This project is a work in progress. I've hit some pretty severe roadblocks with using
+          native React functionality. Given the complexity of the data to be built, I'm
+          considering a Redux implementation.
+        </p>
+        <p>
+          Some features I want to achieve are an interactive map, drag and drop building steps
+          that are fully interactive. Connecting lines between building step inputs and outputs
+          using html canvas element.
+        </p>
+      </Section>
     </article>
   );
 };

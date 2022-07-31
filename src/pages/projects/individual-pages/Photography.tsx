@@ -1,3 +1,5 @@
+import H2 from "components/elements/H2";
+import Section from "components/elements/Section";
 import useProject from "hooks/useProject";
 
 const Photography = () => {
@@ -5,8 +7,8 @@ const Photography = () => {
   if (!project) return null;
   return (
     <article>
-      <section>
-        <h2>Overview</h2>
+      <Section>
+        <H2>Overview</H2>
         <p>
           Full stack project covering account management, Oauth and image manipulation. It
           allows the user to build their own photo albums without limiting them to a grid
@@ -18,9 +20,9 @@ const Photography = () => {
           easily create their own image galleries with drag-and-drop functionality.
         </p>
         <p></p>
-      </section>
-      <section>
-        <h2>Auth and Auth</h2>
+      </Section>
+      <Section>
+        <H2>Auth and Auth</H2>
         <p>
           This project was a huge learning curve for me in terms of authentication and
           authorisation. I landed on a magic-link style login method, or the option to use
@@ -42,9 +44,9 @@ const Photography = () => {
           code in one browser context and then redeeming it on another. Perhaps an IP address
           component would work.
         </p>
-      </section>
-      <section>
-        <h2>The Canvas Problem</h2>
+      </Section>
+      <Section>
+        <H2>The Canvas Problem</H2>
         <p>
           I wanted the user to be able to place images on a canvas in a free-form style. I also
           wanted the app to be responsive.
@@ -65,7 +67,7 @@ const Photography = () => {
           arbitrary coordinates. Maybe not the simplest solution looking back now, but it's
           doing the job and is quite straightforward to work with.
         </p>
-      </section>
+      </Section>
     </article>
   );
 };

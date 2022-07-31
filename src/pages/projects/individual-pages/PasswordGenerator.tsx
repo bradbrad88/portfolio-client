@@ -1,5 +1,7 @@
 import Syntaxer from "components/utils/Syntaxer";
 import useProject from "hooks/useProject";
+import Section from "components/elements/Section";
+import H2 from "components/elements/H2";
 
 const PasswordGenerator = () => {
   const project = useProject();
@@ -7,8 +9,8 @@ const PasswordGenerator = () => {
 
   return (
     <article>
-      <section>
-        <h2>The Algorithm</h2>
+      <Section>
+        <H2>The Algorithm</H2>
         <p>
           There are four options that can be toggled - lowercase, uppercase, numeric and
           special characters.
@@ -35,9 +37,9 @@ const PasswordGenerator = () => {
 functionArray[idx]();`}
         />
         <p></p>
-      </section>
-      <section>
-        <h2>The Animation</h2>
+      </Section>
+      <Section>
+        <H2>The Animation</H2>
         <p>
           Saddened that the project was over before I'd had my fill of it, I had a crack at
           making it a bit more visually appealing. The animation begins after the password has
@@ -58,7 +60,7 @@ functionArray[idx]();`}
           string of placeholder text.
         </p>
         <p></p>
-      </section>
+      </Section>
     </article>
   );
 };

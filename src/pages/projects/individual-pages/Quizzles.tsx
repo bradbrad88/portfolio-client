@@ -1,3 +1,5 @@
+import H2 from "components/elements/H2";
+import Section from "components/elements/Section";
 import useProject from "hooks/useProject";
 
 const Quizzles = () => {
@@ -5,8 +7,8 @@ const Quizzles = () => {
   if (!project) return null;
   return (
     <article>
-      <section>
-        <h2>The Timer</h2>
+      <Section>
+        <H2>The Timer</H2>
         <p>
           This project has one element I'm super proud of. The title. But the timer is a close
           second.
@@ -28,7 +30,7 @@ const Quizzles = () => {
           position of the circumference of a circle, relative to the radius and as a percentage
           of radians. It took a bit of playing with but came together nicely.
         </p>
-      </section>
+      </Section>
     </article>
   );
 };
