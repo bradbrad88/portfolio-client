@@ -3,7 +3,6 @@ import Skill from "./Skill";
 import Main from "components/elements/Main";
 import Section from "components/elements/Section";
 import H1 from "components/elements/H1";
-import NavbarSpacer from "components/elements/NavbarSpacer";
 
 // import "stylesheets/Skills.scss";
 
@@ -13,7 +12,6 @@ const Skills = () => {
   };
   return (
     <Main>
-      <NavbarSpacer />
       <Section>
         <H1>Skills</H1>
         <p>

@@ -4,12 +4,10 @@ import Main from "components/elements/Main";
 import Section from "components/elements/Section";
 import H1 from "components/elements/H1";
 import H2 from "components/elements/H2";
-import NavbarSpacer from "components/elements/NavbarSpacer";
 
 const ContactPage = () => {
   return (
     <Main>
-      <NavbarSpacer />
       <Section>
         <H1>Get In Contact</H1>
         <H2>Preferred methods</H2>
