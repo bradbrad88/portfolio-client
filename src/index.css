@@ -26,4 +26,7 @@
   .text-shadow {
     text-shadow: 0 0 4px black;
   }
+  span {
+    font-family: inherit;
+  }
 }
