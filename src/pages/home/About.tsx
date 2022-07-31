@@ -27,7 +27,7 @@ const About = () => {
       <p></p>
       <H3>Personal</H3>
       <p>Some pass-times I enjoy are:</p>
-      <ul>
+      <ul className="text-lg list-disc list-inside">
         <li>Drumming - anything unique or interesting</li>
         <li>Sports - basketball and taekwondo</li>
         <li>Games - rocket league or most rpgs</li>
