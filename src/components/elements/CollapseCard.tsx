@@ -35,7 +35,6 @@ const CollapseCard = ({ children, fold }: Proptypes) => {
 
   return (
     <div
-      onClick={() => setHeight(0)}
       ref={refCallback}
       style={{
         height: fold ? 0 : height,
