@@ -48,7 +48,7 @@ const Submenu = ({ root, menuItems, expand, setExpand }: Proptypes) => {
 
   return (
     <div
-      className="absolute w-full whitespace-nowrap left-0 bg-purple bottom-0 sm:bottom-auto origin-bottom sm:top-full sm:origin-top my-14 sm:mt-2 rounded-md text-white text-left text-lg max-h-[70vh] overflow-y-auto transition-transform"
+      className="absolute w-full whitespace-nowrap left-0 bg-sky-800 bottom-0 sm:bottom-auto origin-bottom sm:top-full sm:origin-top my-14 sm:mt-2 rounded-md text-white text-left text-lg max-h-[70vh] overflow-y-auto transition-transform"
       style={{
         transform: expand ? undefined : "scaleY(0)",
       }}
