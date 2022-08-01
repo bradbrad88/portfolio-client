@@ -6,9 +6,9 @@ interface Proptypes {
 
 const SocialIcon = ({ icon, url, altText }: Proptypes) => {
   return (
-    <div className="social icon">
+    <div className="w-12 h-12 rounded-md overflow-hidden">
       <a href={url} target={"_blank"} rel="noreferrer">
-        <img src={icon} alt={altText} />
+        <img className="block h-full w-full" src={icon} alt={altText} />
       </a>
     </div>
   );
