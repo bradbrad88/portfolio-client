@@ -3,9 +3,9 @@ import profileImage from "assets/profileImg.png";
 const Header = () => {
   return (
     <header className="flex flex-col sm:flex-row h-screen w-screen justify-center items-center gap-8 px-2 sm:px-8">
-      <div className="w-[280px]">
+      <div className="w-[280px] aspect-square">
         <img
-          className="w-full rounded-full  bg-green  border-white border-8"
+          className="w-full h-full rounded-full  bg-green  border-white border-8"
           src={profileImage}
           alt=""
         />
