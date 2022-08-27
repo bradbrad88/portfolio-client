@@ -47,7 +47,7 @@ functionArray[idx]();`}
           the final value.
         </p>
         <p>
-          The animation begins by creating a Span element for each password character, setting
+          Initially, the animation creates a Span element for each password character, setting
           the intended letter as the inner text. A function grabs the parent container and
           creates an array from its children, the spans, and uses a forEach loop to run an
           animation function on each element.
