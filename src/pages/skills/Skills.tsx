@@ -15,8 +15,8 @@ const Skills = () => {
       <Section>
         <H1>Skills</H1>
         <p>
-          Please take the rating system with a grain of salt - it's only intended as a visual
-          indicator of my confidence within a subject (however mis-guided).
+          Honest feedback regarding my experience with various concepts and technology. A
+          non-comprehensive list I'm slowly adding to.
         </p>
       </Section>
       {renderSkills()}

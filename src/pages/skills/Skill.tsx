@@ -31,10 +31,10 @@ const Skill = ({ skill }: Proptypes) => {
           <article key={concept.description} className="mt-3">
             <div className="sm:flex justify-between">
               <H3>{concept.description}</H3>
-              <span className="text-right sm:text-left block">
+              {/* <span className="text-right sm:text-left block">
                 {concept.stars + " out of 5 "}
                 {"💡".repeat(concept.stars) + "➖".repeat(5 - concept.stars)}
-              </span>
+              </span> */}
             </div>
             <p>{concept.comment}</p>
           </article>
