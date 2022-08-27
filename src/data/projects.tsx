@@ -1,3 +1,4 @@
+import Nibbles from "pages/projects/individual-pages/Nibbles";
 import Satisfactory from "pages/projects/individual-pages/Satisfactory";
 import Photography from "pages/projects/individual-pages/Photography";
 import Quizzles from "pages/projects/individual-pages/Quizzles";
@@ -29,10 +30,25 @@ const projects: Project[] = [
     repos: [{ link: "https://github.com/rouge86/Nibbles", text: "Github" }],
     desc: "A two  week long collaborative project that provides a Tinder-esque experience with meal recipes. Features the ability to filter based on dietary requirements and stores information locally.",
     complete: true,
-    page: null,
+    page: <Nibbles />,
     image: nibblesImg,
     feature: true,
     deployed: "https://rouge86.github.io/Nibbles/",
+  },
+
+  {
+    id: "photography",
+    path: "react-photography",
+    title: "React Photography",
+    repos: [
+      { link: "https://github.com/bradbrad88/photography-client", text: "Github - client" },
+      { link: "https://github.com/bradbrad88/photography-server", text: "Github - server" },
+    ],
+    desc: "PERN stack project featuring account management.",
+    complete: false,
+    page: <Photography />,
+    image: photographyImg,
+    feature: true,
   },
   {
     id: "satisfactory",
@@ -47,20 +63,6 @@ const projects: Project[] = [
     page: <Satisfactory />,
     image: satisfactoryImg,
     feature: false,
-  },
-  {
-    id: "photography",
-    path: "react-photography",
-    title: "React Photography",
-    repos: [
-      { link: "https://github.com/bradbrad88/photography-client", text: "Github - client" },
-      { link: "https://github.com/bradbrad88/photography-server", text: "Github - server" },
-    ],
-    desc: "PERN stack project featuring account management.",
-    complete: false,
-    page: <Photography />,
-    image: photographyImg,
-    feature: true,
   },
   {
     id: "pwgen",
