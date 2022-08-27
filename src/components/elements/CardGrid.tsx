@@ -17,7 +17,7 @@ const CardGrid = ({ className, childClassName, items }: Proptypes) => {
       </>
     );
   };
-  return <div className="grid sm:grid-cols-2 gap-3">{renderCards()}</div>;
+  return <div className="grid sm:grid-cols-2 gap-5">{renderCards()}</div>;
 };
 
 export default CardGrid;
