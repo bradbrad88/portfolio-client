@@ -18,27 +18,26 @@ const skills: Skill[] = [
       {
         description: "Semantic Html",
         stars: 4,
-        comment:
-          "Able to use most semantic Html elements as intended. Room for more experience with",
+        comment: "Confident with a good range of semantic HTML elements.",
       },
       {
         description: "Accessibility",
         stars: 2,
         comment:
-          "Inexperienced with Aria labels. Across details such as alt text and contrast ratios.",
+          "Inexperienced with Aria labels but familiar with details such as alt text and contrast ratios.",
       },
       {
         description: "Responsive Design",
         stars: 4,
         comment:
-          "Able to achieve good quality responsiveness through custom CSS or Bootstrap.",
+          "Able to achieve responsive designs through CSS media queries, CSS layout systems as well as Tailwind/Bootstrap techniques.",
       },
 
       {
         description: "Libraries and Extensions",
         stars: 3,
         comment:
-          "Some expreience with Bootstrap and actively using SCSS. Recently touched on Tailwind which seems like a great fit with React.",
+          "Some experience with Bootstrap and actively using SCSS. Currently using Tailwind in more recent React projects.",
       },
       {
         description: "CSS Basics",
@@ -76,10 +75,15 @@ const skills: Skill[] = [
           "Able to create from scratch but know when to utilise existing solutions. Had some practise in freeCodeCamp and codewars. Created and unit tested an expression that hyphenated a title to be used in a URL.",
       },
       {
-        description: "In Browser",
+        description: "Browser",
         stars: 4,
         comment:
           "Have had some good practice at creating elements with the Document API. Some experience with Location and Navigation APIs, event handling including bubbling and delegation. Familiar with AJAX technique and sending different kinds of requests.",
+      },
+      {
+        description: "jQuery",
+        stars: 3,
+        comment: "Have used and studied jQuery in boot camp course work.",
       },
       {
         description: "Typescript",
@@ -96,13 +100,25 @@ const skills: Skill[] = [
         description: "General Understanding",
         stars: 3,
         comment:
-          "Comfortable with the basics; able to commit, ignore, branch, merge and rebase. ",
+          "Comfortable with the basics; able to commit, ignore, manage branches, stash and reset",
+      },
+      {
+        description: "Three Trees",
+        stars: 3,
+        comment:
+          "Modest understand of the three trees of git - the working directory, staging index and commit history.",
+      },
+      {
+        description: "Rebasing",
+        stars: 3,
+        comment:
+          "Experimented with rebasing in a collaborative project and now understand that the process will create a new set of commits from where the branch initially diverged. The new commits are based on the current head of the branch specified (generally main branch) and may result in having to resolve conflicts on each commit in the chain depending on circumstances. The result is a linear set of commits that can be pulled into the main branch. This means the main branch can keep all commits without squashing them and have them flow in a one dimensional timeline, allowing for much easier analysis of problems that may have been introduced.",
       },
       {
         description: "Collaboration",
         stars: 3,
         comment:
-          "Recently had success completing a collaborative project with 3 other people. We protected the main branch and submitted pull requests that required authorisation by at least one other person. This provided excellent practice in navigating multiple features concurrently.",
+          "Recently had success completing a collaborative project with 3 other people. We protected the main branch and submitted pull requests that required authorisation by at least one other person. This provided excellent practice in navigating multiple features concurrently and resolving code conflicts.",
       },
     ],
   },
@@ -156,6 +172,12 @@ const skills: Skill[] = [
     skill: "Node",
     concepts: [
       {
+        description: "Node Modules",
+        stars: 3,
+        comment:
+          "Have some experience with the console, file system, OS, path, process, http and crypto modules. ",
+      },
+      {
         description: "Express",
         stars: 4,
         comment:
@@ -167,6 +189,12 @@ const skills: Skill[] = [
         comment:
           "Some experience with Sequelize, Passport, Bcrypt, Express-Sessions, Jsonwebtoken, AWS-SDK, Multer, Nodemailer, Sharp (image manipulation)",
       },
+      {
+        description: "Object Relational Mapping",
+        stars: 3,
+        comment:
+          "Experience using Sequelize as an ORM for PostgreSQL as well as using pure SQL queries.",
+      },
     ],
   },
   {
@@ -176,13 +204,13 @@ const skills: Skill[] = [
         description: "Relational Databases",
         stars: 3,
         comment:
-          "Only rating myself a 3 in terms of confidence here given that I've had a glimpse as to how involved DB architecture and admin can be. I'm fairly confident in building up simple data structures. I've had experience in building programs in MS Access that were used in the business I worked in for a few years. The programs contained data on employees in relation to business compliance, for example, who had signed off on Safe Work Practices, who had been onboarded correctly based on which department they were hired into. I created a number of other small utility applications to replace spreadsheets and make my life easier. One of these addressed stock ordering, helping me to achieve some of the best results in terms of minimising stock on hand while almost never running out of items. Currently using PostgreSQL in several applications in development. Trying a pure SQL approach in one app and using an ORM in another.",
+          "Confident in building relational data structures. I've had experience in building programs in MS Access that were used in the business I worked in for a few years. The programs contained data on employees in relation to business compliance, for example, who had signed off on Safe Work Practices, who had been onboarded correctly based on which department they were hired into. I created a number of other small utility applications to replace spreadsheets and make my life easier. One of these addressed stock ordering, helping me to achieve some of the best results in terms of minimising stock on hand while almost never running out of items. Currently using PostgreSQL in several applications in development.",
       },
       {
         description: "Indexing",
         stars: 2,
         comment:
-          "I understand that there are a number of different ways to index a field to optimise it based on how it is most commonly accessed. I also understand that there is a trade-off in terms of space required and that write times become more expensive. I'm only familiar with a b-tree index at this point however.",
+          "An understanding that there are a number of different ways to index a field to optimise it based on how it is most commonly accessed (read/write). I also understand that there is a trade-off in terms of space required and that write times become more expensive. Don't have an intimate understanding of different index types at this point.",
       },
       {
         description: "Sql Language",
@@ -190,11 +218,28 @@ const skills: Skill[] = [
         comment:
           "Still much to learn but able to do most of the basics in terms of CRUD operations, joins, aggregation and analysis.",
       },
+    ],
+  },
+  {
+    skill: "Test Driven Development",
+    concepts: [
       {
-        description: "Redis",
-        stars: 1,
+        description: "Unit Testing",
+        stars: 3,
         comment:
-          "No practical experience with this type of DB yet. Basic understanding of how it is an in-memory db used frequently with caching.",
+          "Have used Jest in a recent project to attain 100% code coverage. The project (team profile generator) was a command-line application used to create an HTML file displaying team details. The project took an object oriented design and required that all objects were thoroughly tested.",
+      },
+      {
+        description: "Testing Experience",
+        stars: 3,
+        comment:
+          "Testing exceptions, testing asynchronous code and mocking modules and their return values. One challege I faced was trying to look for an object in an array of objects that contained certain properties; not an exact match but a minimum set of expected properties. The syntax became tricky however I was able to break the problem down and get individual parts of the test working until I could then create a 2 dimensional loop to properly handle the test.",
+      },
+      {
+        description: "Test Coverage",
+        stars: 3,
+        comment:
+          "Went to the effort of linking a Github repository with Codecov and automating the process of generating a coverage report using Github Actions. The end result was a tasty badge on the README.md file. And code coverage I guess...",
       },
     ],
   },
