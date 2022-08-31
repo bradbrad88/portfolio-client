@@ -5,34 +5,37 @@ const About = () => {
   return (
     <section id="about">
       <H2>About Me</H2>
-      <H3>At a Glance</H3>
-      <p>
-        Studied web development since late 2020. Focussed on PERN stack. Enrolled in the
-        University of Adelaide Coding Bootcamp in May 2022.
-      </p>
       <H3>Professional</H3>
       <p>
-        Previously working in hospitality, I took charge of a hotel and its team of
-        approximately 25 employees immediately prior to the pandemic.
+        Aspiring full stack developer combining leadership experience with a passion for
+        problem solving. Previously requested into a management role to shift negative growth
+        in revenue, I built specialised apps to streamline pain points in the business and
+        nurtured a supportive team culture that resulted in consistent and astonishing growth.
       </p>
       <p>
-        Working hard to foster a fun, respectful and inclusive culture, the team and I achieved
-        some fantastic successes despite the difficult times we faced.
+        Currently undertaking a certificate in full stack development from the University of
+        Adelaide with expected completion in November and supplemented with a year of self
+        study.
       </p>
       <p>
-        Using skills learned in my own time, I developed programs to assist the team in
-        efficiently tackling tasks including stock ordering, compliance tracking and
-        accounting.
+        Proficient in producing client side web apps with modern frameworks supported by
+        Node.js servers hosted on cloud platforms. Motivated by exceeding expectations and the
+        thrill of learning new technologies.
       </p>
-      <p></p>
       <H3>Personal</H3>
-      <p>Some pass-times I enjoy are:</p>
-      <ul className="text-lg list-disc list-inside">
-        <li>Drumming - anything unique or interesting</li>
-        <li>Sports - basketball and taekwondo</li>
-        <li>Games - rocket league or most rpgs</li>
-        <li>Spending time with the family</li>
-      </ul>
+      <p>
+        I have a love of music and a passion for playing the drums. I have spent a lot of time
+        playing live music in the local scene as a hobby.
+      </p>
+      <p>
+        I generally keep active, having participated in sports such as Tae Kwon Do, Basketball,
+        Gymnastics and Tennis.
+      </p>
+      <p>
+        I also enjoy jogging, preferably in nature reserves such as Anstey's Hill or Black
+        Hill.
+      </p>
+      <p>Avid gamer and lover of Rocket League, Satisfactory and a number of other titles.</p>
     </section>
   );
 };
