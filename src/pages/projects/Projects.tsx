@@ -1,21 +1,20 @@
-import { Routes, Route } from "react-router-dom";
-import ProjectView from "./ProjectView";
-import ProjectsHome from "./ProjectsHome";
-import projects from "data/projects";
+import Main from "components/elements/Main";
+import Section from "components/elements/Section";
+import H1 from "components/elements/H1";
+import CardGrid from "components/elements/CardGrid";
+import { Project } from "data/projects";
 
-const Projects = () => {
-  const renderRoutes = () => {
-    return (
-      <Route path="" element={<ProjectView projects={projects} />}>
-        <Route path="/" element={<ProjectsHome projects={projects} />} />
-        {projects.map(project => (
-          <Route path={project.path} element={project.page} key={project.path} />
-        ))}
-      </Route>
-    );
+const Projects = ({ projects }: { projects: Project[] }) => {
+  const renderProjects = () => {
+    return <CardGrid items={projects} />;
   };
 
-  return <Routes>{renderRoutes()}</Routes>;
+  return (
+    <Main>
+      <H1>Projects</H1>
+      <Section>{renderProjects()}</Section>
+    </Main>
+  );
 };
 
 export default Projects;

@@ -30,7 +30,7 @@ const ProjectDetails = ({ project }: Proptypes) => {
 
   return (
     <Section>
-      <H2>{project.title}</H2>
+      <H2>Details</H2>
       <div className="grid grid-cols-[min-content,_minmax(0,1fr)] text-lg">
         <p className="text-purple">Title</p>
         <p>{project.title}</p>

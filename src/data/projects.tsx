@@ -17,7 +17,7 @@ export interface Project {
   deployed?: string;
   desc: string;
   complete: boolean;
-  page: React.ReactNode;
+  article: React.FunctionComponent<{ project: Project }>;
   image: string;
   feature?: boolean;
 }
@@ -30,7 +30,7 @@ const projects: Project[] = [
     repos: [{ link: "https://github.com/rouge86/Nibbles", text: "Github" }],
     desc: "A two  week long collaborative project that provides a Tinder-esque experience with meal recipes. Features the ability to filter based on dietary requirements and stores information locally.",
     complete: true,
-    page: <Nibbles />,
+    article: Nibbles,
     image: nibblesImg,
     feature: true,
     deployed: "https://rouge86.github.io/Nibbles/",
@@ -46,7 +46,7 @@ const projects: Project[] = [
     ],
     desc: "PERN stack project featuring account management.",
     complete: false,
-    page: <Photography />,
+    article: Photography,
     image: photographyImg,
     feature: true,
   },
@@ -60,13 +60,13 @@ const projects: Project[] = [
     ],
     desc: "React project assisting the design of factories in the game, Satisfactory.\nComplex relationships between the inputs and outputs of factories are best described by a graph model.",
     complete: false,
-    page: <Satisfactory />,
+    article: Satisfactory,
     image: satisfactoryImg,
     feature: false,
   },
   {
     id: "pwgen",
-    page: <PasswordGenerator />,
+    article: PasswordGenerator,
     title: "Password Generator",
     complete: true,
     desc: "Vanialla HTML, CSS and JS. A simple application that generates random passwords with the ability to set a few parameters.",
@@ -76,7 +76,7 @@ const projects: Project[] = [
   },
   {
     id: "quizzles",
-    page: <Quizzles />,
+    article: Quizzles,
     title: "Quizzles",
     complete: true,
     desc: "Vanialla HTML, CSS and JS. Renders components dynamically to produce a multiple-choice style game.",
