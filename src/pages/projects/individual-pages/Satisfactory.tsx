@@ -1,12 +1,8 @@
 import mapgif from "assets/MapCapture.gif";
 import H2 from "components/elements/H2";
 import Section from "components/elements/Section";
-import useProject from "hooks/useProject";
 
 const Satisfactory = () => {
-  const project = useProject();
-  if (!project) return null;
-
   return (
     <article>
       <Section>

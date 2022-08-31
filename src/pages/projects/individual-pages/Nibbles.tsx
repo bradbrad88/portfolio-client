@@ -1,12 +1,7 @@
-import Syntaxer from "components/utils/Syntaxer";
-import useProject from "hooks/useProject";
 import Section from "components/elements/Section";
 import H2 from "components/elements/H2";
 
 const PasswordGenerator = () => {
-  const project = useProject();
-  if (!project) return null;
-
   return (
     <article>
       <Section>

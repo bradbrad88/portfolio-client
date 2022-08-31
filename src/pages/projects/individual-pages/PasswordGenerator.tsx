@@ -1,12 +1,8 @@
 import Syntaxer from "components/utils/Syntaxer";
-import useProject from "hooks/useProject";
 import Section from "components/elements/Section";
 import H2 from "components/elements/H2";
 
 const PasswordGenerator = () => {
-  const project = useProject();
-  if (!project) return null;
-
   return (
     <article>
       <Section>
@@ -27,15 +23,14 @@ const PasswordGenerator = () => {
           based on options selected. For example, if the user selected lowercase, uppercase and
           numeric characters we would get an array:
         </p>
-        <Syntaxer code={`const functionArray = [getLower, getUpper, getNumeric]`} />
+        <Syntaxer>const functionArray = [getLower, getUpper, getNumeric]</Syntaxer>
         <p>
           I chose this method so that I could access functions randomly using the array index,
           meaning that each character type would be used a random number of times.
         </p>
-        <Syntaxer
-          code={`const idx = Math.floor(Math.random() * functionArray.length);
-functionArray[idx]();`}
-        />
+        <Syntaxer>
+          const idx = Math.floor(Math.random() * functionArray.length); functionArray[idx]();
+        </Syntaxer>
         <p></p>
       </Section>
       <Section>
