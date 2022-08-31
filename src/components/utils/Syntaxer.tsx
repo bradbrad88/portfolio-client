@@ -1,14 +1,20 @@
 import Prism from "prismjs";
-import "../../../node_modules/prismjs/themes/prism-tomorrow.css";
+
+import classnames from "classnames";
 
 interface Proptypes {
-  code: string;
+  children?: string;
+  className?: string;
+  language?: string;
 }
 
-const Syntaxer = ({ code }: Proptypes) => {
-  const codeSyntax = Prism.highlight(code, Prism.languages.javascript, "javascript");
+const Syntaxer = ({ children = "", language = "javascript", className }: Proptypes) => {
+  const grammar = Prism.languages[language];
+
+  const codeSyntax = Prism.highlight(children, grammar, language);
+  const classname = classnames("w-full bg-black p-2 my-2", className);
   return (
-    <div className="w-full bg-black p-2">
+    <div className={classname}>
       <pre className="w-full font-mono overflow-x-auto whitespace-pre">
         <code className="text-inherit" dangerouslySetInnerHTML={{ __html: codeSyntax }} />
       </pre>
