@@ -9,21 +9,6 @@ export interface Proptypes {
 }
 
 const Card = ({ title, path, image, alt = "" }: Proptypes) => {
-  const articleStyles: React.CSSProperties = {
-    borderRadius: "1rem",
-    overflow: "hidden",
-    border: "solid 1px white",
-    boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.3)",
-  };
-  const imgStyles: React.CSSProperties = {
-    display: "block",
-    aspectRatio: "16 / 9",
-    objectFit: "cover",
-    width: "100%",
-  };
-  const figCaptionStyles: React.CSSProperties = {
-    transition: "200ms",
-  };
   return (
     <article className="group rounded-lg overflow-hidden border-[1px] border-white first-of-type:col-span-full sm:first-of-type:text-3xl text-2xl hover:opacity-90">
       <Link to={path}>

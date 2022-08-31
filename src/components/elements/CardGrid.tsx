@@ -1,13 +1,10 @@
 import Card, { Proptypes as CardProps } from "components/elements/Card";
-import Section from "components/elements/Section";
 
 interface Proptypes {
-  className?: string;
-  childClassName?: string;
   items: CardProps[];
 }
 
-const CardGrid = ({ className, childClassName, items }: Proptypes) => {
+const CardGrid = ({ items }: Proptypes) => {
   const renderCards = () => {
     return (
       <>
