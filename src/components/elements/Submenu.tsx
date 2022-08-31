@@ -23,6 +23,10 @@ const Submenu = ({ root, menuItems, expand, setExpand }: Proptypes) => {
     return () => window.removeEventListener("click", collapse);
   }, []);
 
+  useEffect(() => {
+    if (!menuItems) collapse();
+  }, [menuItems]);
+
   function collapse() {
     setExpand(false);
   }
