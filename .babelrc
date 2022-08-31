@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    [
+      "prismjs",
+      {
+        "languages": ["javascript", "bash", "shell", "properties", "json"],
+        "theme": "tomorrow",
+        "css": true
+      }
+    ]
+  ]
+}
