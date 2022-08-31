@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         green: "#7ba54d",
         purple: "#8153c0",
+        dark: "rgb(28, 28, 31)",
       },
       fontSize: {
         dynamicTitle: "clamp(3.2rem, 10vw, 10rem)",
