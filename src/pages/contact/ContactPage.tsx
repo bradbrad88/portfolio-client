@@ -8,8 +8,8 @@ import H2 from "components/elements/H2";
 const ContactPage = () => {
   return (
     <Main>
+      <H1>Get In Contact</H1>
       <Section>
-        <H1>Get In Contact</H1>
         <H2>Preferred methods</H2>
         <p>
           I'm reachable by text or email - phone calls may fall through due to the large number

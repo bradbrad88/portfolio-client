@@ -12,8 +12,8 @@ const Skills = () => {
   };
   return (
     <Main>
+      <H1>Skills</H1>
       <Section>
-        <H1>Skills</H1>
         <p>
           Honest feedback regarding my experience with various concepts and technology. A
           non-comprehensive list I'm slowly adding to.
