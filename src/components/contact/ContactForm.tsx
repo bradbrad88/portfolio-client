@@ -58,13 +58,10 @@ const ContactForm = () => {
     const res = await postRequest<{ token: string }>(req);
     if (!res) return toast.error("That didn't work, please try again");
     toast.success(<Undo token={res.token} />, {
-      // position: toast.POSITION.BOTTOM_RIGHT,
       autoClose: 10000,
       pauseOnHover: false,
       pauseOnFocusLoss: false,
       closeOnClick: false,
-      // theme: "dark",
-      // style: { backgroundColor: "rgb(50, 50, 60)" },
     });
   };
 
@@ -149,7 +146,7 @@ const ContactForm = () => {
         value={message.value}
         hintMessage={message.hintMessage}
         hintDisplay={message.hintDisplay}
-        placeholder="Message"
+        placeholder="Message (preferable, but also not required)"
         onChange={handleMessageChange}
         type="tel"
         autocomplete="tel"

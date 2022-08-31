@@ -11,7 +11,7 @@ const FeatureProjects = () => {
   return (
     <Section>
       <H2>Feature Projects</H2>
-      <CardGrid items={featureProjects} childClassName="project" className="projects-grid" />
+      <CardGrid items={featureProjects} />
     </Section>
   );
 };

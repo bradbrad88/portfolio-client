@@ -29,7 +29,6 @@ const Submenu = ({ root, menuItems, expand, setExpand }: Proptypes) => {
 
   const handleNavigation = (e: React.MouseEvent, path: string = "") => {
     e.stopPropagation();
-    console.log(path);
     nav(`${root}/${path}`);
     setExpand(false);
   };

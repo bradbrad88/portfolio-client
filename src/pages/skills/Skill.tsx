@@ -13,12 +13,14 @@ const Skill = ({ skill }: Proptypes) => {
   const [fold, setFold] = useState(true);
 
   return (
-    <Section>
+    <Section styles={{ marginTop: 0, marginBottom: 0 }}>
       <div
         className="flex cursor-pointer justify-between items-center border-b-[1px] border-[#fff3]"
         onClick={() => setFold(!fold)}
       >
-        <H2>{skill.skill}</H2>
+        <H2 divider={false} styles={{ fontSize: "1.9rem", marginBottom: 0 }}>
+          {skill.skill}
+        </H2>
         <div
           className={
             (fold ? "rotate-90" : "rotate-180") +
