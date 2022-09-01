@@ -9,11 +9,13 @@ import BlogsIndex from "pages/blogs/BlogIndex";
 import ContactPage from "pages/contact/ContactPage";
 import ScrollTop from "./utils/ScrollTop";
 import FlexWrapper from "components/styling/FlexWrapper";
+import Traffic from "./analysis/Traffic";
 import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
     <Router>
+      <Traffic />
       <ScrollTop />
       <ToastContainer
         position="top-left"
