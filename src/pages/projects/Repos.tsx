@@ -71,7 +71,7 @@ const Repos = () => {
         <PropagateLoader
           size={18}
           color={"#fff5"}
-          cssOverride={{ display: "block", height: "20px" }}
+          cssOverride={{ display: "block", height: "20px", textAlign: "center" }}
         />
       )}
     </Section>
