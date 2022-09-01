@@ -43,7 +43,6 @@ const NavBar = () => {
   const onMouseLeave: React.PointerEventHandler = e => {
     if (e.pointerType === "mouse") {
       timerRef.current = setTimeout(() => {
-        console.log(e);
         setExpand(false);
       }, 100);
     }
