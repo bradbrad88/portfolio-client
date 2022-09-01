@@ -15,6 +15,13 @@ interface ResponseDataError<T> {
 const useFetch = () => {
   const [working, setWorking] = useState(false);
 
+  const getRequest = async <T>(req: AxiosRequestConfig): Promise<T | null> => {
+    req.method = "GET";
+    const res = await sendRequest<T>(req);
+    if (!res) return null;
+    return res.data;
+  };
+
   const postRequest = async <T>(req: AxiosRequestConfig): Promise<T | null> => {
     req.method = "POST";
     const res = await sendRequest<T>(req);
@@ -30,7 +37,7 @@ const useFetch = () => {
   };
 
   const sendRequest = async <T>(req: AxiosRequestConfig): Promise<ResponseDataError<T>> => {
-    req.baseURL = process.env.REACT_APP_SERVER_API;
+    if (!req.baseURL) req.baseURL = process.env.REACT_APP_SERVER_API;
     setWorking(true);
     try {
       const res: AxiosResponse<T> = await axios(req);
@@ -53,7 +60,7 @@ const useFetch = () => {
     }
   };
 
-  return { postRequest, deleteRequest, working };
+  return { getRequest, postRequest, deleteRequest, working };
 };
 
 export default useFetch;
