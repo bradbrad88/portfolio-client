@@ -1,31 +1,11 @@
-import React, { createContext, useState, useContext, useRef } from "react";
-
+import React, { useState, useRef } from "react";
 import useScrollDirection from "hooks/useScrollDirection";
 import NavLi from "components/elements/NavLi";
 import projects from "data/projects";
 import Submenu, { MenuItem } from "./Submenu";
-
-interface Ctx {
-  newMenu: (submenu?: MenuItem[]) => void;
-  submenu?: MenuItem[];
-}
-
-const createCtx = <T extends {}>() => {
-  const ctx = createContext<T | null>(null);
-  const useCtx = () => {
-    const value = useContext(ctx);
-    if (value === null) throw new Error("Context can't be null");
-    return value;
-  };
-  return [useCtx, ctx.Provider] as const;
-};
-
-const [useCtx, Provider] = createCtx<Ctx>();
-
-export { useCtx };
+import { Provider } from "contexts/NavbarCtx";
 
 const NavBar = () => {
-  // sets to true whenever use scrolls up
   const { up } = useScrollDirection();
   const [submenu, setSubmenu] = useState<MenuItem[] | undefined>(undefined);
   const [expand, setExpand] = useState(false);
