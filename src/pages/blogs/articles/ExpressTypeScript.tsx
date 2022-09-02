@@ -154,17 +154,17 @@ const ExpressTypeScript = ({ blog }: { blog: Blog }) => {
 }`}</Syntaxer>
         <H3>Configure package.json</H3>
         <p>
-          <span className="font-bold">The main points:</span>
-          <ul className="list-disc list-inside">
-            <li>Create a script to run the developer environment</li>
-            <li>Create a script to run the production environment</li>
-            <li>
-              Set "type" to "commonjs" - the module option may seem like the correct option as
-              we want to write in ESM syntax, but the TypeScript engine will be set to
-              transpile the code back to common js before Node executes it.
-            </li>
-          </ul>
+          <strong>The main points:</strong>
         </p>
+        <ul className="list-disc list-inside">
+          <li>Create a script to run the developer environment</li>
+          <li>Create a script to run the production environment</li>
+          <li>
+            Set "type" to "commonjs" - the module option may seem like the correct option as we
+            want to write in ESM syntax, but the TypeScript engine will be set to transpile the
+            code back to common js before Node executes it.
+          </li>
+        </ul>
         <Syntaxer language="json">{`{
   "type": "commonjs", // default - may be omitted, just ensure it's NOT set to "module". Set to "commonjs" Node will expect commonjs import syntax, eg const module = require("module"). This is what we want as ts-node will transform our code this way despite us writing in ESM syntax (import module from "module").
   "scripts": {
@@ -304,33 +304,31 @@ import "dotenv/config"`}</Syntaxer>
           this setup.
         </p>
         <H3>Worth Noting</H3>
-        <p>
-          Some quick points worth noting here:
-          <ul className="list-disc list-inside">
-            <li>
-              If the 'tsc' command is not provided any arguments, it will look for a{" "}
-              <span className="text-green">tsconfig.json</span> file. The config file tells
-              TypeScript what to transpile with "files" or "includes". This is how we are
-              utilising 'tsc' in our project setup.
-            </li>
-            <li>
-              <em>Important!</em> Once the 'tsc' command has run, our project will contain
-              JavaScript versions of all our TypeScript source files sitting right next to
-              them. Ts-node will default to looking at the regular .js files now, so if we
-              continue to develop and make changes on the .ts files, we won't see any changes.
-              This is where "preferTsExts" is important.
-            </li>
-            <li>
-              For a large codebase, having the tsc command run could be a painful experience. A
-              decently sized project should consider a more comprehensive setup with bundlers.
-            </li>
-            <li>
-              Generally speaking, avoid running npm start and stick to npm run dev in the local
-              environment. You could consider git ignoring .js files with 'src/**/*.js' so that
-              an accidental execution of tsc could be cleaned up with version control methods.
-            </li>
-          </ul>
-        </p>
+        <p>Some quick points worth noting here:</p>
+        <ul className="list-disc list-inside">
+          <li>
+            If the 'tsc' command is not provided any arguments, it will look for a{" "}
+            <span className="text-green">tsconfig.json</span> file. The config file tells
+            TypeScript what to transpile with "files" or "includes". This is how we are
+            utilising 'tsc' in our project setup.
+          </li>
+          <li>
+            <em>Important!</em> Once the 'tsc' command has run, our project will contain
+            JavaScript versions of all our TypeScript source files sitting right next to them.
+            Ts-node will default to looking at the regular .js files now, so if we continue to
+            develop and make changes on the .ts files, we won't see any changes. This is where
+            "preferTsExts" is important.
+          </li>
+          <li>
+            For a large codebase, having the tsc command run could be a painful experience. A
+            decently sized project should consider a more comprehensive setup with bundlers.
+          </li>
+          <li>
+            Generally speaking, avoid running npm start and stick to npm run dev in the local
+            environment. You could consider git ignoring .js files with 'src/**/*.js' so that
+            an accidental execution of tsc could be cleaned up with version control methods.
+          </li>
+        </ul>
         <H3>Entry Point File Extension</H3>
         <p>
           It is important that our entry point is a TypeScript file, otherwise Nodemon will try
