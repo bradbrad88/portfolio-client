@@ -51,7 +51,7 @@ const Repos = () => {
       const date = new Date(repo.pushed_at);
       const days = Math.floor((new Date().getTime() - date.getTime()) / 1000 / 60 / 60 / 24);
       return (
-        <article className="text-lg">
+        <article key={repo.name} className="text-lg">
           <a className="text-green underline" href={repo.html_url} target={"_blank"}>
             {repo.name}
           </a>
