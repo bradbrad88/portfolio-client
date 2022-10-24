@@ -23,8 +23,8 @@ const App = () => {
         toastClassName="toasty"
         autoClose={3000}
       />
+      <Navbar />
       <FlexWrapper>
-        <Navbar />
         <Routes>
           <Route index element={<Home />} />
           <Route path="projects/*" element={<ProjectsIndex />} />
@@ -33,8 +33,8 @@ const App = () => {
           <Route path="contact" element={<ContactPage />} />
           <Route path="*" element={<Home />} />
         </Routes>
-        <Footer />
       </FlexWrapper>
+      <Footer />
     </Router>
   );
 };
