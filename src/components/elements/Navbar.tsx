@@ -38,13 +38,13 @@ const NavBar = () => {
         (up
           ? "animate-drop-in-below sm:animate-drop-in-above"
           : "animate-drop-out-below sm:animate-drop-out-above") +
-        " fixed w-[90%]  bottom-0 left-1/2 -translate-x-1/2 bg-sky-800 sm:bg-transparent sm:w-fit  sm:p-3 sm:rounded-none mb-3 sm:bottom-auto sm:right-0 mr-2 rounded-lg z-10"
+        " fixed w-[90%] bottom-0 left-1/2 -translate-x-1/2 sm:w-fit sm:p-3 mb-3 sm:bottom-auto sm:right-0 mr-2 z-10"
       }
       onPointerLeave={onMouseLeave}
       onPointerUp={onMouseEnter}
       onPointerEnter={onMouseEnter}
     >
-      <ul className="relative grid grid-flow-col auto-cols-fr justify-center sm:flex sm:gap-6 font-bold ">
+      <ul className="relative grid grid-flow-col auto-cols-fr justify-center sm:flex sm:gap-6 font-bold rounded-lg bg-sky-800 sm:bg-transparent overflow-hidden">
         <Provider value={{ submenu, newMenu }}>
           <NavLi to="/" title="Home" />
           <NavLi to="/projects" title="Projects" submenu={projects} />
