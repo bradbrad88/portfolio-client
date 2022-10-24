@@ -8,6 +8,7 @@ import satisfactoryImg from "assets/satisfactory.webp";
 import photographyImg from "assets/photography.avif";
 import pwgenImg from "assets/pwgen.gif";
 import quizzlesImg from "assets/quizzles.gif";
+import dndImg from "assets/dnd.gif";
 
 export interface Project {
   id: string;
@@ -23,6 +24,29 @@ export interface Project {
 }
 
 const projects: Project[] = [
+  {
+    id: "satisfactory",
+    path: "satisfactory-planner",
+    title: "Satisfactory Planner",
+    repos: [{ link: "https://github.com/bradbrad88/satisfactory", text: "Github" }],
+    desc: "React project assisting the design of factories in the game, Satisfactory.\nComplex relationships between the inputs and outputs of factories are best described by a graph model.",
+    complete: false,
+    article: Satisfactory,
+    image: satisfactoryImg,
+    feature: true,
+  },
+  {
+    id: "dnd",
+    path: "dnd-creator",
+    title: "DnD Character Creator",
+    repos: [{ link: "https://github.com/SamMarch/DnD-Character-Generator", text: "Github" }],
+    desc: "A collaborative project to produce a full-stack Dungeons and Dragons Charactor web app.",
+    article: () => null,
+    complete: true,
+    image: dndImg,
+    deployed: "https://project-2-character-creator.herokuapp.com/update/34",
+    feature: true,
+  },
   {
     id: "nibbles",
     path: "nibbles",
@@ -50,20 +74,7 @@ const projects: Project[] = [
     image: photographyImg,
     feature: true,
   },
-  {
-    id: "satisfactory",
-    path: "satisfactory-planner",
-    title: "Satisfactory Planner",
-    repos: [
-      { link: "https://github.com/bradbrad88/satisfactory-client", text: "Github - client" },
-      { link: "https://github.com/bradbrad88/satisfactory-server", text: "Github - server" },
-    ],
-    desc: "React project assisting the design of factories in the game, Satisfactory.\nComplex relationships between the inputs and outputs of factories are best described by a graph model.",
-    complete: false,
-    article: Satisfactory,
-    image: satisfactoryImg,
-    feature: false,
-  },
+
   {
     id: "pwgen",
     article: PasswordGenerator,
