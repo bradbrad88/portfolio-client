@@ -1,32 +1,29 @@
+import React from "react";
 import { Project } from "data/projects";
 import H2 from "components/elements/H2";
 import Section from "components/elements/Section";
+
 interface Proptypes {
   project: Project;
 }
 
 const ProjectDetails = ({ project }: Proptypes) => {
-  const renderRepos = () => {
-    return (
-      <>
-        <p className="text-purple">Repos</p>
-        <div>
-          {project.repos.map(repo => (
-            <p key={repo.link}>
-              <a
-                className="text-green underline"
-                href={repo.link}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {repo.text}
-              </a>
-            </p>
-          ))}
-        </div>
-      </>
-    );
-  };
+  const renderRepos = () =>
+    project.repos.map(repo => (
+      <React.Fragment key={repo.link + repo.text}>
+        <p className="text-purple whitespace-pre pr-5">{repo.text}</p>
+        <p>
+          <a
+            className="text-green underline"
+            href={repo.link}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {repo.link}
+          </a>
+        </p>
+      </React.Fragment>
+    ));
 
   return (
     <Section>
@@ -37,10 +34,12 @@ const ProjectDetails = ({ project }: Proptypes) => {
         {renderRepos()}
         {project.deployed && (
           <>
-            <p className="text-purple">Deployment</p>
-            <a className="text-green underline" href={project.deployed} target="_blank">
-              Live Site
-            </a>
+            <p className="text-purple">Live Site</p>
+            <p>
+              <a className="text-green underline" href={project.deployed} target="_blank">
+                {project.deployed}
+              </a>
+            </p>
           </>
         )}
         <p className="text-purple">Status</p>
