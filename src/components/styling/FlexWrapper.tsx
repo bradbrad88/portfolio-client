@@ -1,4 +1,8 @@
-const FlexWrapper = ({ children }) => {
+interface Proptypes {
+  children?: React.ReactNode;
+}
+
+const FlexWrapper = ({ children }: Proptypes) => {
   return (
     <div
       className="flex-wrapper"
