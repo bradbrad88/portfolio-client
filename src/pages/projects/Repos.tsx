@@ -30,9 +30,10 @@ const Repos = () => {
       const duration = 1000 * 60 * 60 * 24 * DAYS;
       const threshold = new Date(Date.now() - duration);
       const data = (await getRequest<Repo[]>(req)) || [];
+      console.log(data);
       const repos = data
         .filter(repo => {
-          const date = new Date(repo.updated_at);
+          const date = new Date(repo.pushed_at);
           return date > threshold;
         })
         .map(repo => ({
