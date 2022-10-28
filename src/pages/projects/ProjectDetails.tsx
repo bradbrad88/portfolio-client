@@ -47,7 +47,20 @@ const ProjectDetails = ({ project }: Proptypes) => {
         <p className="text-purple mr-8">Description</p>
         <p className="whitespace-pre-line">{project.desc}</p>
       </div>
-      <img className="mt-3 border-[1px] border-white rounded-lg" src={project.image} alt="" />
+      {project.video ? (
+        <video
+          src={project.video}
+          autoPlay
+          loop
+          className="object-contain aspect-video"
+        ></video>
+      ) : (
+        <img
+          className="mt-3 border-[1px] border-white rounded-lg"
+          src={project.image}
+          alt=""
+        />
+      )}
     </Section>
   );
 };
