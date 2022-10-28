@@ -1,10 +1,12 @@
 import Nibbles from "pages/projects/individual-pages/Nibbles";
 import Satisfactory from "pages/projects/individual-pages/Satisfactory";
+import DndCharacterCreator from "pages/projects/individual-pages/DndCharacterCreator";
+import satisfactoryVid from "assets/satisfactory.webm";
 import Photography from "pages/projects/individual-pages/Photography";
 import Quizzles from "pages/projects/individual-pages/Quizzles";
 import PasswordGenerator from "pages/projects/individual-pages/PasswordGenerator";
 import nibblesImg from "assets/nibbles.png";
-import satisfactoryImg from "assets/satisfactory.webp";
+// import satisfactoryImg from "assets/satisfactory.webp";
 import photographyImg from "assets/photography.avif";
 import pwgenImg from "assets/pwgen.gif";
 import quizzlesImg from "assets/quizzles.gif";
@@ -19,7 +21,8 @@ export interface Project {
   desc: string;
   complete: boolean;
   article: React.FunctionComponent<{ project: Project }>;
-  image: string;
+  image?: string;
+  video?: string;
   feature?: boolean;
 }
 
@@ -29,10 +32,11 @@ const projects: Project[] = [
     path: "satisfactory-planner",
     title: "Satisfactory Planner",
     repos: [{ link: "https://github.com/bradbrad88/satisfactory", text: "Github" }],
-    desc: "React project assisting the design of factories in the game, Satisfactory.\nComplex relationships between the inputs and outputs of factories are best described by a graph model.",
+    desc: "Next.js and Redux project assisting the design and logistics of factories in the game, Satisfactory.",
     complete: false,
     article: Satisfactory,
-    image: satisfactoryImg,
+    // image: satisfactoryImg,
+    video: satisfactoryVid,
     feature: true,
   },
   {
@@ -40,8 +44,8 @@ const projects: Project[] = [
     path: "dnd-creator",
     title: "DnD Character Creator",
     repos: [{ link: "https://github.com/SamMarch/DnD-Character-Generator", text: "Github" }],
-    desc: "A collaborative project to produce a full-stack Dungeons and Dragons Charactor web app.",
-    article: () => null,
+    desc: "A collaborative project to produce a full-stack Dungeons and Dragons Charactor web app. Uses Node.js,  Express, MySQL, Sequelize, S3 and Tailwind",
+    article: DndCharacterCreator,
     complete: true,
     image: dndImg,
     deployed: "https://project-2-character-creator.herokuapp.com/update/34",
