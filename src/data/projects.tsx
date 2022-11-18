@@ -6,7 +6,7 @@ import Photography from "pages/projects/individual-pages/Photography";
 import Quizzles from "pages/projects/individual-pages/Quizzles";
 import PasswordGenerator from "pages/projects/individual-pages/PasswordGenerator";
 import nibblesImg from "assets/nibbles.png";
-// import satisfactoryImg from "assets/satisfactory.webp";
+import coinCharterImg from "assets/coin-charter.png";
 import photographyImg from "assets/photography.avif";
 import pwgenImg from "assets/pwgen.gif";
 import quizzlesImg from "assets/quizzles.gif";
@@ -28,6 +28,18 @@ export interface Project {
 
 const projects: Project[] = [
   {
+    id: "coin-charter",
+    path: "coin-charter",
+    title: "Coin Charter",
+    repos: [{ link: "https://github.com/bradbrad88/coin-charter", text: "Github" }],
+    deployed: "https://coin-charter-au.herokuapp.com",
+    desc: "MERN stack application merging crypto analysis with socials.",
+    complete: true,
+    article: () => null,
+    image: coinCharterImg,
+    feature: true,
+  },
+  {
     id: "satisfactory",
     path: "satisfactory-planner",
     title: "Satisfactory Planner",
@@ -35,7 +47,6 @@ const projects: Project[] = [
     desc: "Next.js and Redux project assisting the design and logistics of factories in the game, Satisfactory.",
     complete: false,
     article: Satisfactory,
-    // image: satisfactoryImg,
     video: satisfactoryVid,
     feature: true,
   },
@@ -49,7 +60,6 @@ const projects: Project[] = [
     complete: true,
     image: dndImg,
     deployed: "https://project-2-character-creator.herokuapp.com/update/34",
-    feature: true,
   },
   {
     id: "nibbles",
