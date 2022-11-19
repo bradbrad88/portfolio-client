@@ -18,7 +18,7 @@ const Skill = ({ skill }: Proptypes) => {
         className="flex cursor-pointer justify-between items-center border-b-[1px] border-[#fff3]"
         onClick={() => setFold(!fold)}
       >
-        <H2 divider={false} styles={{ fontSize: "1.9rem", marginBottom: 0 }}>
+        <H2 divider={false} styles={{ fontSize: "1.5rem", marginBottom: 0 }}>
           {skill.skill}
         </H2>
         <div
@@ -30,9 +30,9 @@ const Skill = ({ skill }: Proptypes) => {
       </div>
       <CollapseCard fold={fold}>
         {skill.concepts.map(concept => (
-          <article key={concept.description} className="mt-3">
+          <article key={concept.description} className="">
             <div className="sm:flex justify-between">
-              <H3>{concept.description}</H3>
+              <H3 styles={{ fontSize: "1.4rem" }}>{concept.description}</H3>
               {/* <span className="text-right sm:text-left block">
                 {concept.stars + " out of 5 "}
                 {"💡".repeat(concept.stars) + "➖".repeat(5 - concept.stars)}
