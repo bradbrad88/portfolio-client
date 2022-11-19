@@ -2,7 +2,7 @@ import Skill from "pages/skills/Skill";
 
 interface Concept {
   description: string;
-  stars: 1 | 2 | 3 | 4 | 5;
+  stars?: 1 | 2 | 3 | 4 | 5;
   comment?: string;
 }
 
@@ -18,55 +18,50 @@ const skills: Skill[] = [
       {
         description: "Semantic Html",
         stars: 4,
-        comment: "Confident with a good range of semantic HTML elements.",
+        comment:
+          "Able to appropriately use a large variety of semantically correct HTML elements, from sectional ones such as <main> or <article> elements to functional ones like <time>.",
       },
       {
         description: "Accessibility",
         stars: 2,
         comment:
-          "Inexperienced with Aria labels but familiar with details such as alt text and contrast ratios.",
+          "Familiar with design details such as alt text, contrast ratios, font size, button layouts and good quality html structure to provide ease of access on assisted devices.",
       },
       {
         description: "Responsive Design",
         stars: 4,
         comment:
-          "Able to achieve responsive designs through CSS media queries, CSS layout systems as well as Tailwind/Bootstrap techniques.",
+          "Able to achieve responsive designs through CSS media queries, CSS layout systems as well as Tailwind/Bootstrap techniques. Have worked through many page layout challenges to achieve good quality responsive designs.",
       },
 
       {
-        description: "Libraries and Extensions",
+        description: "CSS Libraries and Extensions",
         stars: 3,
         comment:
-          "Some experience with Bootstrap and actively using SCSS. Currently using Tailwind in more recent React projects.",
+          "Confident with vanilla CSS and Tailwind. Have briefly used Bootstrap and SCSS.",
       },
       {
-        description: "CSS Basics",
+        description: "CSS Layouts",
         stars: 4,
         comment:
-          "Confident I can achieve nearly any design, given time. Good knowledge of selectors, formatting and layouts.",
-      },
-      {
-        description: "CSS Layous",
-        stars: 4,
-        comment:
-          "Comfortable with grid and flex systems. Solid understanding of the box model.",
+          "Good understanding of inline and block element positioning. Have used flex and grid layouts extensively to achieve responsive designs. Able to identify when an element should be positioned absolutely (rarely) or fixed. Have utilised sticky positioning to great effect as well.",
       },
     ],
   },
   {
-    skill: "Javascript",
+    skill: "JavaScript",
     concepts: [
       {
         description: "In General",
         stars: 4,
         comment:
-          "Completed freeCodeCamp's Javascript course. Utilise codewars.com training. Have solved many issues in day-to-day work on projects. Reasonable understanding of the call stack, prototype inheritance and object references.",
+          "Completed freeCodeCamp's JavaScript course. Utilise codewars.com training. Have solved many issues in day-to-day work on projects as well as completed a six month bootcamp that heavily utilised JavaScript. Reasonable understanding of the call stack, prototype inheritance and object references.",
       },
       {
         description: "ES6",
         stars: 4,
         comment:
-          "Across most ES6 syntax, including array methods, arrow functions, spread operators, destructuring, async/await ",
+          "Across most ES6 syntax, including array methods, arrow functions, spread operators, destructuring, and async/await.",
       },
       {
         description: "Regular Expressions",
@@ -94,6 +89,21 @@ const skills: Skill[] = [
     ],
   },
   {
+    skill: "TypeScript",
+    concepts: [
+      {
+        description: "Project Setup",
+        comment:
+          "Have explored a few different ways of setting up projects with TypeScript so they may be deployed with relative ease. Have implemented with Webpack as well as basic builds and developer environments with Nodemon.",
+      },
+      {
+        description: "Usage",
+        comment:
+          "Confident using TypeScript in new projects, whether in a back-end Node.js project or using with React on the front-end. Able to use generics to create dynamic functions with strongly-typed return statements. Able to manage global types for a project, use correct types in React components (ie: the difference between native HTML event types and React synthetic events). Excited to learn more in this area.",
+      },
+    ],
+  },
+  {
     skill: "Git",
     concepts: [
       {
@@ -106,7 +116,7 @@ const skills: Skill[] = [
         description: "Three Trees",
         stars: 3,
         comment:
-          "Modest understand of the three trees of git - the working directory, staging index and commit history.",
+          "Modest understanding of the three trees of git - the working directory, staging index and commit history.",
       },
       {
         description: "Rebasing",
@@ -118,7 +128,7 @@ const skills: Skill[] = [
         description: "Collaboration",
         stars: 3,
         comment:
-          "Recently had success completing a collaborative project with 3 other people. We protected the main branch and submitted pull requests that required authorisation by at least one other person. This provided excellent practice in navigating multiple features concurrently and resolving code conflicts.",
+          "Had success completing multiple collaborative projects. Have worked on multiple repositories that protected the main branch and required pull requests to be authorised by at least one other member of the project. This provided excellent practice in navigating multiple features concurrently and resolving code conflicts.",
       },
     ],
   },
@@ -169,6 +179,16 @@ const skills: Skill[] = [
     ],
   },
   {
+    skill: "GraphQL",
+    concepts: [
+      {
+        description: "Experience",
+        comment:
+          "Successfully produced a minimum viable product in a project using GraphQL using Apollo (Coin Charter project). Able to create type definitions and resolvers as well as query the data from the client. Introduced context to provide authentication information. Refactored the server to handle web-socket connections so we could then go on to use subscriptions to provide real-time updates on comments, friend requests and other features of the application. Planning to look into making the publisher/subscriber model work on a distributed system using a proper engine.",
+      },
+    ],
+  },
+  {
     skill: "Node",
     concepts: [
       {
@@ -181,7 +201,7 @@ const skills: Skill[] = [
         description: "Express",
         stars: 4,
         comment:
-          "Comfortable with the core elements of Express. Able to handle errors, route effectively, write and implement middleware and process responses.",
+          "Comfortable with the core elements of Express. Able to handle errors, route effectively, write and implement middleware and process responses. Experience with view engines including Handlebars.",
       },
       {
         description: "Libraries",
@@ -193,7 +213,7 @@ const skills: Skill[] = [
         description: "Object Relational Mapping",
         stars: 3,
         comment:
-          "Experience using Sequelize as an ORM for PostgreSQL as well as using pure SQL queries.",
+          "Experience using Sequelize as an ORM for PostgreSQL as well as using pure SQL queries. Have also used Mongoose in a full stack application.",
       },
     ],
   },
@@ -213,10 +233,26 @@ const skills: Skill[] = [
           "An understanding that there are a number of different ways to index a field to optimise it based on how it is most commonly accessed (read/write). I also understand that there is a trade-off in terms of space required and that write times become more expensive. Don't have an intimate understanding of different index types at this point.",
       },
       {
-        description: "Sql Language",
+        description: "SQL Language",
         stars: 3,
         comment:
           "Still much to learn but able to do most of the basics in terms of CRUD operations, joins, aggregation and analysis.",
+      },
+      {
+        description: "NoSQL Language",
+        stars: 3,
+        comment:
+          "Have implemented a web app with social media qualities using MongoDB. This was a requirement for course work. Looking to rework this using PostgreSQL in the near future as all the data is relational in nature and SQL seems like a much better fit.",
+      },
+    ],
+  },
+  {
+    skill: "Webpack",
+    concepts: [
+      {
+        description: "Config",
+        comment:
+          "Successfully setup a React application from scratch where it went on to be used in a full-stack project that used TypeScript on the client. Navigated many of the issues that Create-React-App handles automatically including proxying the development server, handling environment variables and much more.",
       },
     ],
   },
@@ -240,6 +276,16 @@ const skills: Skill[] = [
         stars: 3,
         comment:
           "Went to the effort of linking a Github repository with Codecov and automating the process of generating a coverage report using Github Actions. The end result was a tasty badge on the README.md file. And code coverage I guess...",
+      },
+    ],
+  },
+  {
+    skill: "AWS",
+    concepts: [
+      {
+        description: "Experience",
+        comment:
+          "Created an S3 bucket for use with a collaborative project. Used Identity and Access Management to create a user with limited programmatic access to the bucket. This allowed me to share an API key among our team without exposing my account details.",
       },
     ],
   },
